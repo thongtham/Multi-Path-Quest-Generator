@@ -1,0 +1,63 @@
+CHARACTER
+
+EX: 1:merchant1:isAlive:true
+
+
+	IGNORE 
+		case ("currentLocation")
+		case ("listOccupation")
+			
+	conflict if same case & diff variable
+		case ("isAlive")
+	
+	conflict if same variable after case in pair
+	
+		[	case ("listStatus")	
+		[	case ("listStatusNOT")
+			
+		[	case ("listSkill")
+		[	case ("listSkillNOT")
+		
+		
+	Conflict if same object after case + match ITEM CONFLICT RULE (ITEM TOOK PIORITY?)
+			case ("listItem")
+
+			
+LOCATION
+
+	IGNORE (ACTUALLY conflict if same case, but current build no way to manipulate these attribute)
+				case ("locationName"):
+				case ("locationType"):
+				case ("locationEnvironment"):
+				case ("listConnectLocation"):
+	
+	Conflict if same object after case + match ITEM CONFLICT RULE (ITEM TOOK PIORITY)
+				case ("listItemInLocation"):
+			
+			
+			
+			
+ITEM
+
+EX: 1:merchant1:listItem:antidote:listProperty:damaged
+
+	IGNORE
+				case ("typeOfItem") 
+				case ("typeOfFunction") 
+				case ("currentLocation") 
+
+	conflict if same case & diff variable
+				case ("ownerName") 
+				case ("isOnGround") 
+				
+	conflict if same variable after case in pair
+	
+			[	case ("itemName") 
+			[	case ("itemNameNOT")
+				
+			[	case ("listProperty") 
+			[	case ("listPropertyNOT") 
+				
+				
+
+			

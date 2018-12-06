@@ -1,0 +1,98 @@
+﻿ใช้ระบบ token 
+
+เช่นจาก goto(Griffin loc), [เลข 2] 
+ลงมาเป็น prepare [เลข 3]
+ลงมาเป็น goto(NOT_SELECT_YET)   >>>>>> token = [Griffin]
+
+ตัว goto() ขึ้นไปเจอ goto(Griffin Loc) that is repeating of itself. Thus it cannot not put (Griffin Loc) into itself. 
+Thus it random (Hunter) to put into goto
+
+now at learn(NOT_SELECT_YET) [เลข 5] >>>> The token = [Griffin, Hunter]
+
+this learn(OBJ), the OBJ must be item of type 'information'. 
+From token that is past down, it can choose from ['Griffin's location Info, Hunter's location info,], it choose Griffin ?????
+
+
+
+*************IDEA that should work ************
+
+Token system, however, each sub-token has priority. 
+
+EX.  Griffin = 3 sub-token = [Info, Location, Griffin itself]
+
+RULE 1: Here, when griffen is selected, it will select Info 1st, then if Info already selected, Location will be selected, then Griffin itself. (see blueo square)
+
+RULE 2: the token will be selected by the latest one that is 'created'. See (orange and green square) on this.
+
+RULE 3: Token is unlock after the corespound Component is pass. EX. at [15]
+Otherwise, the earliest unlocked token is used.
+
+EXTRA RULE
+*No need to follow [Info > Location, itself]  (see green square)
+
+*Here the token [Dogs info] isn't used yet, but Goto(XXX) cannot use Info token, thus the next token is select instead (loc in this case).
+
+*Another example is at [26]
+>>Here Follow() can only use Character, thus 'Hunter itself' which is a character is selected.
+
+------
+
+*EXECEPTION at [6] && [34]
+>>>Here goto() should use Hunter's Loc, but instead, it use Hunter's House
+
+[OPTION 2 so this make sense]
+***If goto() happen and the current token isn't at the [loc] or [itself], select a random location that is related to the token.
+
+//[OPTION 1 so this make sense]
+//***This is because the next Component is Explore()
+//***When goto() is follow by explore(), goto() must be Location As in Location (not the character's current location)
+
+*EXCEPTION at [49]
+>>>Here the previous Component is [ goto(Griffin loc) ]
+The most logical token for [use()] is [use(Griffin) ]
+BUT INSTEAD, (BUCKHORN) IS SELECTED
+
+[OPTION 1]
+***Use can only use 'item' token. & because the only token left is Griffin ITSELF, >>> [select the last item token that exist]
+
+
+-----
+
+
+TOKEN
+**If no token is legit or avaiable, 'create/choose' a token from game world.
+**Some ComponentRule will force create new token?
+
+
+
+6 Goto(Hunter's House)] > 
+10 Explore >
+11 Examine(Clues)) >
+16 goto(Dogs loc) > 
+17 kill(dogs) >
+19 goto(Hunter loc) >
+20 report(Hunter) >
+21 listen(Griffin Info) > 
+26 follow(Hunter) >
+27 examine(Clues)) >
+28 follow(Tracks) >
+29 examine(Clues)) >
+34 goto(Herbalist loc) >
+35 listen(Buckhorn loc == info) >
+36 goto(Buckhorn loc) >
+40 gather(Buckhorn) >
+42 goto(Griffin loc) >
+49 use(Buckhorn) >
+51 kill(Griffin) >
+53 goto(Camp) >
+54 report(Commander) 
+
+
+
+
+
+
+
+
+
+

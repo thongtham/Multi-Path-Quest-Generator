@@ -1,0 +1,80 @@
+package com.pengyifan.commons.collections;
+
+import com.google.common.collect.Lists;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+public final class ListUtils {
+
+  private ListUtils() throws InstantiationException {
+    throw new InstantiationException("This class is not for instantiation");
+  }
+  /**
+   * Given a sequence of s1,...,sn, find the first subsequence si1 < si2 < ...<
+   * sik with i1 < ... < ik so that k is as large as possible.
+   * <p>
+   * O(n^2)
+   */
+  public static <E extends Comparable<E>> List<E> longestIncreasingSubsequence(List<E> list) {
+    return longestIncreasingSubsequence(list, E::compareTo);
+  }
+
+  /**
+   * Given a sequence of s1,...,sn, find the first subsequence si1 < si2 < ...<
+   * sik with i1 < ... < ik so that k is as large as possible.
+   * <p>
+   * O(n^2)
+   */
+  public static <E> List<E> longestIncreasingSubsequence(List<E> list, Comparator<E> comp) {
+
+    if (list == null) {
+      return null;
+    } else if (list.isEmpty()) {
+      return Collections.emptyList();
+    }
+
+    /**
+     * length of longest increasing subsequence in s1,...,sn that ends in si
+     */
+    int[] l = new int[list.size()];
+    /**
+     * by following the p[j] values we can reconstruct the whole sequence in
+     * linear time.
+     */
+    int[] p = new int[list.size()];
+    for (int j = 0; j < list.size(); j++) {
+      E sj = list.get(j);
+      l[j] = 1;
+      p[j] = -1;
+      for (int i = 0; i < j; i++) {
+        E si = list.get(i);
+        if (comp.compare(si, sj) < 0 && l[i] + 1 > l[j]) {
+          p[j] = i;
+          l[j] = l[i] + 1;
+        }
+      }
+    }
+    // find j such that L[j] is largest
+    int maxIndex = 0;
+    int maxLength = l[0];
+    for (int i = 1; i < l.length; i++) {
+      if (maxLength < l[i]) {
+        maxLength = l[i];
+        maxIndex = i;
+      }
+    }
+    // walk backwards through P[j] pointers to find the sequence
+    LinkedList<E> lis = Lists.newLinkedList();
+    lis.addFirst(list.get(maxIndex));
+    int j = maxIndex;
+    while (p[j] != -1) {
+      lis.addFirst(list.get(p[j]));
+      j = p[j];
+    }
+
+    return lis;
+  }
+}

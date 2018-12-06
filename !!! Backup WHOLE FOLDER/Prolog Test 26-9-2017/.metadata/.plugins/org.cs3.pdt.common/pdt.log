@@ -1,0 +1,1533 @@
+pdt: ----------------------------------
+pdt: Sun Aug 20 16:03:33 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Sun Aug 20 16:03:33 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ERROR - 20/08 16:03:35 - Prolog Process Default Process Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 20/08 16:03:35 - Worker-0: pdt: The following Exception was caught:
+pdt: WARNING - 20/08 16:03:35 - Worker-13: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getAsyncSession(AbstractPrologProcess.java:543)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.enableSubject(PrologEventDispatcher.java:246)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.addPrologEventListener(PrologEventDispatcher.java:202)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.addProcessListener(CurrentProcessListener.java:69)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.activePrologProcessChanged(CurrentProcessListener.java:105)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:362)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.ensureConnection(PrologConsoleView.java:1264)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.connect(PrologConsoleView.java:1246)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.setPrologProcess(PrologConsoleView.java:1181)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.setPrologProcess(PrologConsoleView.java:1166)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView$13.run(PrologConsoleView.java:1011)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ERROR - 20/08 16:03:35 - Prolog Process Default Process Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 20/08 16:03:35 - Worker-0: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.restart(AbstractPrologProcess.java:440)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:355)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryOnce(AbstractPrologProcess.java:652)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryOnce(AbstractPrologProcess.java:624)
+	at org.cs3.pdt.common.PDTCommonUtil.updateEntryPointsInProcess(PDTCommonUtil.java:471)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.updateEntryPoints(CurrentProcessListener.java:89)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.activePrologProcessChanged(CurrentProcessListener.java:107)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ERROR - 20/08 16:03:35 - Prolog Process Default Process Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:03:35 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 20/08 16:03:35 - Worker-0: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.restart(AbstractPrologProcess.java:440)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:355)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryAll(AbstractPrologProcess.java:612)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryAll(AbstractPrologProcess.java:585)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.loadBreakpointsFromProcess(PDTBreakpointHandler.java:339)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.activePrologProcessChanged(PDTBreakpointHandler.java:496)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:03:35 - Worker-0: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getAsyncSession(AbstractPrologProcess.java:539)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.enableSubject(PrologEventDispatcher.java:246)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.addPrologEventListener(PrologEventDispatcher.java:202)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.addProcessListener(PDTBreakpointHandler.java:369)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.activePrologProcessChanged(PDTBreakpointHandler.java:498)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ERROR - 20/08 16:04:12 - Prolog Process Test1 Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: clearing queue
+pdt: WARNING - 20/08 16:04:12 - main: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:362)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.ensureConnection(PrologConsoleView.java:1264)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.connect(PrologConsoleView.java:1246)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.setPrologProcess(PrologConsoleView.java:1181)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.setPrologProcess(PrologConsoleView.java:1166)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView.activateNewPrologProcess(PrologConsoleView.java:1026)
+	at org.cs3.pdt.console.internal.views.PrologConsoleView$CreateNamedProcessAction$1.runInUIThread(PrologConsoleView.java:472)
+	at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:97)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4211)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3827)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1121)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:693)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:610)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:04:12 - Worker-1: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getAsyncSession(AbstractPrologProcess.java:539)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.enableSubject(PrologEventDispatcher.java:246)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.addPrologEventListener(PrologEventDispatcher.java:202)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.addProcessListener(CurrentProcessListener.java:69)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.activePrologProcessChanged(CurrentProcessListener.java:105)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ERROR - 20/08 16:04:12 - Prolog Process Test1 Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: clearing queue
+pdt: WARNING - 20/08 16:04:12 - Worker-1: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.restart(AbstractPrologProcess.java:440)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:355)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryOnce(AbstractPrologProcess.java:652)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryOnce(AbstractPrologProcess.java:624)
+	at org.cs3.pdt.common.PDTCommonUtil.updateEntryPointsInProcess(PDTCommonUtil.java:471)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.updateEntryPoints(CurrentProcessListener.java:89)
+	at org.cs3.pdt.editor.internal.editors.CurrentProcessListener.activePrologProcessChanged(CurrentProcessListener.java:107)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ERROR - 20/08 16:04:12 - Prolog Process Test1 Work: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:04:12 - Prolog Process Test1 Work: clearing queue
+pdt: WARNING - 20/08 16:04:12 - Worker-1: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilUp(LifeCycle.java:131)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.start(AbstractPrologProcess.java:480)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.start(SocketPrologProcess.java:297)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.restart(AbstractPrologProcess.java:440)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getSession(AbstractPrologProcess.java:355)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryAll(AbstractPrologProcess.java:612)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.queryAll(AbstractPrologProcess.java:585)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.loadBreakpointsFromProcess(PDTBreakpointHandler.java:339)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.activePrologProcessChanged(PDTBreakpointHandler.java:496)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:04:12 - Worker-1: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.getAsyncSession(AbstractPrologProcess.java:539)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.enableSubject(PrologEventDispatcher.java:246)
+	at org.cs3.prolog.connector.process.PrologEventDispatcher.addPrologEventListener(PrologEventDispatcher.java:202)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.addProcessListener(PDTBreakpointHandler.java:369)
+	at org.cs3.pdt.editor.internal.editors.breakpoints.PDTBreakpointHandler.activePrologProcessChanged(PDTBreakpointHandler.java:498)
+	at org.cs3.pdt.connector.internal.service.PrologProcessService$3.run(PrologProcessService.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:05:41 - Framework stop: problems during shutdown of process Test1
+pdt: WARNING - 20/08 16:05:41 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:494)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: WARNING - 20/08 16:05:41 - Framework stop: problems during shutdown of process Default Process
+pdt: WARNING - 20/08 16:05:41 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:494)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:40)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: org.cs3.prolog.connector.process.PrologProcessStartException: Failed to start the Prolog process.
+The path to the Prolog executable is invalid.
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommands(SocketServerStartAndStopStrategy.java:260)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getCommandArray(SocketServerStartAndStopStrategy.java:234)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getNewProcess(SocketServerStartAndStopStrategy.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startSocketServer(SocketServerStartAndStopStrategy.java:115)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.startServer(SocketServerStartAndStopStrategy.java:105)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.startServer(AbstractPrologProcess.java:229)
+	at org.cs3.prolog.connector.internal.lifecycle.InitState$1.run(InitState.java:38)
+	... 1 more
+pdt: ----------------------------------
+pdt: Sun Aug 20 16:05:51 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Sun Aug 20 16:05:51 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 20/08 16:05:58 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 20/08 16:43:33 - Prolog Process TestProlog Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 20/08 16:43:52 - Prolog Process TestProlog Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 20/08 16:44:15 - Prolog Process TestProlog Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 20/08 16:53:48 - Prolog Process TestProlog Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Sun Aug 20 20:18:33 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Sun Aug 20 20:18:33 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 20/08 20:18:35 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Mon Aug 21 15:39:02 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Mon Aug 21 15:39:02 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 21/08 15:39:09 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ERROR - 22/08 00:07:46 - async result dispatcher (handle_client2): Fatal error during batch processing (probably the connection to the server was lost).
+pdt: WARNING - 22/08 00:07:46 - Console Reader Thread: pdt: The following Exception was caught:
+pdt: ERROR - 22/08 00:07:46 - async result dispatcher (handle_client3): Fatal error during batch processing (probably the connection to the server was lost).
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read1(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at java.io.Reader.read(Unknown Source)
+	at org.cs3.pdt.console.internal.views.PrologSocketConsoleModel$ConsoleReader.run(PrologSocketConsoleModel.java:129)
+	at java.lang.Thread.run(Unknown Source)
+pdt: WARNING - 22/08 00:07:46 - Console Reader Thread: pdt: The following Exception was caught:
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at sun.nio.cs.StreamEncoder.writeBytes(Unknown Source)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(Unknown Source)
+	at sun.nio.cs.StreamEncoder.implFlush(Unknown Source)
+	at sun.nio.cs.StreamEncoder.flush(Unknown Source)
+	at java.io.OutputStreamWriter.flush(Unknown Source)
+	at java.io.BufferedWriter.flush(Unknown Source)
+	at org.cs3.pdt.console.internal.views.PrologSocketConsoleModel.disconnect(PrologSocketConsoleModel.java:346)
+	at org.cs3.pdt.console.internal.views.PrologSocketConsoleModel$ConsoleReader.run(PrologSocketConsoleModel.java:137)
+	at java.lang.Thread.run(Unknown Source)
+pdt: WARNING - 22/08 00:07:46 - async result dispatcher (handle_client2): pdt: The following Exception was caught:
+pdt: WARNING - 22/08 00:07:46 - async result dispatcher (handle_client3): pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.InputStreamProxy.read(InputStreamProxy.java:79)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.skipWhiteSpace(ValueReader.java:150)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readFirstInterestingCharacter(ValueReader.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.doReading(ValueReader.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readValue(ValueReader.java:45)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.readValue(SocketClient.java:247)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.read_solution(AsyncSocketSession.java:298)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatchResults(AsyncSocketSession.java:177)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatch(AsyncSocketSession.java:90)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.access$0(AsyncSocketSession.java:75)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession$1.run(AsyncSocketSession.java:348)
+org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.InputStreamProxy.read(InputStreamProxy.java:79)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.skipWhiteSpace(ValueReader.java:150)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readFirstInterestingCharacter(ValueReader.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.doReading(ValueReader.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readValue(ValueReader.java:45)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.readValue(SocketClient.java:247)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.read_solution(AsyncSocketSession.java:298)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatchResults(AsyncSocketSession.java:177)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatch(AsyncSocketSession.java:90)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.access$0(AsyncSocketSession.java:75)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession$1.run(AsyncSocketSession.java:348)
+pdt: WARNING - 22/08 00:07:47 - Prolog Process Default Process Work: There was a problem during server shutdown.
+pdt: WARNING - 22/08 00:07:47 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getSocketClient(SocketServerStartAndStopStrategy.java:365)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopSocketServer(SocketServerStartAndStopStrategy.java:345)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopServer(SocketServerStartAndStopStrategy.java:336)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.stopServer(AbstractPrologProcess.java:234)
+	at org.cs3.prolog.connector.internal.lifecycle.ErrorState$1.run(ErrorState.java:48)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: WARNING - 22/08 10:23:21 - Framework stop: problems during shutdown of process Default Process
+pdt: WARNING - 22/08 10:23:21 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:494)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.InputStreamProxy.read(InputStreamProxy.java:79)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.skipWhiteSpace(ValueReader.java:150)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readFirstInterestingCharacter(ValueReader.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.doReading(ValueReader.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readValue(ValueReader.java:45)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.readValue(SocketClient.java:247)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.read_solution(AsyncSocketSession.java:298)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatchResults(AsyncSocketSession.java:177)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatch(AsyncSocketSession.java:90)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.access$0(AsyncSocketSession.java:75)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession$1.run(AsyncSocketSession.java:348)
+pdt: ----------------------------------
+pdt: Sat Aug 26 15:09:31 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Sat Aug 26 15:09:31 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 26/08 15:09:36 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 26/08 18:24:08 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.lang.IllegalMonitorStateException: Invalid thread access. Cannot call 'waitUntilError' from transition or work queue.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilError(LifeCycle.java:160)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.error(AbstractPrologProcess.java:516)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.error(SocketPrologProcess.java:277)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.getShutdownSession(SocketPrologProcess.java:253)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.getShutdownSession(AbstractPrologProcess.java:224)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycleHookWrapper$3.run(LifeCycleHookWrapper.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: WARNING - 26/08 18:24:08 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 26/08 18:24:08 - Framework stop: problems during shutdown of process Default Process
+pdt: WARNING - 26/08 18:24:08 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: java.net.ConnectException: Connection refused: connect
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilDown(LifeCycle.java:151)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:498)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: java.net.ConnectException: Connection refused: connect
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.getShutdownSession(SocketPrologProcess.java:251)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.getShutdownSession(AbstractPrologProcess.java:224)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycleHookWrapper$3.run(LifeCycleHookWrapper.java:117)
+	... 1 more
+pdt: WARNING - 26/08 18:24:09 - Prolog Process Default Process Work: There was a problem during server shutdown.
+pdt: WARNING - 26/08 18:24:09 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getSocketClient(SocketServerStartAndStopStrategy.java:365)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopSocketServer(SocketServerStartAndStopStrategy.java:345)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopServer(SocketServerStartAndStopStrategy.java:336)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.stopServer(AbstractPrologProcess.java:234)
+	at org.cs3.prolog.connector.internal.lifecycle.ErrorState$1.run(ErrorState.java:48)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: ----------------------------------
+pdt: Sun Aug 27 15:15:24 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Sun Aug 27 15:15:24 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 27/08 15:15:28 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: WARNING - 27/08 18:22:40 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Mon Aug 28 20:36:48 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Mon Aug 28 20:36:48 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 28/08 20:37:00 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Wed Aug 30 11:56:56 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Wed Aug 30 11:56:56 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 30/08 11:57:02 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Wed Aug 30 16:06:44 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Wed Aug 30 16:06:44 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 30/08 16:06:52 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Wed Aug 30 16:52:20 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Wed Aug 30 16:52:20 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 30/08 16:52:22 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Mon Sep 04 15:26:51 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Mon Sep 04 15:26:51 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 04/09 15:26:57 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ERROR - 04/09 21:23:46 - async result dispatcher (handle_client1): Fatal error during batch processing (probably the connection to the server was lost).
+pdt: WARNING - 04/09 21:23:48 - async result dispatcher (handle_client1): pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.InputStreamProxy.read(InputStreamProxy.java:79)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.skipWhiteSpace(ValueReader.java:150)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readFirstInterestingCharacter(ValueReader.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.doReading(ValueReader.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readValue(ValueReader.java:45)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.readValue(SocketClient.java:247)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.read_solution(AsyncSocketSession.java:298)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatchResults(AsyncSocketSession.java:177)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatch(AsyncSocketSession.java:90)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.access$0(AsyncSocketSession.java:75)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession$1.run(AsyncSocketSession.java:348)
+pdt: WARNING - 04/09 21:23:49 - Framework stop: problems during shutdown of process Default Process
+pdt: WARNING - 04/09 21:23:49 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:494)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: java.net.SocketException: Connection reset
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.InputStreamProxy.read(InputStreamProxy.java:79)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.skipWhiteSpace(ValueReader.java:150)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readFirstInterestingCharacter(ValueReader.java:131)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.doReading(ValueReader.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.ValueReader.readValue(ValueReader.java:45)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.readValue(SocketClient.java:247)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.read_solution(AsyncSocketSession.java:298)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatchResults(AsyncSocketSession.java:177)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.readAndDispatch(AsyncSocketSession.java:90)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession.access$0(AsyncSocketSession.java:75)
+	at org.cs3.prolog.connector.internal.session.socket.AsyncSocketSession$1.run(AsyncSocketSession.java:348)
+pdt: WARNING - 04/09 21:23:50 - Prolog Process Default Process Work: There was a problem during server shutdown.
+pdt: WARNING - 04/09 21:23:50 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getSocketClient(SocketServerStartAndStopStrategy.java:365)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopSocketServer(SocketServerStartAndStopStrategy.java:345)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopServer(SocketServerStartAndStopStrategy.java:336)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.stopServer(AbstractPrologProcess.java:234)
+	at org.cs3.prolog.connector.internal.lifecycle.ErrorState$1.run(ErrorState.java:48)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: ----------------------------------
+pdt: Mon Sep 04 21:44:46 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Mon Sep 04 21:44:46 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 04/09 21:44:50 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Wed Sep 06 20:53:11 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Wed Sep 06 20:53:11 ICT 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 06/09 20:53:18 - Prolog Process Default Process Work: Prolog warnings and errors during initialization:
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl:15
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/metainference/pdt_prolog_metainference.pl':19:13: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules_visibility.pl':47:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl:17
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/lists.pl':17:50: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/utils4modules.pl':37:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl:19
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/logging.pl':25:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl:22
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/count.pl':29:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl:18
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database.pl':22:3: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl:450
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201708021141/pl/xref/pdt_xref.pl':450:0: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl:25
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.prolog.library_3.1.2.201708021141/pl/database_cache.pl':31:2: Illegal multibyte Sequence
+
+Location: c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl:20
+Message: 'c:/users/user/.p2/pool/plugins/org.cs3.pdt.editor_3.1.2.201708021141/pl/editor/load.pl':20:42: Illegal multibyte Sequence
+
+
+pdt: ----------------------------------
+pdt: Thu Sep 14 12:30:21 GMT+07:00 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Thu Sep 14 12:30:21 GMT+07:00 2017
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 14/09 13:45:21 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.lang.IllegalMonitorStateException: Invalid thread access. Cannot call 'waitUntilError' from transition or work queue.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilError(LifeCycle.java:160)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.error(AbstractPrologProcess.java:516)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.error(SocketPrologProcess.java:277)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.getShutdownSession(SocketPrologProcess.java:253)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.getShutdownSession(AbstractPrologProcess.java:224)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycleHookWrapper$3.run(LifeCycleHookWrapper.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: WARNING - 14/09 13:45:21 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 14/09 13:45:21 - Framework stop: problems during shutdown of process Default Process
+pdt: WARNING - 14/09 13:45:21 - Framework stop: pdt: The following Exception was caught:
+org.cs3.prolog.connector.process.PrologProcessException: org.cs3.prolog.connector.process.PrologProcessException: java.net.ConnectException: Connection refused: connect
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilDown(LifeCycle.java:151)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.stop(AbstractPrologProcess.java:498)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.stop(SocketPrologProcess.java:266)
+	at org.cs3.pdt.connector.PDTConnectorPlugin.stop(PDTConnectorPlugin.java:236)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1669)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1588)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.cs3.prolog.connector.process.PrologProcessException: java.net.ConnectException: Connection refused: connect
+	at org.cs3.prolog.connector.internal.lifecycle.AbstractState.error(AbstractState.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$3.run(LifeCycle.java:226)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.getShutdownSession(SocketPrologProcess.java:251)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.getShutdownSession(AbstractPrologProcess.java:224)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycleHookWrapper$3.run(LifeCycleHookWrapper.java:117)
+	... 1 more
+pdt: WARNING - 14/09 13:45:22 - Prolog Process Default Process Work: There was a problem during server shutdown.
+pdt: WARNING - 14/09 13:45:22 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getSocketClient(SocketServerStartAndStopStrategy.java:365)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopSocketServer(SocketServerStartAndStopStrategy.java:345)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopServer(SocketServerStartAndStopStrategy.java:336)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.stopServer(AbstractPrologProcess.java:234)
+	at org.cs3.prolog.connector.internal.lifecycle.ErrorState$1.run(ErrorState.java:48)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)

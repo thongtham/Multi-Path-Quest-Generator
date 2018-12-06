@@ -1,0 +1,7 @@
+jackjack
+[1;31mfalse.[0m
+
+?- 
+
+[32m% halt
+[0m

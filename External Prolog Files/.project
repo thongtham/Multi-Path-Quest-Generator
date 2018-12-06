@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>External Prolog Files</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Users/User/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201805281450/pl/callgraph/pdt_call_analysis.pl</name>
+			<type>1</type>
+			<location>c:/users/user/.p2/pool/plugins/org.cs3.pdt.common_3.1.2.201805281450/pl/callgraph/pdt_call_analysis.pl</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="history">
+		<list key="TestProlog">
+			<item value="test(1)."/>
+			<item value="test(1)."/>
+			<item value="test(1)."/>
+		</list>
+		<list key="Default Process">
+			<item value="test(1)."/>
+			<item value="test(1)."/>
+			<item value="trace."/>
+			<item value="testQuest(kill,john,jill,d)."/>
+			<item value="testQuest(kill,john,jill,dead)."/>
+			<item value="testQuest(kill,john,jill,dead)."/>
+			<item value="trace."/>
+			<item value="testQuest(kill,john,jill,dead)."/>
+		</list>
+	</section>
+</section>

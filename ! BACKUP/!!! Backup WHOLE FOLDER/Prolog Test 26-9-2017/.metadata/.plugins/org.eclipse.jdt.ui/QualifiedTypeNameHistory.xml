@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="gameObject.Location"/>
+<fullyQualifiedTypeName name="templateComponent.QuestFrame"/>
+<fullyQualifiedTypeName name="templateComponent.AtomAction"/>
+<fullyQualifiedTypeName name="templateComponent.AtomItem"/>
+<fullyQualifiedTypeName name="enviroment.GameState"/>
+<fullyQualifiedTypeName name="gameObject.Item"/>
+<fullyQualifiedTypeName name="gameObject.Character"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>

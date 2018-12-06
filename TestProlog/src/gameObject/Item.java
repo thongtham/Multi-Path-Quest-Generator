@@ -1,0 +1,278 @@
+package gameObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Item {
+	
+	// Generic property that all Item with the same name share
+	int itemID = 0;	
+	String itemName;
+	ArrayList<String> typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
+	ArrayList<String> typeOfFunction = new ArrayList<String>();; // consumable , equipment , object , container?
+	
+	
+	//property that vary from Item to Item, making them unique from each other
+	String holderName;
+	String ownerName;
+	boolean isOnGround;
+	String currentLocation;
+	ArrayList<String> listProperty = new ArrayList<String>();
+	
+	
+
+	
+	
+	
+	//////////////// Constructor ///////////////////
+	
+	public Item(){
+		
+	}
+	public Item(String name)
+	{
+		itemName = name;
+	}
+	
+	public Item (Item inputItem) {
+		
+		itemID = inputItem.getID();	
+		itemName = inputItem.getName();
+		
+		typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
+		for (String str : inputItem.getListTypeOfItem()) {
+			typeOfItem.add(str);
+		}
+		
+		typeOfFunction = new ArrayList<String>(); // consumable , equipment , object , container?
+		for (String str : inputItem.getListTypeOfFunction()) {
+			typeOfFunction.add(str);
+		}
+		
+		//property that vary from Item to Item, making them unique from each other
+		holderName = inputItem.getHolderName();
+		ownerName = inputItem.getOwnerName();
+		isOnGround = inputItem.isItemOnGround();
+		currentLocation = inputItem.getCurrentLocation();
+		
+		listProperty = new ArrayList<String>();
+		for (String str : inputItem.getListProperty()) {
+			typeOfFunction.add(str);
+		}
+		
+	}
+	
+	
+	///////////////////Set item ////////////////
+	
+	
+	public void setNewItem( int id, String inputName, 
+							String[] inputType, String[] inputFunction, 
+							String inputOwner, String[] inputProperty)
+	{
+		
+		List al = Arrays.asList(inputType);
+		List al2 = Arrays.asList(inputFunction);
+		List al3 = Arrays.asList(inputProperty);
+		
+		itemID = id;
+		itemName = inputName;
+		typeOfItem = new ArrayList<String>();
+		typeOfFunction = new ArrayList<String>();
+		typeOfItem.addAll(al);
+		typeOfFunction.addAll(al2);
+		
+		//property that vary from Item to Item, making them unique from each other
+		ownerName = inputOwner;
+		isOnGround = false;
+		currentLocation = "";
+		ArrayList<String> listProperty = new ArrayList<String>();
+		listProperty.addAll(al3);
+	}
+	
+	
+	
+	public void SetLocation(String location)
+	{
+		isOnGround = true;
+		currentLocation = location;
+		holderName = null;
+	}
+	
+	public void setHolder(String holder)
+	{
+		holderName = holder;
+		currentLocation = null;
+	}
+	
+	
+	//////////////////////// add,remove,change item property ///////////////////////
+	
+	public void addProperties(String inputProperty)
+	{
+		if (listProperty.contains(inputProperty))
+		{
+			//do nothing
+		}
+		else {
+			listProperty.add(inputProperty);
+		}
+	}
+	
+	// for removing that EXCAT newItem 
+	public void removeProperty(String inputProperty)
+	{
+		listProperty.remove(inputProperty);
+		
+	}
+
+	
+	///////////////// get info //////////////////
+	public String getName()
+	{
+		return itemName;
+	}
+	
+	public int getID()
+	{
+		return itemID;
+	}
+	
+	public String getOwnerName()
+	{
+		return ownerName;
+	}
+	public boolean isOwned()
+	{
+		if (ownerName == "") return false;
+		else if (ownerName == null) return false;
+		else return true;
+	}
+	
+	public String getHolderName()
+	{
+		return holderName;
+	}
+	
+	public String getCurrentLocation()
+	{
+		if (!isOnGround) 
+		{
+			return "Not_On_Ground";
+		}
+		else
+		{
+			return currentLocation;
+		}
+	}
+	
+	public boolean isItemOnGround()
+	{
+		return isOnGround;
+	}
+	
+	public ArrayList<String> getListProperty()
+	{
+		return listProperty;
+	}
+	
+	public ArrayList<String> getListTypeOfItem()
+	{
+		return typeOfItem;
+	}
+	
+	public ArrayList<String> getListTypeOfFunction()
+	{
+		return typeOfFunction;
+	}
+	
+	public boolean propertyExist(String inputProp)
+	{
+		return listProperty.contains(inputProp);
+	}
+
+	////////////////get toString ///////////////////
+	
+	public String getItemProlog() {
+		String output = "item(";
+		output += typeOfItem;
+		output += ",";
+		output += itemName;
+		output += ")";
+		return output;
+	}
+	
+	
+	public String simpleToString() {
+		return itemName;
+	}
+	
+	
+	
+	
+	/////////////////////////OVERRIDE////////////////////////////////
+	
+    @Override
+    public boolean equals(Object o){
+    	  if(o instanceof Item){
+    		  Item toCompare = (Item) o;
+    		  //IF they have same ID, they are the same item
+    		  if (itemID == toCompare.getID()) {
+    			return true;  
+    		  }
+    		  //ELSE, even with identical property, it just meant the character has 2
+    		  //identical item.
+    		  else {
+    			  return false;
+    		  }
+    	  }
+    	  return false;
+    }
+    
+
+	
+    
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + itemName.hashCode();
+        result = 31 * result + Integer.hashCode(itemID);
+        result = 31 * result + typeOfItem.hashCode();
+        result = 31 * result + typeOfFunction.hashCode();
+        result = 31 * result + ownerName.hashCode();
+        result = 31 * result + Boolean.hashCode(isOnGround);
+        result = 31 * result + currentLocation.hashCode();
+        result = 31 * result + listProperty.hashCode();
+        return result;
+    }
+    
+	
+	public String toString()
+	{
+		String strReturn = "[";
+		strReturn += itemName;
+		strReturn += ",";
+		strReturn += currentLocation;
+		strReturn += ",";
+		strReturn += itemID;
+		strReturn += ",";
+		strReturn += ownerName;
+		strReturn += ",";
+		strReturn += typeOfItem;
+		strReturn += ",";
+		strReturn += typeOfFunction;
+		strReturn += "[";
+		
+		
+		String result = String.join(",", listProperty);
+		strReturn += result;
+		
+		strReturn += "]]";
+		
+		//System.out.println("ToString Item");
+		
+		return strReturn;
+		
+	}
+	
+}
