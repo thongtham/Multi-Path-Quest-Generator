@@ -36,6 +36,11 @@ public class Character {
 	// objective depended on quest giver (farmer shouldn't give quest to kill dragon)
 	int levelQuest;
 	
+	// Some object (character, item, etc.) can give quest 
+	// Ex. most character can give quest
+	// Ex2. Some item can also give quest (treasure map, ancient tomb, secret letter)
+	boolean isQuestGiver;
+
 	//List<String> listFriend = new ArrayList<String>();
 	//List<String> listEnemy = new ArrayList<String>();
 
@@ -84,6 +89,7 @@ public class Character {
 		}
 		
 		levelQuest = inputC.getLevelQuest();
+		isQuestGiver = inputC.getisQuestGiver();
 	}
 	
 	public Character(String name)
@@ -91,14 +97,15 @@ public class Character {
 		characterName = name;
 	}
 	//character(Name,Level,Status,Attribute,Location)
-	public Character(String newName, int newLevel,Boolean newStatus, String newLocation)
+	public Character(String newName, int newLevel, Boolean newStatus, String newLocation, int questLvl, boolean isQG)
 	{
 		characterName = newName;
 		level = newLevel;
 		isAlive = newStatus;
 		currentLocation = newLocation;
 		attribute = "";
-		
+		isQuestGiver = isQG;
+		levelQuest = questLvl;
 	}
 	
 	//////////////////////////Constructor ////////////////////////////////
@@ -132,6 +139,16 @@ public class Character {
 		currentLocation = newLo;
 	}
 
+	public void setQuestLevel(int newQL)
+	{
+		levelQuest = newQL;
+	}
+	
+	public void setIsQuestGiver(boolean inputB)
+	{
+		isQuestGiver = inputB;
+	}
+	
 	//////////////////////////reset data ////////////////////////////////
 	
 	
@@ -315,7 +332,10 @@ public class Character {
 		return  levelQuest;
 	}
 	
-	
+	public boolean getisQuestGiver()
+	{
+		return isQuestGiver;
+	}
 	/*
 	public ArrayList<String> getlistDesire()
 	{

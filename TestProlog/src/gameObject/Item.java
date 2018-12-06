@@ -21,7 +21,14 @@ public class Item {
 	ArrayList<String> listProperty = new ArrayList<String>();
 	
 	
-
+	// Each object (character, item, etc.) should have levelQuest to determine what is 'acceptable' as quest
+	// objective depended on quest giver (farmer shouldn't give quest to kill dragon)
+	int levelQuest;
+	
+	// Some object (character, item, etc.) can give quest 
+	// Ex. most character can give quest
+	// Ex2. Some item can also give quest (treasure map, ancient tomb, secret letter)
+	boolean isQuestGiver;
 	
 	
 	
@@ -61,6 +68,8 @@ public class Item {
 			typeOfFunction.add(str);
 		}
 		
+		levelQuest = inputItem.getLevelQuest();
+		isQuestGiver = inputItem.getisQuestGiver();
 	}
 	
 	
@@ -69,7 +78,8 @@ public class Item {
 	
 	public void setNewItem( int id, String inputName, 
 							String[] inputType, String[] inputFunction, 
-							String inputOwner, String[] inputProperty)
+							String inputOwner, String[] inputProperty,
+							int inputQuestLevel, boolean isQG)
 	{
 		
 		List al = Arrays.asList(inputType);
@@ -89,6 +99,11 @@ public class Item {
 		currentLocation = "";
 		ArrayList<String> listProperty = new ArrayList<String>();
 		listProperty.addAll(al3);
+		
+		levelQuest = inputQuestLevel;
+		isQuestGiver = isQG;
+		
+		
 	}
 	
 	
@@ -104,6 +119,16 @@ public class Item {
 	{
 		holderName = holder;
 		currentLocation = null;
+	}
+	
+	public void setQuestLevel(int newQL)
+	{
+		levelQuest = newQL;
+	}
+	
+	public void setIsQuestGiver(boolean inputB)
+	{
+		isQuestGiver = inputB;
 	}
 	
 	
@@ -192,6 +217,18 @@ public class Item {
 		return listProperty.contains(inputProp);
 	}
 
+	public int getLevelQuest()
+	{
+		return  levelQuest;
+	}
+	
+	public boolean getisQuestGiver()
+	{
+		return isQuestGiver;
+	}
+	
+	
+	
 	////////////////get toString ///////////////////
 	
 	public String getItemProlog() {

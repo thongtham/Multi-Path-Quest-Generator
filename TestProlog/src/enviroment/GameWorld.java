@@ -89,14 +89,14 @@ public class GameWorld {
 		String[] type =		new String[]	{"luxury"};
 		String[] function = new String[]	{"object"};	
 		String[] property = new String[]	{""};
-		newItem.setNewItem(1,"Diamond", type, function, "", property);
+		newItem.setNewItem(1,"Diamond", type, function, "", property, 2, true);
 		newLocationPalace.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"weapon"};
 		function =  new String[]	{"equipment"};	
 		property =  new String[]	{"weapon"};
 		newItem = new Item();
-		newItem.setNewItem(5,"dagger", type, function, "", property);		
+		newItem.setNewItem(5,"dagger", type, function, "", property, 1, false);		
 		newLocationDungeon.addOrUpdateItem(newItem);
 		
 		
@@ -109,16 +109,16 @@ public class GameWorld {
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"berry"};
 		newItem = new Item();
-		newItem.setNewItem(100000,"berry", type, function, "", property);
+		newItem.setNewItem(100000,"berry", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(100001,"berry", type, function, "", property);
+		newItem.setNewItem(100001,"berry", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(100002,"berry", type, function, "", property);
+		newItem.setNewItem(100002,"berry", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(100003,"berry", type, function, "", property);
+		newItem.setNewItem(100003,"berry", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
 		
@@ -127,10 +127,10 @@ public class GameWorld {
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"poison"};
-		newItem.setNewItem(101000,"poison_plant", type, function, "", property);
+		newItem.setNewItem(101000,"poison_plant", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(101001,"poison_plant", type, function, "", property);
+		newItem.setNewItem(101001,"poison_plant", type, function, "", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
 
@@ -138,32 +138,32 @@ public class GameWorld {
 		
 		
 		//player
-		Character newChar = new Character("PLAYER", 1, true,"City");
+		Character newChar = new Character("PLAYER", 1, true,"City", 0, false);
 		newChar.setIsPlayer(true);
 		listCharacter.add(newChar);
 		
 		//UNIQUE NPC
-		newChar = new Character("Alpha", 15, true,"City");
+		newChar = new Character("Mob_NPC_1", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Beta", 15, true,"City");
+		newChar = new Character("Mob_NPC_2", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Charle", 15, true,"City");
+		newChar = new Character("Mob_NPC_3", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Delta", 15, true,"City");
+		newChar = new Character("Mob_NPC_4", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
 		
-		newChar = new Character("King", 20, true,"Palace");
+		newChar = new Character("King", 20, true,"Palace", 3, true);
 		newChar.addOccupation("king");
 		listCharacter.add(newChar);
 
 		//Mob character
-		newChar = new Character("soldier1", 20, true,"City");
+		newChar = new Character("soldier1", 20, true,"City", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
-		newChar = new Character("soldier2", 20, true,"Jail");
+		newChar = new Character("soldier2", 20, true,"Jail", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
-		newChar = new Character("soldier3", 20, true,"Palace");
+		newChar = new Character("soldier3", 20, true,"Palace", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
 		
@@ -173,32 +173,32 @@ public class GameWorld {
 		//listLocation.add(newLocationJail);
 		//listLocation.add(newLocationPalace);
 		
-		newChar = new Character("doctor1", 20, true,"City");
+		newChar = new Character("doctor1", 20, true,"City", 3, true);
 		newChar.addOccupation("doctor");
 		listCharacter.add(newChar);	
-		newChar = new Character("blacksmith1", 20, true,"City");
+		newChar = new Character("blacksmith1", 20, true,"City", 2, true);
 		newChar.addOccupation("blacksmith");
 		listCharacter.add(newChar);
-		newChar = new Character("thief1", 20, true,"Jail");
+		newChar = new Character("thief1", 20, true,"Jail", 2, true);
 		newChar.addOccupation("thief");
 		listCharacter.add(newChar);
-		newChar = new Character("messenger1", 20, true,"City");
+		newChar = new Character("messenger1", 20, true,"City", 2, true);
 		newChar.addOccupation("messenger");
 		listCharacter.add(newChar);
-		newChar = new Character("scout1", 20, true,"Forest");
+		newChar = new Character("scout1", 20, true,"Forest", 2, true);
 		newChar.addOccupation("scout");
 		listCharacter.add(newChar);
-		newChar = new Character("farmer1", 20, true,"Forest");
+		newChar = new Character("farmer1", 20, true,"Forest", 1, true);
 		newChar.addOccupation("farmer");
 		listCharacter.add(newChar);
-		newChar = new Character("miner1", 20, true,"Dungeon");
+		newChar = new Character("miner1", 20, true,"Dungeon", 1, true);
 		newChar.addOccupation("miner");
 		listCharacter.add(newChar);
-		newChar = new Character("lumberjack1", 20, true,"Forest");
+		newChar = new Character("lumberjack1", 20, true,"Forest", 1, true);
 		newChar.addOccupation("lumberjack");
 		listCharacter.add(newChar);
 		
-		newChar = new Character("merchant1", 20, true,"City");
+		newChar = new Character("merchant1", 20, true,"City", 3, true);
 		newChar.addOccupation("merchant");
 		
 		// Merchant Item
@@ -207,21 +207,21 @@ public class GameWorld {
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"poison"};
 		newItem = new Item();
-		newItem.setNewItem(50000,"potion_poison", type, function, "", property);
+		newItem.setNewItem(50000,"potion_poison", type, function, "", property, 1, false);
 		newChar.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"healing"};
 		newItem = new Item();
-		newItem.setNewItem(50001,"potion_heal", type, function, "", property);
+		newItem.setNewItem(50001,"potion_heal", type, function, "", property, 1, false);
 		newChar.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"cure_poison"};
 		newItem = new Item();
-		newItem.setNewItem(50002,"antidote", type, function, "", property);	
+		newItem.setNewItem(50002,"antidote", type, function, "", property, 1, false);	
 		newChar.addOrUpdateItem(newItem);
 		
 		
@@ -258,11 +258,13 @@ public class GameWorld {
 		
 		
 		ArrayList<String> tempListCharacter = inputGameState.getListStringCharacter();
-		ArrayList<String> tempListItem = inputGameState.getListStringItem();
 		ArrayList<String> tempListLocation = inputGameState.getListStringLocation();
 		ArrayList<String> tempListRelationship = inputGameState.getListStringRelationship();
 		
+		//COMMENT 6-12-2018 This is comment out since All Item are now in either Character or in Location
+		//ArrayList<String> tempListItem = inputGameState.getListStringItem();
 
+		
 		// IF even one of the conditions isn't met, it will set the return value to false;
 		/////////////////////////////////////
 		boolean isContainCharater = containCharacter(tempListCharacter);
@@ -801,7 +803,7 @@ public class GameWorld {
 		while (iterator.hasNext())
 		{
 		     Character next = iterator.next();
-		     if (next.sameChararacter(target)) 
+		     if (next.isSameChararacter(target)) 
 		     {
 			         //Replace element
 			         iterator.set(target);		
@@ -826,7 +828,7 @@ public class GameWorld {
 		while (iterator.hasNext())
 		{
 		     Character next = iterator.next();
-		     if (next.sameChararacter(target)) 
+		     if (next.isSameChararacter(target)) 
 		     {
 			         //Replace element
 			         iterator.set(target);		

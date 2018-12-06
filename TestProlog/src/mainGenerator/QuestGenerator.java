@@ -103,9 +103,99 @@ public class QuestGenerator {
 			//--------------------- 2nd step, create token  ----------------------/	
 			///////////////////////////////////////////////////////////////////////
 			
+
+			
+			
+			
+			// EDIT SINCE 6-12-2018  >>>  THIS is for levelQuest, special token selected as quest starter
+			//
+			//
+			//
+			//
+			//
+			int current_QuestLevel = 0;
+			
+			// 1 = character/ item in char, 2 = location/ item in location
+			int QuestStarterObjectType = 0;
+			
+			//Select a random object within the game world
+			Object randomObjectQuestStarter = new Object();
+			
+			int randomNumQuestStarter = -1;
+			
+			boolean isQuestGiverOK = false;
+			
+			while(!isQuestGiverOK)
+			{
+				//Random integer from [1] to [2]
+				randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1,3+1);
+				
+			
+				// get item from Location
+				if (randomNumQuestStarter == 1)
+				{
+					randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromLocationAll().size()+1);
+					randomObjectQuestStarter = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1);
+					current_QuestLevel = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1).getLevelQuest();
+					QuestStarterObjectType = 2;
+					isQuestGiverOK = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1).getisQuestGiver();
+					//DEBUG
+					//
+				}
+				
+				// get item from chararacter's inventory
+				else if (randomNumQuestStarter == 3)
+				{
+					randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromCharacterALL().size()+1);
+					randomObjectQuestStarter = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1);
+					current_QuestLevel = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1).getLevelQuest();
+					QuestStarterObjectType = 1;
+					isQuestGiverOK = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1).getisQuestGiver();
+					//DEBUG
+					//
+				}
+				
+				else if (randomNumQuestStarter == 2)
+				{
+					boolean isPlayer =true;
+					while(isPlayer) {
+						randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListCharacter().size()+1);
+						randomObjectQuestStarter = mainGameWorld.getListCharacter().get(randomNumQuestStarter-1);
+						Character curChar = (Character) randomObjectQuestStarter;
+						
+						// Check if chosen character is player
+						if (curChar.isPlayer() == false)  // If it is player, must select new character.
+						{
+							isPlayer = false; 
+						}
+						else 
+						{
+							current_QuestLevel = curChar.getLevelQuest();
+							QuestStarterObjectType = 1;
+							isQuestGiverOK = curChar.getisQuestGiver();
+						}
+					}
+				}
+				
+			
+			}
+			//
+			//
+			//
+			//
+			//
+			//
+			// END EDIT SINCE 6-12-2018 
+			
+			
+			
+			
+			
+			
 			TreeNode rootNode = new TreeNode();
 			rootNode = newGeneratedTemplate.getComponentTree();	
 			List<TreeNode> itr = rootNode.preorderList();
+			
 			
 			//1st, set each Component's preorder number
 			int preorderCounter = 0;
@@ -133,6 +223,8 @@ public class QuestGenerator {
 					List<TreeNode> curNodeChildren = curNode.children();
 					int numberOfTokenMade = 0;
 					
+					
+					tokenloop: // If token has higher level of quest Level than QuestGiver, loop it all again
 					for (int y = 0; y < curNodeChildren.size(); y++) {
 						TreeNode curNode2ndLayer = curNodeChildren.get(y);
 						Component curComLayer2 = (Component) curNode2ndLayer.getObject();
@@ -153,8 +245,10 @@ public class QuestGenerator {
 						{
 							randomNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromLocationAll().size()+1);
 							randomObject = mainGameWorld.getListItemFromLocationAll().get(randomNum-1);
-							//DEBUG
-							//
+							if (current_QuestLevel > mainGameWorld.getListItemFromLocationAll().get(randomNum-1).getLevelQuest())
+							{
+								continue tokenloop;
+							}
 						}
 						
 						// get item from chararacter's inventory
@@ -162,8 +256,10 @@ public class QuestGenerator {
 						{
 							randomNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromCharacterALL().size()+1);
 							randomObject = mainGameWorld.getListItemFromCharacterALL().get(randomNum-1);
-							//DEBUG
-							//
+							if (current_QuestLevel > mainGameWorld.getListItemFromCharacterALL().get(randomNum-1).getLevelQuest())
+							{
+								continue tokenloop;
+							}
 						}
 						
 						else if (randomNum == 2)
@@ -175,7 +271,15 @@ public class QuestGenerator {
 								Character curChar = (Character) randomObject;
 								
 								// Check if chosen character is player
-								if (curChar.isPlayer() == false) isPlayer = false; // If it is player, must select new character.
+								if (curChar.isPlayer() == false)  // If it is player, must select new character.
+								{
+									isPlayer = false; 
+								}
+								
+								if (current_QuestLevel > curChar.getLevelQuest())
+								{
+									continue tokenloop;
+								}
 							}
 						}
 						
@@ -322,6 +426,11 @@ public class QuestGenerator {
 			for (int x = 0; x < tokenList.size(); x++) {
 				Token curToken = tokenList.get(x);
 				tokenInt.add(curToken.getPreOrderNumber());
+			}
+			
+			if (tokenList.size() == 0)
+			{
+				continue outterloop;
 			}
 			
 			// This list is the list of token that is 'activated' 
@@ -1262,7 +1371,7 @@ public class QuestGenerator {
 			
 			
 			
-			
+			System.out.println(randomObjectQuestStarter.toString());
 			
 			
 			
@@ -1297,6 +1406,35 @@ public class QuestGenerator {
 	
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

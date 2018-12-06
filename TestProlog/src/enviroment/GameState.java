@@ -152,6 +152,7 @@ public class GameState {
 		return listDesireCharacter;
 	}
 
+	//COMMENT 6-12-2018 This is comment out since All Item are now in either Character or in Location
 	/*
 	public ArrayList<GameCondition> getListGameConditionItem(){
 		return listDesireItem;
