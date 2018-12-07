@@ -120,61 +120,78 @@ public class QuestGenerator {
 			
 			//Select a random object within the game world
 			Object randomObjectQuestStarter = new Object();
+			Character curCharQG = new Character();
 			
 			int randomNumQuestStarter = -1;
+			int randomQuestStarterObjNum = -1;
 			
 			boolean isQuestGiverOK = false;
+			
+			System.out.println("Select QuestGiver");
 			
 			while(!isQuestGiverOK)
 			{
 				//Random integer from [1] to [2]
 				randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1,3+1);
-				
+				System.out.println(randomNumQuestStarter);
 			
 				// get item from Location
 				if (randomNumQuestStarter == 1)
 				{
-					randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromLocationAll().size()+1);
-					randomObjectQuestStarter = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1);
-					current_QuestLevel = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1).getLevelQuest();
+					randomQuestStarterObjNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromLocationAll().size()+1);
+					randomObjectQuestStarter = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1);
+					current_QuestLevel = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getLevelQuest();
 					QuestStarterObjectType = 2;
-					isQuestGiverOK = mainGameWorld.getListItemFromLocationAll().get(randomNumQuestStarter-1).getisQuestGiver();
+					isQuestGiverOK = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getisQuestGiver();
+
 					//DEBUG
 					//
+					System.out.println(mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getName());
+					System.out.println(mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getisQuestGiver());
 				}
 				
 				// get item from chararacter's inventory
 				else if (randomNumQuestStarter == 3)
 				{
-					randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromCharacterALL().size()+1);
-					randomObjectQuestStarter = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1);
-					current_QuestLevel = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1).getLevelQuest();
+					randomQuestStarterObjNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromCharacterALL().size()+1);
+					randomObjectQuestStarter = mainGameWorld.getListItemFromCharacterALL().get(randomQuestStarterObjNum-1);
+					current_QuestLevel = mainGameWorld.getListItemFromCharacterALL().get(randomQuestStarterObjNum-1).getLevelQuest();
 					QuestStarterObjectType = 1;
-					isQuestGiverOK = mainGameWorld.getListItemFromCharacterALL().get(randomNumQuestStarter-1).getisQuestGiver();
+					isQuestGiverOK = mainGameWorld.getListItemFromCharacterALL().get(randomQuestStarterObjNum-1).getisQuestGiver();
+					
 					//DEBUG
 					//
+					System.out.println(mainGameWorld.getListItemFromCharacterALL().get(randomQuestStarterObjNum-1).getName());
+					System.out.println(mainGameWorld.getListItemFromCharacterALL().get(randomQuestStarterObjNum-1).getisQuestGiver());
+					//System.out.println(isQuestGiverOK);
 				}
 				
 				else if (randomNumQuestStarter == 2)
 				{
 					boolean isPlayer =true;
 					while(isPlayer) {
-						randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListCharacter().size()+1);
-						randomObjectQuestStarter = mainGameWorld.getListCharacter().get(randomNumQuestStarter-1);
-						Character curChar = (Character) randomObjectQuestStarter;
+						randomQuestStarterObjNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListCharacter().size()+1);
+						randomObjectQuestStarter = mainGameWorld.getListCharacter().get(randomQuestStarterObjNum-1);
+						curCharQG = (Character) randomObjectQuestStarter;
 						
 						// Check if chosen character is player
-						if (curChar.isPlayer() == false)  // If it is player, must select new character.
+						if (curCharQG.isPlayer() == true)  // If it is player, must select new character.
 						{
-							isPlayer = false; 
+							isPlayer = true; 
 						}
 						else 
 						{
-							current_QuestLevel = curChar.getLevelQuest();
+							current_QuestLevel = curCharQG.getLevelQuest();
 							QuestStarterObjectType = 1;
-							isQuestGiverOK = curChar.getisQuestGiver();
+							isQuestGiverOK = curCharQG.getisQuestGiver();
+							isPlayer = false; 
 						}
 					}
+					
+					//DEBUG
+					//
+					System.out.println(curCharQG.getName());
+					System.out.println(curCharQG.getisQuestGiver());
 				}
 				
 			
@@ -417,7 +434,7 @@ public class QuestGenerator {
 
 			
 			////////////////////////// 5th step, put token in this  ////////////////////////////////////////////
-			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 			
 			// This list is to check if the current Node activate the next token yet?
@@ -538,6 +555,11 @@ public class QuestGenerator {
 									System.out.println("No available token with free slot");
 									
 									//Option 1: use the latest token anyway
+									// But if no token exist, start new quest
+									if ((activateToken.size()-1) == -1)
+									{
+										continue outterloop;
+									}
 									latestToken = activateToken.get(activateToken.size()-1);
 									curComponent.setObject(latestToken.getTokenObject());
 									curComponent.setTypeOfToken(3);
@@ -596,6 +618,11 @@ public class QuestGenerator {
 									System.out.println("No available token with free ITSELF slot");
 									
 									//Option 1: use the latest token anyway
+									// But if no token exist, start new quest
+									if ((activateToken.size()-1) == -1)
+									{
+										continue outterloop;
+									}
 									latestToken = activateToken.get(activateToken.size()-1);
 									curComponent.setObject(latestToken.getTokenObject());
 									curComponent.setTypeOfToken(3);
@@ -1077,7 +1104,7 @@ public class QuestGenerator {
 							while (true) 
 							{
 								int currentTokenInt = activateToken.size()-currentTokenNumFromLast;
-								Token latestToken;
+								Token latestToken = new Token();
 								
 								// If == 0; it means last token is reached
 								if ( currentTokenInt == -1 ) {
@@ -1085,7 +1112,18 @@ public class QuestGenerator {
 									currentTokenNumFromLast = 1;
 
 									// If exhaust full token list and no token available, just use the latest NPC token
+									// However, if no such NPC or any token exist, start new quest
+									if ((activateToken.size()-1) == -1)
+									{
+										continue outterloop;
+									}
 									latestToken = activateToken.get(activateToken.size()-1);
+									
+									// However, if no such NPC or any token exist, start new quest
+									if (!(latestToken.getTokenObject() instanceof Character)) {
+										continue outterloop;
+									}
+									
 									curComponent.setObject(latestToken.getTokenObject());
 									curComponent.setTypeOfToken(3);
 									break;
@@ -1372,7 +1410,7 @@ public class QuestGenerator {
 			
 			
 			System.out.println(randomObjectQuestStarter.toString());
-			
+			System.out.println(randomNumQuestStarter);
 			
 			
 			
