@@ -1,6 +1,3 @@
-:- module(QuestGenerator,[
-		
-		
 
 :- dynamic character/5.
 
@@ -1551,13 +1548,3 @@ father_of(john, george).
 
 
 
-
-
-
-
-
-
-		
-		
-		
-	]).
