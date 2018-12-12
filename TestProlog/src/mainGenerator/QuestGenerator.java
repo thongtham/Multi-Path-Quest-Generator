@@ -223,7 +223,6 @@ public class QuestGenerator {
 				curCom.setPreorderNumber(preorderCounter);
 				
 			}
-			String aaa = "type of token";
 			
 			//2nd, create token from the preOrder list
 			for (int x = 0; x < itr.size(); x++) {
@@ -604,7 +603,6 @@ public class QuestGenerator {
 						case "read" :
 						case "experiment" :
 						case "use" :
-						case "spy":
 							
 							currentTokenNumFromLast = 1;
 							
@@ -660,6 +658,7 @@ public class QuestGenerator {
 						case "stealth":
 						case "kill" :
 						case "report" :
+						case "spy":
 							
 							currentTokenNumFromLast = 1;
 							while (true) 

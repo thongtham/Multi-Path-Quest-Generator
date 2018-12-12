@@ -65,7 +65,34 @@ questPathMainLoop_PlayerAction(GoalCharacter,GoalLocation,AllCharacter,AllLocati
 	player_Hire_to_Attack().	
 	
 	
-	
+% Pickup / gather
+
+% Give
+
+% Take (from corpse)
+
+% Pickpocket (is stealth)
+% Putpocket (reverse-pickpocket, is stealth)
+
+% Goto
+
+% SHOULD DO SPELL INTERACTION TOO, ex, water spell stop fire????
+% EACH HAS 2 VERSION, target self or target other
+% Spell (heal)
+% Spell (fire)
+%
+
+% SHOULD DO SPELL INTERACTION TOO, ex, water spell stop fire????
+% EACH HAS 2 VERSION, target self or target other
+% Use item(potion)
+% Use item(poison)
+% Use item(berry)
+%
+%
+% 
+%
+%
+
 	
 	
 	

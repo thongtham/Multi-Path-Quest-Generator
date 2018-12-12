@@ -21,7 +21,7 @@
 	
 	
 	%MUST TRUE
-	%memberlist([a,b],[[a,b],[a,c],[a,d]]).
+	%memberlist([[a,b]],[[a,b],[a,c],[a,d]]).
 	%memberlist([[a,b],[a,c]],[[a,b],[a,c],[a,d]]).
 	
 	%MUST FALSE
@@ -29,6 +29,7 @@
 	%memberlist([d,d],[[a,b],[a,c],[a,d]]).
 	%member([d,d],[[a,b],[a,c],[a,d]]).
 
+memberlist([],_).
 memberlist([XH|XT],LIST)
 :-
 	write(XH),
@@ -36,14 +37,12 @@ memberlist([XH|XT],LIST)
 	member(XH,LIST),
 	memberlist(XT,LIST).
 	
-memberlist([XH|_],LIST)
-:-
-	member(XH,LIST).
-	
-memberlist(XH,LIST)
-:-
-	member(XH,LIST).
-	
 
-		
-			
+memberlistInlist([],_).
+memberlistInlist(X,[[HeadInside|TailInside]|Tail])	
+:-
+	X == HeadInside.
+	
+memberlistInlist(X,[Head|Tail])
+:-
+	member(X,Head).	

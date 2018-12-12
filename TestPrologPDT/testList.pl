@@ -14,18 +14,22 @@ testNum(X)
 	Y is X+1,
 	testNum(Y).
 	
-	
-	
-testAP(Path,4)
-:-
-	write(Path).
 
-testAP(Path,X)
+
+
+testAP(Path,PathANS,0).
+testAP(_,PathANS,4)
+:-
+	write(PathANS).
+
+testAP(Path,PathANS,X)
 :-
 	Y is X+1,
-	append([kill_quest],Path,Path2),
-	append(X,Path2,Path3),
-	testAP(Path3,Y).
+	PathANS2 = Path3,
+	append([":Path"],Path,Path2),
+	append([X],Path2,Path3),
+	write(PathANS2),
+	testAP(Path,PathANS2,Y).
 
 
 	%
