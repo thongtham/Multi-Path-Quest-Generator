@@ -25,11 +25,11 @@ testAP(_,PathANS,4)
 testAP(Path,PathANS,X)
 :-
 	Y is X+1,
-	PathANS2 = Path3,
-	append([":Path"],Path,Path2),
-	append([X],Path2,Path3),
-	write(PathANS2),
-	testAP(Path,PathANS2,Y).
+	string_concat(X,":Path",K),
+	append([K],Path,Path2),
+	PathANS2 = Path2,
+	%write(PathANS2),
+	testAP(PathANS2,PathANS2,Y).
 
 
 	%

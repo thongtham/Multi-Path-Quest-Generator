@@ -37,6 +37,8 @@ memberlist([XH|XT],LIST)
 	member(XH,LIST),
 	memberlist(XT,LIST).
 	
+	
+	
 
 memberlistInlist([],_).
 memberlistInlist(X,[[HeadInside|TailInside]|Tail])	
