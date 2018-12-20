@@ -85,22 +85,22 @@ public class GameCondition {
 	// FOR ITEM ONLY, OR IT WILL ERROR
 	public String getVariable2()
 	{
-		//EX: ITEM ["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
-		//EX:  [: number]        1                  2             3          4       
+		//EX: ITEM ["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
+		//EX:  [: number]        1                  2             3          4       5
 		
-		//["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
+		//["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 		//String desireString;
 		
-		//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
+		//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 		String stringDesire_2 = desireString.substring(desireString.indexOf(":")+1, desireString.length());
-		//["THE_ITEM_NAME:typeOfItem:luxury"]  
-		String stringDesire_3 = stringDesire_2.substring(desireString.indexOf(":")+1, desireString.length());;
-		//["typeOfItem:luxury"]  
-		String stringDesire_4 = stringDesire_3.substring(desireString.indexOf(":")+1, desireString.length());;
+		//["THE_ITEM_NAME:typeOfItem:luxury:001"]  
+		String stringDesire_3 = stringDesire_2.substring(stringDesire_2.indexOf(":")+1, stringDesire_2.length());;
+		//["typeOfItem:luxury:001"]  
+		String stringDesire_4 = stringDesire_3.substring(stringDesire_3.indexOf(":")+1, stringDesire_3.length());;
 		
 		
-		String variable_2 		= stringDesire_4.substring(desireString.indexOf(":")+1, desireString.length());
-		String desireValue_2	= stringDesire_4.substring(desireString.lastIndexOf(":")+1,desireString.length());
+		String variable_2 		= stringDesire_4.substring(0,stringDesire_4.indexOf(":"));
+		String desireValue_2	= stringDesire_4.substring(stringDesire_4.indexOf(":")+1,stringDesire_4.lastIndexOf(":"));
 		
 		
 		return variable_2;
@@ -109,22 +109,22 @@ public class GameCondition {
 	// FOR ITEM ONLY, OR IT WILL ERROR
 	public String getDesireValue2()
 	{
-		//EX: ITEM ["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
+		//EX: ITEM ["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 		//EX:  [: number]        1                  2             3          4       
 		
-		//["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
+		//["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 		//String desireString;
 		
-		//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  
+		//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 		String stringDesire_2 = desireString.substring(desireString.indexOf(":")+1, desireString.length());
-		//["THE_ITEM_NAME:typeOfItem:luxury"]  
-		String stringDesire_3 = stringDesire_2.substring(desireString.indexOf(":")+1, desireString.length());;
-		//["typeOfItem:luxury"]  
-		String stringDesire_4 = stringDesire_3.substring(desireString.indexOf(":")+1, desireString.length());;
+		//["THE_ITEM_NAME:typeOfItem:luxury:001"]  
+		String stringDesire_3 = stringDesire_2.substring(stringDesire_2.indexOf(":")+1, stringDesire_2.length());;
+		//["typeOfItem:luxury:001"]  
+		String stringDesire_4 = stringDesire_3.substring(stringDesire_3.indexOf(":")+1, stringDesire_3.length());;
 		
 		
-		String variable_2 		= stringDesire_4.substring(desireString.indexOf(":")+1, desireString.length());
-		String desireValue_2	= stringDesire_4.substring(desireString.lastIndexOf(":")+1,desireString.length());
+		String variable_2 		= stringDesire_4.substring(0,stringDesire_4.indexOf(":"));
+		String desireValue_2	= stringDesire_4.substring(stringDesire_4.indexOf(":")+1,stringDesire_4.lastIndexOf(":"));
 		
 		return desireValue_2;
 	}

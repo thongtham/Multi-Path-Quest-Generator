@@ -318,6 +318,15 @@ public class Component {
 	
 	
 	
+	
+	
+	
+	
+	
+	public String getPrologFormatFullCondition()
+	{
+		return fullConditionState.toStringPrologFormat();
+	}
 
 	
 	@Override

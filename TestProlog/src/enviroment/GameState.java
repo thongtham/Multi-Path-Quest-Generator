@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 import javax.swing.Spring;
 
+import org.apache.commons.lang3.StringUtils;
+
 import enviroment.GameState;
 import enviroment.GameWorld;
 import gameObject.Item;
@@ -1236,9 +1238,100 @@ public class GameState {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		///////////Below = override Java Utility methods/////////////////////////////
 
+		//ArrayList<GameCondition> listDesireCharacter = new ArrayList<GameCondition>();
+		//ArrayList<GameCondition> listDesireLocation = new ArrayList<GameCondition>();
+		//ArrayList<GameCondition> listDesireRelationship = new ArrayList<GameCondition>();
 
+		
+		public String toStringPrologFormat()
+		{
+			String output = "[";
+			for (GameCondition GC: listDesireCharacter)
+			{
+				String desireString = GC.getDesireState();
+				output += "[";
+				int count = StringUtils.countMatches(desireString, ":");
+				
+				if (count <= 2)
+				{
+					//["listItemInLocation:THE_ITEM_NAME"]  
+					String stringDesire_2 = desireString.substring(desireString.indexOf(":")+1, desireString.length());
+					//["THE_ITEM_NAME"]  
+					String stringDesire_3 = stringDesire_2.substring(stringDesire_2.indexOf(":")+1, stringDesire_2.length());;
+
+					String name 			= desireString.substring(0, desireString.indexOf(":"));
+					String variable1 		= stringDesire_2.substring(0,stringDesire_2.indexOf(":"));
+					String desire1 			= stringDesire_3;
+
+					output += name;
+					output += ",";
+					output += variable1;
+					output += ",";
+					output += desire1;
+					output += ",";
+					output += "z";
+					output += ",";
+					output += "zz";
+					output += ",";
+					output += "zzz";
+					
+				}
+				else
+				{
+					//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
+					String stringDesire_2 = desireString.substring(desireString.indexOf(":")+1, desireString.length());
+					//["THE_ITEM_NAME:typeOfItem:luxury:001"]  
+					String stringDesire_3 = stringDesire_2.substring(desireString.indexOf(":")+1, stringDesire_2.length());;
+					//["typeOfItem:luxury:001"]  
+					String stringDesire_4 = stringDesire_3.substring(desireString.indexOf(":")+1, stringDesire_3.length());;
+					
+					String name 			= desireString.substring(0, desireString.indexOf(":"));
+					String variable1 		= stringDesire_2.substring(0,stringDesire_2.indexOf(":"));
+					String desire1 			= stringDesire_3.substring(0,stringDesire_3.indexOf(":"));
+					String variable_2 		= stringDesire_4.substring(0,stringDesire_4.indexOf(":"));
+					String desireValue_2	= stringDesire_4.substring(stringDesire_4.indexOf(":")+1,stringDesire_4.lastIndexOf(":"));
+					String itemIDnum 		= stringDesire_4.substring(stringDesire_4.lastIndexOf(":")+1,stringDesire_4.length());
+					
+					output += name;
+					output += ",";
+					output += variable1;
+					output += ",";
+					output += desire1;
+					output += ",";
+					output += variable_2;
+					output += ",";
+					output += desireValue_2;
+					output += ",";
+					output += itemIDnum;
+				}
+				output += "],";
+				
+			}
+			output = output.substring(0, (output.length() - 1));
+			output += "]";
+			
+			return output;
+		}
+		
+		
 		@Override
 		public String toString()
 		{

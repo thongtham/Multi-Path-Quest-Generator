@@ -6,8 +6,22 @@ import java.util.List;
 
 public class Item {
 	
+	
+	int itemID = 0;	 //  EXPLAINING WHY WE NEED THIS  in [player:itemInInventory:itemName:Variable2:Desire2:ITEMID]
+					 //
+					 // *** Although each item has it's own unique ID, we still use [itemName] in checking itemName:ETC:TEC ***
+					 // *** This is because the checking of player and location, it check all item in inventory anyway, so when 
+					 // *** checking, it will check all item anyway
+					 //
+					 // *** Even generic item with same name (ex. berry), when checking for specific property, the code should check
+				 	 // *** all item and just ignore berry that didn't pass the check and move to next berry
+					 //
+					 // *** In case of backward assigning from Prolog to Java, now that's where we need the ID if we are to assign
+					 // *** the value to the item correctly.
+	
+	
+	
 	// Generic property that all Item with the same name share
-	int itemID = 0;	
 	String itemName;
 	ArrayList<String> typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
 	ArrayList<String> typeOfFunction = new ArrayList<String>();; // consumable , equipment , object , container?
@@ -293,11 +307,20 @@ public class Item {
 		strReturn += ",";
 		strReturn += itemID;
 		strReturn += ",";
-		strReturn += ownerName;
+		
+		if (ownerName == "" || ownerName.isEmpty())
+		{
+			strReturn += "no_owner";
+		}
+		else 
+		{
+			strReturn += ownerName;
+		}
 		strReturn += ",";
 		strReturn += typeOfItem;
 		strReturn += ",";
 		strReturn += typeOfFunction;
+		strReturn += ",";
 		strReturn += "[";
 		
 		

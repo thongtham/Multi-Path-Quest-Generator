@@ -1389,9 +1389,13 @@ public class QuestGenerator {
 			//
 			// DONE REVERSE QUESET BACK
 			
-			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW");
-			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW");
-			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			System.out.println("DONE QUEST: PRINTOUT QUEST BELOW **********");
+			
 			
 			//Printout ALL QUEST
 			for (int x = 0; x < questTreeFinal.size(); x++) {
@@ -1413,6 +1417,32 @@ public class QuestGenerator {
 			
 			
 			
+			
+			////////////////////////// 8th step, Push to Prolog ////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
+			// Get each Component, we are sending to Prolog one Component at a time
+			for (int x = 0; x < questTreeFinal.size(); x++) {
+				TreeNode finalTreeNode = questTreeFinal.get(x);
+				Component curCom = (Component) finalTreeNode.getObject();
+				if (curCom.getComponentName() == "NULL")
+				{
+					continue;
+				}
+
+				
+				String goalState = "";
+				goalState = curCom.getPrologFormatFullCondition();
+				System.out.println(goalState);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
 			System.out.println("END OF MAIN LOOP");
 			break;
 			// END OF MAIN WHILE LOOP
@@ -1424,6 +1454,19 @@ public class QuestGenerator {
 		
 		System.out.println("END OF MAIN BODY");
 		// END OF MAIN BODY
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	

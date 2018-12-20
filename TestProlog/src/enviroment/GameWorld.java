@@ -89,7 +89,7 @@ public class GameWorld {
 		String[] type =		new String[]	{"luxury"};
 		String[] function = new String[]	{"object"};	
 		String[] property = new String[]	{""};
-		newItem.setNewItem(1,"Diamond", type, function, "", property, 2, true);
+		newItem.setNewItem(1,"diamond", type, function, "", property, 2, true);
 		newLocationPalace.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"weapon"};
@@ -138,21 +138,21 @@ public class GameWorld {
 		
 		
 		//player
-		Character newChar = new Character("PLAYER", 1, true,"City", 0, false);
+		Character newChar = new Character("player", 1, true,"City", 0, false);
 		newChar.setIsPlayer(true);
 		listCharacter.add(newChar);
 		
 		//UNIQUE NPC
-		newChar = new Character("Mob_NPC_1", 15, true,"City", 0, false);
+		newChar = new Character("mob_NPC_1", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Mob_NPC_2", 15, true,"City", 0, false);
+		newChar = new Character("mob_NPC_2", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Mob_NPC_3", 15, true,"City", 0, false);
+		newChar = new Character("mob_NPC_3", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
-		newChar = new Character("Mob_NPC_4", 15, true,"City", 0, false);
+		newChar = new Character("mob_NPC_4", 15, true,"City", 0, false);
 		listCharacter.add(newChar);
 		
-		newChar = new Character("King", 20, true,"Palace", 3, true);
+		newChar = new Character("king", 20, true,"Palace", 3, true);
 		newChar.addOccupation("king");
 		listCharacter.add(newChar);
 
@@ -232,7 +232,7 @@ public class GameWorld {
 		
 		//Relation
 		Relationship newRelation = new Relationship();
-		newRelation.setRelationship("Alpha", "Beta", "friend");
+		newRelation.setRelationship("alpha", "beta", "friend");
 		listRelationship.add(newRelation);
 		
 		//

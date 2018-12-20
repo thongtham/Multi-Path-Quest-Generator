@@ -17,7 +17,8 @@ public class Character {
 	//character(Name,Level,Status,Attribute,Location)
 	
 	//Character will use characterName as unique ID (unlike item, which can has identical name)
-	String characterName;
+	
+	String characterName; // ***CharacterName MUST HAS LOWER CASE 1st CHAR  (this is due to Prolog behavior)***
 	boolean isPlayer;
 	int level;
 	boolean isAlive;  //Status
@@ -94,12 +95,12 @@ public class Character {
 	
 	public Character(String name)
 	{
-		characterName = name;
+		characterName = name.toLowerCase();
 	}
 	//character(Name,Level,Status,Attribute,Location)
 	public Character(String newName, int newLevel, Boolean newStatus, String newLocation, int questLvl, boolean isQG)
 	{
-		characterName = newName;
+		characterName = newName.toLowerCase();
 		level = newLevel;
 		isAlive = newStatus;
 		currentLocation = newLocation;
@@ -121,7 +122,7 @@ public class Character {
 	
 	public void setCharName(String newName) 
 	{
-		characterName = newName;
+		characterName = newName.toLowerCase();
 	}
 	
 	public void setIsPlayer(Boolean boo)
@@ -154,7 +155,7 @@ public class Character {
 	
 	public void setToGenericHuman(String Name,String Location)
 	{
-		characterName = Name;
+		characterName = Name.toLowerCase();
 		isPlayer = false;
 		level = 15;
 		isAlive = true;			//Status
