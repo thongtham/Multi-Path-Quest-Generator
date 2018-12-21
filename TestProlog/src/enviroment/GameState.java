@@ -61,7 +61,7 @@ public class GameState {
 
 	//The front string = what variable to check, the later string = what the variable must be
 	//EX: ["CharNAME:isAlive:false","CharNAME:currentLocation:market",""]
-	//EX: for ITEM ["CharNAME:listItem:THE_ITEM_NAME:typeOfItem:luxury"]  item has to be 5 steps
+	//EX: for ITEM ["CharNAME:listItem:THE_ITEM_NAME:typeOfItem:luxury:001"]  item has to be 5 steps
 	ArrayList<GameCondition> listDesireCharacter = new ArrayList<GameCondition>();
 
 	//EX: ["LocationNAME:locationType:City","LocationNAME:locationEnvironment:night",""]

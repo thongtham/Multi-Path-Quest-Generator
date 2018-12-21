@@ -1,0 +1,8 @@
+test(a).
+test(b).
+
+friend(a).
+friend(k).
+
+enemy(a, b).
+

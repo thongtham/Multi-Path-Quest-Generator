@@ -116,7 +116,13 @@ characterTest([[CharacterName,Value]|TailMain],CharacterNameAsk,CharacterAbility
 	
 	
 	
+queryToRelation(friend(A,B))
+:-.
+
+queryTR([RelationHead|RelationTail])
+:-
 	
+		
 	
 	
 	

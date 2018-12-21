@@ -45,6 +45,7 @@ startQuestPath(CO,GC,GL,AC,AL,AR,P,PF)
 
 startQuestPath(CO,GC,GL,AC,AL,AR,P,PF)
 :-
+	reconsult('c.txt'),
 	LoopCounter = 1,
 	append([kill_quest],[P],P2),
 	
@@ -58,7 +59,7 @@ startQuestPath(CO,GC,GL,AC,AL,AR,P,PF)
 %goal is reached yet or not.	
 questPathMainLoop(GC,GL,AC,AL,AR,P,LC,PF)	 
 :-
-	( 	questPathMainLoop_Done(GC,GL,AC,AL,AR,P,LC,PF) -> true
+	( 	questPathMainLoop_Done(GC,GL,AC,AL,AR,P,LC,PF) -> writeToFile(GC,GL,AC,AL,AR,P,LC,PF)
 	;	questPathMainLoop_Continue(GC,GL,AC,AL,AR,P,LC,PF)
 	).
 	
@@ -69,16 +70,40 @@ questPathMainLoop_Done(GC,GL,AC,AL,AR,P,LC,PF)
 	memberlist(GL,AL),
 	append("QUEST DONE",P,PF).
 	
+%This will write all condition to file
+writeToFile(GC,GL,AC,AL,AR,P,LC,PF)	
+:-
+	.
+
+	
+	
 %
 questPathMainLoop_Continue(GC,GL,AC,AL,AR,P,LC,PF)
 :-
 	% Loop possible player action (player can only act 1 time, then wait until all NPC react to it and react to other NPC react too)
-	questPathMainLoop_PlayerAction(GC,GL,AC,AL,AR,P,LC,PF,ACReturn,ALReturn,ARReturn,P2,LC2).
+	questPathMainLoop_PlayerAction(GC,GL,AC,AL,AR,P,LC,PF,ACReturn,ALReturn,ARReturn,P2,LC2),
 	% Loop resolve
 	questPathMainLoop_Resolve(GC,GL,ACReturn,ALReturn,ARReturn,P2,LC2,ACRS,ALRS,ARRS,P3,LC3),
 	% set back to main loop
-	questPathMainLoop(GC,GL,ACReturn,ALReturn,ARReturn,P2,LC2,PF).
+	questPathMainLoop(GC,GL,ACRS,ALRS,ARRS,P3,LC3,PF).
 
+
+
+questPathMainLoop_Resolve(GC,GL,AC,AL,AR,P,LC,ACRS,ALRS,ARRS,PRS,LCRS)
+:-
+	%If it's possible to resolve, loop until no longer possible to resolve
+	(resolving(GC,GL,AC,AL,AR,P,LC,ACRS_2,ALRS_2,ARRS_2,P_2,LC_2) -> questPathMainLoop_Resolve(GC,GL,ACRS_2,ALRS_2,ARRS_2,P_2,LC_2,ACRS_B,ALRS_B,ARRS_B,PRS_B,LCRS_B)
+	;ACRS = AC,
+	ALRS = AL,
+	ARRS = AR,
+	PRS = P,
+	LCRS = LC
+	).
+	
+food(jelly).
+
+	
+student(a,b).
 
 
 % START of Possible player action
@@ -92,6 +117,10 @@ questPathMainLoop_PlayerAction(GC,GL,AC,AL,AR,P,LC,PF,ACReturn,ALReturn,ARReturn
 	
 	% 2nd call the proper related action
 	player_Direct_to_Attack(GC,GL,AC,AL,AR,P,LC,PF,ACReturn,ALReturn,ARReturn,P2,LC2).
+
+	
+	
+	delete()
 	
 	
 %Hire to Attack
@@ -209,9 +238,10 @@ player_Direct_to_Attack(GC,GL,AC,AL,AR,P,LC,
 
 
 
-questPathMainLoop_Resolve(GC,GL,AC,AL,AR,P,LC,ACRS,ALRS,ARRS,P3,LC3)
-:-
-	.
+resolving
+
+
+
 
 
 % END Resolve LOOP

@@ -26,6 +26,9 @@ public class Item {
 	ArrayList<String> typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
 	ArrayList<String> typeOfFunction = new ArrayList<String>();; // consumable , equipment , object , container?
 	
+	[[jelly,typeOfItem,food],[jelly,typeOfItem,sweet],[]],
+	
+	
 	
 	//property that vary from Item to Item, making them unique from each other
 	String holderName;

@@ -214,3 +214,16 @@ checknotpathrepeat(ANY,[Current|RestOfPath]) :-
     
     
     
+writeTest()
+:-
+	reconsult('b.txt'),
+	tell('a.txt'),
+	listing(test/1),
+	listing(friend/1),
+	listing(enemy/2),
+	told.   
+    
+friend(a).
+friend(k).
+enemy(a,b).    
+    
