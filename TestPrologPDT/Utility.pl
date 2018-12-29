@@ -114,7 +114,13 @@ add_tail([H|T],X,[H|L]):-add_tail(T,X,L).
 	
 	
 	
-	
+
+%//1st return 	case ("isAlive"):
+%//2st return 	case ("currentLocation"):	
+%//2st return 	case ("level"):	
+%//2st return 	case ("listOccupation"):
+%//2st return 	case ("listStatus")	:
+%//2st return	case ("listSkill"):		
 %------------------------------------------------------------------------------------							
 getCharacterFromList([[Name,A,B,C,D,E]|T],Name,[Name,A,B,C,D,E]).
 getCharacterFromList([[Name,A,B,C,D,E]|T],Name2, Ans):- 
@@ -122,19 +128,175 @@ getCharacterFromList([[Name,A,B,C,D,E]|T],Name2, Ans):-
 	getCharacterFromList(T,Name2,Ans).
 
 %----TEST = TRUE ------	
-%getCharacterFromList([[jack,a,b,c,d],[kane,1,2,3,4]],kane,[A,B,C,D,E]).
-%getCharacterFromList([[jack,a,b,c,d],[kane,1,2,3,4]],_,[A,B,C,D,E]).	
-%getCharacterFromList([[jack,a,b,c,d],[kane,1,2,3,4],[abel,x,y,z,a]],_,[A,B,C,D,E]).	
+%getCharacterFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5],[kane,k1,k2,k3,k4,5]],kane,[A,B,C,D,E,F]).
+%getCharacterFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5],[kane,currentLocation,k2,k3,k4,k5]],kane,[A,currentLocation,C,D,E,F]).
+%getCharacterFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5],[kane,currentLocation,k2,k3,k4,k5]],T,[A,currentLocation,C,D,E,F]).
 
 
-getNameFromList([[Name,A,B,C,D,E]|T],Name,Name).
-getNameFromList([[Name,A,B,C,D,E]|T],Name2,Ans)
+%getCharacterFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5]],_,[A,B,C,D,E]).	
+%getCharacterFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5],[abel,x,y,z,a,b]],_,[A,B,C,D,E,F]).	
+%getCharacterFromList(AC,TargetName,[NameTarget,"isAlive","true",A2Target,V2Target,ID])
+
+
+getCharNameFromList([[Name,A,B,C,D,E]|T],Name,Name).
+getCharNameFromList([[Name,A,B,C,D,E]|T],Name2,Ans)
 :-
 	Name \== Name2,
-	getNameFromList(T,Name2,Ans).
+	getCharNameFromList(T,Name2,Ans).
 
 %----TEST: below line = get all possible name
-%getNameFromList([[jack,a,b,c,d],[kane,1,2,3,4]],_,A).
+%getCharNameFromList([[jack,a,b,c,d,e],[kane,1,2,3,4,5]],_,A).
+
+
+getCharIsAliveFromList([[Name,isAlive,B,C,D,Z]|T],Name,B).
+getCharIsAliveFromList([[Name,isAlive,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getCharIsAliveFromList(T,Name2,Ans).		
+
+getCharCurrentLocationFromList([[Name,currentLocation,B,C,D,Z]|T],Name,B).
+getCharCurrentLocationFromList([[Name,currentLocation,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getCharCurrentLocationFromList(T,Name2,Ans).	
+
+
+getCharLevelFromList([[Name,level,B,C,D,Z]|T],Name,B).
+getCharLevelFromList([[Name,level,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getCharCurrentLocationFromList(T,Name2,Ans).	
+
+%getCharLevelFromList([[jack,level,10,c,d,e],[kane,1,2,3,4,5],[kane,k1,k2,k3,k4,5]],jack,B).
+
+	
+existCharListOccupationFromList([[Name,listOccupation,B,C,D,Z]|T],Name,B).
+existCharListOccupationFromList([[Name,listOccupation,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	existCharListOccupationFromList(T,Name2,Ans).	
+
+%existCharListOccupationFromList([[jack,listOccupation,soldier,c,d,e],[kane,listOccupation,lord,3,4,5],[kane,k1,k2,k3,k4,5]],jack,soldier).
+%existCharListOccupationFromList([[jack,listOccupation,soldier,c,d,e],[kane,listOccupation,lord,3,4,5],[kane,k1,k2,k3,k4,5]],kane,lord).
+	
+	
+existCharListStatusFromList([[Name,listStatus,B,C,D,Z]|T],Name,B).
+existCharListStatusFromList([[Name,listStatus,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	existCharListStatusFromList(T,Name2,Ans).	
+	
+	
+existCharListSkillFromList([[Name,listSkill,B,C,D,Z]|T],Name,B).
+existCharListSkillFromList([[Name,listSkill,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	existCharListSkillFromList(T,Name2,Ans).		
+	
+	
+	
+	
+	
+
+getItemNameUsingID([[ANY,A,B,itemName,Name,Z]|T],Z,B).
+getItemNameUsingID([[ANY,A,B,itemName,Name,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	getItemNameUsingID(T,Z2,Ans).	
+	
+	
+getItemNameFromList([[ANY,A,B,itemName,Name,Z]|T],Name,Name).
+getItemNameFromList([[ANY,A,B,itemName,Name,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getItemNameFromList(T,Name2,Ans).	
+	
+%----TEST: below line = get all possible name
+%getItemNameFromList([[jack,a,b,itemName,d,e],[kane,1,2,itemName,4,e]],_,A).
+	
+
+
+getItemCurrentLocationUsingID([[ANY,A,Name,currentLocation,D,Z]|T],Z,D).
+getItemCurrentLocationUsingID([[ANY,A,Name,currentLocation,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	getItemCurrentLocationUsingID(T,Z2,Ans).	
+
+
+getItemOwnerNameUsingID([[ANY,A,Name,ownerName,D,Z]|T],Z,D).
+getItemOwnerNameUsingID([[ANY,A,Name,ownerName,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	getItemOwnerNameUsingID(T,Z2,Ans).	
+
+
+getItemIsOnGroundUsingID([[ANY,A,Name,isOnGround,D,Z]|T],Z,D).
+getItemIsOnGroundUsingID([[ANY,A,Name,isOnGround,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	getItemIsOnGroundUsingID(T,Z2,Ans).	
+
+
+getItemIsOnGroundUsingID([[ANY,A,Name,isOnGround,D,Z]|T],Z,D).
+getItemIsOnGroundUsingID([[ANY,A,Name,isOnGround,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	getItemIsOnGroundUsingID(T,Z2,Ans).	
+
+
+
+existItemTypeOfItemUsingID([[ANY,A,Name,typeOfItem,D,Z]|T],Z,D).
+existItemTypeOfItemUsingID([[ANY,A,Name,typeOfItem,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	existItemTypeOfItemUsingID(T,Z2,Ans).			
+		
+
+existItemTypeOfFunctionUsingID([[ANY,A,Name,typeOfFunction,D,Z]|T],Z,D).
+existItemTypeOfFunctionUsingID([[ANY,A,Name,typeOfFunction,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	existItemTypeOfFunctionUsingID(T,Z2,Ans).	
+
+
+existItemListPropertyUsingID([[ANY,A,Name,listProperty,D,Z]|T],Z,D).
+existItemListPropertyUsingID([[ANY,A,Name,listProperty,D,Z]|T],Z2,Ans)
+:-
+	Z \== Z2,
+	existItemListPropertyUsingID(T,Z2,Ans).	
+ 			
+
+
+getLocationNameFromList([[Name,locationName,B,C,D,Z]|T],Name,B).
+getLocationNameFromList([[Name,locationName,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getLocationNameFromList(T,Name2,Ans).	
+
+getLocationTypeFromList([[Name,locationType,B,C,D,Z]|T],Name,B).
+getLocationTypeFromList([[Name,locationType,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getLocationTypeFromList(T,Name2,Ans).	
+		
+		
+getLocationEnvironmentList([[Name,locationEnvironment,B,C,D,Z]|T],Name,B).
+getLocationEnvironmentList([[Name,locationEnvironment,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	getLocationEnvironmentList(T,Name2,Ans).	
+
+		
+		
+		
+existLocationListConnectLocationList([[Name,listConnectLocation,B,C,D,Z]|T],Name,B).
+existLocationListConnectLocationList([[Name,listConnectLocation,B,C,D,Z]|T],Name2,Ans)
+:-
+	Name \== Name2,
+	existLocationListConnectLocationList(T,Name2,Ans).	
+				
+
+		
 		
 %------------------------------------------------------------------------------------							
 	
@@ -164,7 +326,6 @@ characterCheck([[CharacterName,Attribute1,Value1,Attribute2,Value2,ID]|TailMain]
 
 % ---- TRUE
 %characterCheck([[jack,isAlive,true,_,_,_],[bob,isAlive,true,a,a,z]],[bob,isAlive,true,a,a,z]).
-%characterCheck([[jack,isAlive,true,_,_,_],[bob,isAlive,true,a,a,z]],[bob,_,_,_,_,_]).
 
 % ---- FALSE
 %characterCheck([[jack,isAlive,true,_,_,_],[bob,isAlive,true,a,a,_]],[bob,isAlive,true,_,_,_]).
@@ -172,6 +333,43 @@ characterCheck([[CharacterName,Attribute1,Value1,Attribute2,Value2,ID]|TailMain]
 %characterCheck([[jack,isAlive,true,_,_,_],[bob,isAlive,true,_,_,_]],[bob,isAlive,true,a,a,a]).
 
 %------------------------------------------------------------------------------------							
+	
+	
+	
+	
+%------------------------------------------------------------------------------------							
+		
+checksamelocation(AC,NPC1Name,NPC2Name) 
+:-
+	getCharacterFromList(AC,NPC1Name,[NPC1Name,currentLocation,B1,C1,D1,E1]),
+	getCharacterFromList(AC,NPC2Name,[NPC2Name,currentLocation,B2,C2,D2,E2]),
+	NPC1Location == NPC2Location.
+%------------------------------------------------------------------------------------							
+
+		
+%------------------------------------------------------------------------------------							
+changelocation(MoveName,NewLocation) :-
+	passkeymovecheck(MoveName,NewLocation),
+	retract(character(MoveName,TargetLvl,TargetStatus,TargetHealth,TargetLocation)),
+	assert(character(MoveName,TargetLvl,TargetStatus,TargetHealth,NewLocation)).
+%------------------------------------------------------------------------------------							
+		
+
+%------------------------------------------------------------------------------------							
+passkeymovecheck(MoveName,NewLocation) :-	
+	character(MoveName,TargetLvl,TargetStatus,TargetHealth,TargetLocation),
+	passkeycheck(NewLocation,TargetLocation,dungeonkey).
+%------------------------------------------------------------------------------------							
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -225,5 +423,34 @@ writeTest()
     
 friend(a).
 friend(k).
-enemy(a,b).    
-    
+enemy(a,b).  
+
+
+writeFile(GC,GL,AC,AL,AR,LA,P,LC,PF)	
+:-	
+    open('file.txt',write, Stream),
+    (  	writeln(PF),
+    	writeln(Stream,AC), 
+		writeln(Stream,AL),
+		writeln(AR)
+    ;   true
+    ),
+    close(Stream).  
+ 
+%WORKING 
+%writeFile([],[],[a,b,c],[kkk],[],[],[],[],[]).	    
+ 
+ 
+
+writeFile(A,B)
+:- 
+	open('file.txt',write, Stream),
+    (  	
+    	writeln(Stream,A), 
+		writeln(Stream,B)
+    ;   true
+    ),
+    close(Stream).  
+
+%writeFile([a,b,c],[kkk]).
+%("writeFile","[a,b,c]","[kkk]");

@@ -257,7 +257,7 @@ killQuest_Resolve_loop1(AllItem,AllCharacter,AllRelation,AllAttribute,character(
 	member(relationship(hire_to_attack,PlayerChar,AssassinChar,TargetChar),AllRelation),
 	nl,
 	list_item_subtracted(AllRelation,relationship(hire_to_attack,PlayerChar,AssassinChar,TargetChar),AllRelationNew),
-	write(AllRelationNew), 
+	write(AllRelationNew),
 	nl,
 	direct_attack_record(AllCharacter,AssassinChar,TargetChar,AllCharacterNew),
 	write(resolve_hire_to_attack_record), 

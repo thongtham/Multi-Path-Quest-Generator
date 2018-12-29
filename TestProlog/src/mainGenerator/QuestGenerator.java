@@ -1436,9 +1436,27 @@ public class QuestGenerator {
 				System.out.println(goalState);
 			}
 			
+			//*************  DEBUG  *********************
+			//(CO,GC,GL,AC,AL,AR,P,PF)
+			
+			//([],[],[],[],[],[],[],[]).
+			//([],[], [[a,b,c,d,e,ID],[a,b,c,d,e,ID],[a,b,c,d,e,ID]] , [] , [] , [] , [] , []).
 			
 			
+			System.out.println();
 			
+			String gameWorldstr = "(";
+			
+			gameWorldstr += mainGameWorld.toStringPrologFormatListChar();
+			gameWorldstr += "AAAA,AAAA";
+			gameWorldstr += mainGameWorld.toStringPrologFormatListLo();
+			gameWorldstr += ") END";
+					
+			System.out.println(gameWorldstr);
+			
+			System.out.println();
+			
+			//*************  DEBUG  END  ****************
 			
 			
 			

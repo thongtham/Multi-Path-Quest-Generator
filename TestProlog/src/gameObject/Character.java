@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
+
+import enviroment.GameCondition;
+
 
 //
 // *** NOTE TO SELF
@@ -22,11 +26,8 @@ public class Character {
 	boolean isPlayer;
 	int level;
 	boolean isAlive;  //Status
-	
-	String attribute;
-	
+
 	String currentLocation;
-	String charRace;
 
 	ArrayList<String> listStatus = new ArrayList<String>();
 	ArrayList<Item> listItem = new ArrayList<Item>();       // This is character's Inventory 
@@ -45,6 +46,9 @@ public class Character {
 	//List<String> listFriend = new ArrayList<String>();
 	//List<String> listEnemy = new ArrayList<String>();
 
+	
+	String attribute;	// OBSOLETE, IGNORE
+	String charRace;	// OBSOLETE, IGNORE
 
 	//////////////////////////Constructor ////////////////////////////////
 	
@@ -361,7 +365,7 @@ public class Character {
 	
 	//////////////// utility ////////////////////////
 	
-	
+	/*
 	public String toStringPrologFormat()
 	{
 		String strReturn = "character(";
@@ -385,7 +389,7 @@ public class Character {
 		return strReturn;
 	}
 	
-	
+	*/
 	
 	
 	
@@ -395,7 +399,130 @@ public class Character {
 	///////////Below = override Java Utility methods/////////////////////////////
 	
 	
+	public String CharToStringPrologFormat()
+	{
+		//1st return name 		case ("isAlive"):
 	
+		String output = "["; 
+		
+		output += this.characterName;
+		output += ",";
+		output += "isAlive";
+		output += ",";
+		output += String.valueOf(this.isAlive);
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		//2st return 	 case ("currentLocation"):	
+		
+		output += "["; 
+		output += this.characterName;
+		output += ",";
+		output += "currentLocation";
+		output += ",";
+		output += this.currentLocation;
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		//2st return 	case ("level"):	
+		output += "["; 
+		output += this.characterName;
+		output += ",";
+		output += "level";
+		output += ",";
+		output += this.level;
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		//2st return 	case ("listOccupation"):
+		
+		for(String occupation: this.listOccupation)
+		{
+			output += "["; 
+			output += this.characterName;
+			output += ",";
+			output += "listOccupation";
+			output += ",";
+			output += occupation;
+			output += ",";
+			output += "z";
+			output += ",";
+			output += "zz";
+			output += ",";
+			output += "zzz";
+			output += "],"; 
+		}
+
+		//2st return 	case ("listStatus")	:
+		
+		for (String status: this.listStatus)
+		{
+			output += "["; 
+			output += this.characterName;
+			output += ",";
+			output += "listStatus";
+			output += ",";
+			output += status;
+			output += ",";
+			output += "z";
+			output += ",";
+			output += "zz";
+			output += ",";
+			output += "zzz";
+			output += "],"; 
+		}
+
+		//2st return 	case ("listSkill"):
+		for (String skill: this.listSkill)
+		{
+			output += "["; 
+			output += this.characterName;
+			output += ",";
+			output += "listSkill";
+			output += ",";
+			output += skill;
+			output += ",";
+			output += "z";
+			output += ",";
+			output += "zz";
+			output += ",";
+			output += "zzz";
+			output += "],"; 
+		}
+		
+		if(this.listItem.isEmpty())
+		{
+			output = output.substring(0, output.length()-1);
+		}
+		else
+		{
+			//2st return 	case ("listItem"):
+			for(Item IC : this.listItem)
+			{
+				output += IC.toStringProlog(this.characterName,this.currentLocation);
+			}
+		}
+
+					
+
+		
+		return output;
+	}
 	
 	
 	public String toString()
@@ -465,3 +592,23 @@ public class Character {
 	}
 	
 }
+
+
+
+//1st return 	case ("isAlive"):
+//2st return 	case ("currentLocation"):	
+//2st return 	case ("level"):	
+//2st return 	case ("listOccupation"):
+//2st return 	case ("listStatus")	:
+//2st return	case ("listSkill"):			
+
+//switch (variable_2)
+//case ("typeOfItem") :
+//case ("typeOfFunction") : 
+//case ("currentLocation"):
+//case ("ownerName") 
+//case ("isOnGround")
+//case ("itemName") :
+//case ("itemNameNOT"):
+//case ("listProperty") :
+//case ("listPropertyNOT") : 

@@ -2,6 +2,8 @@ package gameObject;
 
 public class Relationship {
 	
+	//[Friend:player:jack]
+			
 	String type;
 	String mainCharacter;
 	String objectCharacter;
@@ -47,13 +49,43 @@ public class Relationship {
 		return output;
 	}
 	
-	public String toString() {
-		String output = "relationship(";
+	
+	
+	
+	
+	//-------------------- ToString()---------------------------
+	
+	public String toStringPrologFormat()
+	{
+		String output = "";
+		output += "[";
+		output += type;
+		output += ",";
 		output += mainCharacter;
 		output += ",";
 		output += objectCharacter;
-		output += ",";
+		output += "]";
+		
+		return output;
+	}
+	
+	//[Friend:player:jack]
+	
+	
+	
+	
+	
+	
+	//--------------------Override---------------------------
+	
+	@Override
+	public String toString() {
+		String output = "relationship(";
 		output += type;
+		output += ",";
+		output += mainCharacter;
+		output += ",";
+		output += objectCharacter;
 		output += ")";
 		return output;
 	}

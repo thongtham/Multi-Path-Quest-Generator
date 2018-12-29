@@ -281,6 +281,7 @@ public class GameWorld {
 		
 		// OBSOLETE >> now All item must be in character's inventory or on Location ONLY
 		//             AKA >> even to check if item exist, must do through check character & Location
+		/*
 		boolean isContainItem = ;
 		if(!isContainItem)
 		{
@@ -292,6 +293,7 @@ public class GameWorld {
 		{
 			isGameStateSatisfy = false;
 		}
+		*/
 		////////////////////////////////////
 		
 		
@@ -975,5 +977,78 @@ public class GameWorld {
 		}
 		return tempListItem;
 	}
+	
+	
+	
+	
+	
+	public String toStringPrologFormatListChar()
+	{
+		//memberlist([[a,b,c,d,e,ID],[a,b,c,d,e,ID],[a,b,c,d,e,ID]] , [[a,b]] , ).
+		
+		String output = "[";
+
+		for (Location lo : this.listLocation)
+		{
+			output += lo.LocationToStringPrologFormat();
+			output += ",";
+		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		return output;	
+	}
+	
+	public String toStringPrologFormatListLo()
+	{
+		//(CO,GC,GL,AC,AL,AR,P,PF)
+		
+		//([],[],[],[],[],[],[],[]).
+		//([],[], [[a,b,c,d,e,ID],[a,b,c,d,e,ID],[a,b,c,d,e,ID]] , [] , [] , [] , [] , []).
+		
+		String output = "[";
+
+		for (Character ch : this.listCharacter)
+		{
+			output += ch.CharToStringPrologFormat();
+			output += ",";
+		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		
+		return output;
+	}
+	
+	public String toStringPrologFormatListRelationship()
+	{
+		//memberlist([[a,b,c,d,e,ID],[a,b,c,d,e,ID],[a,b,c,d,e,ID]] , [[a,b]] , ).
+		
+		String output = "[";
+
+		for (Relationship Re : this.listRelationship)
+		{
+			output += Re.toStringPrologFormat();
+			output += ",";
+		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		return output;	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

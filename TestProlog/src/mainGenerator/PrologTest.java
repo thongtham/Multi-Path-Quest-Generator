@@ -48,11 +48,31 @@ public class PrologTest {
 			 
 			            // fill the factbase
 			            fillFactbaseWithDemoData(process);
-			 
 
-						System.out.println("testQuestGameState("+AllItem+","+AllCharacter+","+AllRelation+","+AllAttribute+","+kill+","+Goal+","+Path+","+LoopCounter+")");
-			            String queryTest = "testQuestGameState("+AllItem+","+AllCharacter+","+AllRelation+","+AllAttribute+","+kill+","+Goal+","+Path+","+LoopCounter+")";
-			            process.queryAll(queryTest);
+			            
+			            
+			            // ****************************************************************************************
+			            // ********************need B in "writeFile([a,b,c],[kkk],B)"; *********************************************
+			            // ****************************************************************************************
+			            // ********************process.queryOnce need 'B' (unknown) of it will throw error *******************************************************************
+			            // ****************************************************************************************
+			            
+			            String queryTest = "writeFile([a,b,c],[kkk],B)";
+			            Map<String, Object> resultA = process.queryOnce(queryTest);
+			            System.out.println(resultA);
+			            //List<Map<String, Object>> resultAll = process.queryAll(queryTest);
+			            //System.out.println(resultAll);  
+			            
+			            
+			            
+			            
+			            
+			            
+			            
+			            
+			            
+			            
+			            
 			            //Map<String, Object> resultA = process.queryOnce(queryTest);
 			            //System.out.println(resul A);
 			            //List<Map<String, Object>> resultAll = process.queryAll(queryTest);
@@ -94,7 +114,7 @@ public class PrologTest {
 	private static void fillFactbaseWithDemoData(PrologProcess process) throws PrologProcessException, FileNotFoundException {
 
         // or by consulting a file
-         String consultQuery = QueryUtils.bT("reconsult", "'c:/Users/user/Desktop/Prolog Test/QuestGenerator.pl'");
+         String consultQuery = QueryUtils.bT("reconsult", "'c:/Users/user/Desktop/test.pl'");
          process.queryOnce(consultQuery);
 
     	

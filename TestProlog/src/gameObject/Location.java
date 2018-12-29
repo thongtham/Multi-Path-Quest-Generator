@@ -3,6 +3,8 @@ package gameObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import enviroment.GameCondition;
+
 
 //There should be a list of 'final' locations class 
 //All thing that contain "String location" will compare the "location name"
@@ -250,6 +252,102 @@ public class Location {
 	
 	
 	
+	
+	
+	
+	
+	
+	public String LocationToStringPrologFormat()
+	{
+
+		//1st return name		case ("locationName"):
+		String output = "["; 
+		
+		output += this.locationName;
+		output += ",";
+		output += "locationName";
+		output += ",";
+		output += this.locationName;
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		
+		//1st return name		case ("locationType"):
+		
+		output += "["; 
+		output += this.locationName;
+		output += ",";
+		output += "locationType";
+		output += ",";
+		output += this.locationType;
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		
+		//1st return name		case ("locationEnvironment"):
+		output += "["; 
+		output += this.locationName;
+		output += ",";
+		output += "locationEnvironment";
+		output += ",";
+		output += this.locationEnvironment;
+		output += ",";
+		output += "z";
+		output += ",";
+		output += "zz";
+		output += ",";
+		output += "zzz";
+		output += "],"; 
+		
+		
+		//1st return name		case ("listConnectLocation"):
+		for (String str: this.listConnectLocation)
+		{
+			output += "["; 
+			output += this.locationName;
+			output += ",";
+			output += "listConnectLocation";
+			output += ",";
+			output += str;
+			output += ",";
+			output += "z";
+			output += ",";
+			output += "zz";
+			output += ",";
+			output += "zzz";
+			output += "],"; 
+		}
+		
+		if(this.listItemInLocation.isEmpty())
+		{
+			output = output.substring(0, output.length()-1);
+		}
+		else
+		{
+			//1st return name		case ("listItemInLocation"):
+			for(Item IC : this.listItemInLocation)
+			{
+				output += IC.toStringProlog(this.locationName,this.locationName);
+			}
+		}
+					
+
+		
+		return output;
+	
+	}
+	
+	
 	/////////////////////////////// OVERRIDE //////////////////////////////////
 
 	public String toString()
@@ -267,3 +365,26 @@ public class Location {
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//IGNORE (ACTUALLY conflict if same case, but current build no way to manipulate these attribute)
+//case ("locationName"):
+//case ("locationType"):
+//case ("locationEnvironment"):
+//case ("listConnectLocation"):
+
+//case ("listItemInLocation"):
+
+

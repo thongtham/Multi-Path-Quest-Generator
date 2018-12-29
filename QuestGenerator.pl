@@ -1537,7 +1537,15 @@ father_of(john, george).
 
 
 
-
+writeFile(A,B)
+:- 
+	open('file.txt',write, Stream),
+    (  	
+    	writeln(Stream,A), 
+		writeln(Stream,B)
+    ;   true
+    ),
+    close(Stream).  
 
 
 

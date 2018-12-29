@@ -26,9 +26,6 @@ public class Item {
 	ArrayList<String> typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
 	ArrayList<String> typeOfFunction = new ArrayList<String>();; // consumable , equipment , object , container?
 	
-	[[jelly,typeOfItem,food],[jelly,typeOfItem,sweet],[]],
-	
-	
 	
 	//property that vary from Item to Item, making them unique from each other
 	String holderName;
@@ -261,6 +258,143 @@ public class Item {
 	public String simpleToString() {
 		return itemName;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	public String toStringProlog(String ownerName, String ownerLocation)
+	{
+		String output = "";
+		
+		//1st Item Name		case ("itemName") :
+		output += "["; 
+		output += ownerName;
+		output += ",";
+		output += "listItem";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += "itemName";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += this.itemID;
+		output += "],"; 
+		
+		
+		//1st Item Name		case ("ownerName") 
+		output += "["; 
+		output += ownerName;
+		output += ",";
+		output += "listItem";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += "ownerName";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += this.itemID;
+		output += "],"; 
+		
+		//1st Item Name		case ("isOnGround")
+		output += "["; 
+		output += ownerName;
+		output += ",";
+		output += "listItem";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += "isOnGround";
+		output += ",";
+		output += String.valueOf(this.isOnGround);
+		output += ",";
+		output += this.itemID;
+		output += "],"; 
+		
+		//1st Item Name		case ("currentLocation"):
+		output += "["; 
+		output += ownerName;
+		output += ",";
+		output += "listItem";
+		output += ",";
+		output += this.itemName;
+		output += ",";
+		output += "currentLocation";
+		output += ",";
+		output += ownerLocation;
+		output += ",";
+		output += this.itemID;
+		output += "],"; 
+		
+		
+		//1st Item Name		case ("typeOfItem") :
+		for (String str: this.typeOfItem)
+		{
+			output += "["; 
+			output += ownerName;
+			output += ",";
+			output += "listItem";
+			output += ",";
+			output += this.itemName;
+			output += ",";
+			output += "typeOfItem";
+			output += ",";
+			output += str;
+			output += ",";
+			output += this.itemID;
+			output += "],"; 
+		}
+		//1st Item Name		case ("typeOfFunction") : 
+		for (String str: this.typeOfFunction)
+		{
+			output += "["; 
+			output += ownerName;
+			output += ",";
+			output += "listItem";
+			output += ",";
+			output += this.itemName;
+			output += ",";
+			output += "typeOfFunction";
+			output += ",";
+			output += str;
+			output += ",";
+			output += this.itemID;
+			output += "],"; 
+		}
+		//1st Item Name		case ("listProperty") :
+		for (String str: this.listProperty)
+		{
+			output += "["; 
+			output += ownerName;
+			output += ",";
+			output += "listItem";
+			output += ",";
+			output += this.itemName;
+			output += ",";
+			output += "listProperty";
+			output += ",";
+			output += str;
+			output += ",";
+			output += this.itemID;
+			output += "],"; 
+		}
+		
+		output = output.substring(0, output.length()-1);
+		return output;
+	}
+	
+	
+	
 	
 	
 	

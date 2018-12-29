@@ -61,6 +61,9 @@ public class ConnectorDemo {
             System.out.println(resultAll);           
 
             
+            
+            
+            
             /////////////  Test Reading answer from Prolog  ///////////
             Scanner sc = new Scanner(new File("C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/file.txt"));
             
