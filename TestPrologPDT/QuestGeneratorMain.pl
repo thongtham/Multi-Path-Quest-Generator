@@ -98,8 +98,10 @@ questPathMainLoop_Continue(GC,GL,AC,AL,AR,LA,P,LC,PF)
 	questPathMainLoop_PlayerAction(GC,GL,AC,AL,AR,LA,P,LC,PF,ACReturn,ALReturn,ARReturn,LAReturn,P2,LC2),
 	% Loop resolve
 	questPathMainLoop_Resolve(GC,GL,ACReturn,ALReturn,ARReturn,LAReturn,P2,LC2,ACRS,ALRS,ARRS,LA3,P3,LC3),
+	% Loop NPC-reaction 
+	questPathMainLoop_Reaction(GC,GL,ACRS,ALRS,ARRS,LA3,P3,LC3,PF,ACLR,ALLR,ARLR,LA4,P4,LC4).
 	% set back to main loop
-	questPathMainLoop(GC,GL,ACRS,ALRS,ARRS,LA3,P3,LC3,PF).
+	questPathMainLoop(GC,GL,ACLR,ALLR,ARLR,LA4,P4,LC4,PF).
 
 
 
@@ -116,6 +118,9 @@ questPathMainLoop_Resolve(GC,GL,AC,AL,AR,LA,P,LC,ACRS,ALRS,ARRS,LARS,PRS,LCRS)
 	).
 	
 
+questPathMainLoop_Reaction(GC,GL,ACRS,ALRS,ARRS,LA3,P3,LC3,PF,ACLR,ALLR,ARLR,LA4,P4,LC4)
+:-
+	.
 
 % START of Possible player action
 % --------------------------------------------------------------------------------------------------------------
