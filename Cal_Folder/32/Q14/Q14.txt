@@ -1,0 +1,49 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,lumberjack1,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+kill: [[king,isAlive,false,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+explore: [[player,sameLocation,king,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,soldier3,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d1e1f1.txt, filesa2c1d1e1f1.txt]
+
+[f,sa1c1d1e1,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,king,move_from_to,forest,palace,lumberjack1,char_die,king,soldier_capture_criminal,lumberjack1,soldier3,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier3,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player]
+[f,sa2c1d1e1,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,king,move_from_to,forest,palace,lumberjack1,char_die,king,soldier_capture_criminal,lumberjack1,soldier3,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier3,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 15
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+forest              18
+char_die            2
+lumberjack1         8
+city                38
+thief1              3
+player]             1
+soldier3            4
+move_from_to        21
+criminal_lockpick_escape_jail1
+soldier_capture_criminal2
+sa2c1d1e1           1
+player              40
+palace              6
+criminal_escort_to_jail_also_lose_crime2
+ac_capture          1
+king                4
+capture             1
+ac_hire_to_attack   2
+[f                  1
+jail                10
+player][f           1
+ac_move_from_to     19
+dungeon             8
+start_new_component 10
+sa1c1d1e1           1
+
+END OF MAIN LOOP

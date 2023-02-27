@@ -1,0 +1,35 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,lumberjack1,z,zz,zzz],[player,sameLocation,lumberjack1,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+stealth: [[player,sameLocation,soldier3,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+kill: [[soldier3,isAlive,false,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,mob_npc_1,z,zz,zzz],[player,sameLocation,mob_npc_1,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,merchant1,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d1e1f1.txt]
+
+[f,sa1c1d1e1,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,soldier3,char_die,soldier3,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 1
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+palace              6
+forest              8
+char_die            1
+lumberjack1         1
+city                14
+no_action_need]     1
+soldier3            2
+ac_hire_to_attack   1
+[f                  1
+move_from_to        7
+ac_move_from_to     7
+start_new_component 5
+sa1c1d1e1           1
+player              15

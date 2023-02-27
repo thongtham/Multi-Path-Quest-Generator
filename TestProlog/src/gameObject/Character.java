@@ -52,10 +52,17 @@ public class Character {
 
 	//////////////////////////Constructor ////////////////////////////////
 	
-	
+
 	public Character()
 	{
-		characterName = "testing Character";
+		characterName = "generic_NPC";
+		isPlayer = true;  				// This is true since this isn't suppose to be used, and most method check that [if player, select new] 
+		level = 1;
+		isAlive = true;
+		currentLocation = "market";
+		attribute = "";
+		isQuestGiver = false;
+		levelQuest = 0;
 	}
 	
 	
@@ -233,6 +240,7 @@ public class Character {
 	public void addOrUpdateItem(Item newItem)
 	{
 		newItem.setHolder(characterName);
+		newItem.setOwner(characterName);
 		Item tempNI = new Item(newItem);
 		
 		//IF there's a item with same id, this is update, thus old one will be removed
@@ -505,6 +513,7 @@ public class Character {
 			output += "],"; 
 		}
 		
+		boolean checkItemExist = false;
 		if(this.listItem.isEmpty())
 		{
 			output = output.substring(0, output.length()-1);
@@ -515,11 +524,14 @@ public class Character {
 			for(Item IC : this.listItem)
 			{
 				output += IC.toStringProlog(this.characterName,this.currentLocation);
+				output += ",";
+				checkItemExist = true;
 			}
 		}
-
-					
-
+		
+		if(checkItemExist) {
+			output = output.substring(0, output.length()-1);
+		}
 		
 		return output;
 	}

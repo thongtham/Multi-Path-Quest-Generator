@@ -1,0 +1,30 @@
+Change from the below
+
+
+		// 11
+		// Info >>> Info of Item      		= Select Random NPC? and condition = [player at same NPC location]?
+		// 12
+		// Info >>> Info of Character		= Select Random NPC? and condition = [player at same NPC location]?
+		// 13
+		// Info >>> Info of Location		= Select Random NPC? and condition = [player at same NPC location]?
+		//
+		// 21 
+		// Loc >>> Loc of Item				= Get the Location of the Item, and condition = [player at that location]?
+		// 22
+		// Loc >>> Loc of Character			= Get the Location of the Character, and condition = [player at that location]?
+		// 23
+		// Loc >>> Loc of Location			= just [player same location]?
+		//
+		// 31
+		// itself >>> itself of Item		= Depend on Component type (dmg, give, etc.)
+		// 32
+		// itself >>> itself of Character	= Depend on Component type (capture, free, etc.)
+		// 33
+		// itself >>> itself of Location	= Depend on Component type?????
+		//
+		//
+		// IF(contain '4') == null and ignore >> go to next one.
+
+
+so that instead of going to location of NPC,
+it go to NPC directly (using 'sameLocation')

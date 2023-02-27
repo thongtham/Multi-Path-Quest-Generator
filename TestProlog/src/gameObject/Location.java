@@ -73,7 +73,7 @@ public class Location {
 	
 	public void setToGenericForest(){
 		
-		locationName = "Forest";
+		locationName = "forest";
 		locationType = "forest"; 
 		locationEnvironment = "rain";
 
@@ -81,12 +81,11 @@ public class Location {
 		//listCharacterInLocation = new ArrayList<Character>();
 		listConnectLocation = new ArrayList<String>();
 		
-		listConnectLocation.add("City");
-		listConnectLocation.add("Dungeon");
+		listConnectLocation.add("city");
 	}
 	
 	public void setToGenericCity(){
-		locationName = "City";
+		locationName = "city";
 		locationType = "urban"; 
 		locationEnvironment = "sunny";
 
@@ -94,13 +93,14 @@ public class Location {
 		//listCharacterInLocation = new ArrayList<Character>();
 		listConnectLocation = new ArrayList<String>();
 		
-		listConnectLocation.add("Forest");
-		listConnectLocation.add("Jail");
-		listConnectLocation.add("Palace");
+		listConnectLocation.add("forest");
+		listConnectLocation.add("dungeon");
+		listConnectLocation.add("jail");
+		listConnectLocation.add("palace");
 	}
 	
 	public void setToGenericJail(){
-		locationName = "Jail";
+		locationName = "jail";
 		locationType = "urban"; 
 		locationEnvironment = "night";
 
@@ -108,11 +108,11 @@ public class Location {
 		//listCharacterInLocation = new ArrayList<Character>();
 		listConnectLocation = new ArrayList<String>();
 		
-		listConnectLocation.add("City");
+		listConnectLocation.add("city");
 	}
 	
 	public void setToGenericPalace(){
-		locationName = "Palace";
+		locationName = "palace";
 		locationType = "urban"; 
 		locationEnvironment = "sunny";
 
@@ -120,11 +120,11 @@ public class Location {
 		//listCharacterInLocation = new ArrayList<Character>();
 		listConnectLocation = new ArrayList<String>();
 		
-		listConnectLocation.add("City");
+		listConnectLocation.add("city");
 	}
 	
 	public void setToGenericDungeon(){
-		locationName = "Dungeon";
+		locationName = "dungeon";
 		locationType = "cave"; 
 		locationEnvironment = "night";
 
@@ -132,7 +132,7 @@ public class Location {
 		//listCharacterInLocation = new ArrayList<Character>();
 		listConnectLocation = new ArrayList<String>();
 		
-		listConnectLocation.add("Forest");
+		listConnectLocation.add("city");
 	}
 	
 	
@@ -279,6 +279,8 @@ public class Location {
 		
 		//1st return name		case ("locationType"):
 		
+		/* REMOVE 19-2-2019 to improve performance
+		
 		output += "["; 
 		output += this.locationName;
 		output += ",";
@@ -293,8 +295,13 @@ public class Location {
 		output += "zzz";
 		output += "],"; 
 		
+		*/
 		
 		//1st return name		case ("locationEnvironment"):
+		
+		
+		/* REMOVE 19-2-2019 to improve performance
+		
 		output += "["; 
 		output += this.locationName;
 		output += ",";
@@ -309,6 +316,7 @@ public class Location {
 		output += "zzz";
 		output += "],"; 
 		
+		*/
 		
 		//1st return name		case ("listConnectLocation"):
 		for (String str: this.listConnectLocation)
@@ -327,7 +335,7 @@ public class Location {
 			output += "zzz";
 			output += "],"; 
 		}
-		
+		boolean checkItemExist = false;
 		if(this.listItemInLocation.isEmpty())
 		{
 			output = output.substring(0, output.length()-1);
@@ -338,11 +346,14 @@ public class Location {
 			for(Item IC : this.listItemInLocation)
 			{
 				output += IC.toStringProlog(this.locationName,this.locationName);
+				output += ",";
+				checkItemExist = true;
 			}
 		}
-					
-
 		
+		if(checkItemExist) {
+			output = output.substring(0, output.length()-1);
+		}
 		return output;
 	
 	}

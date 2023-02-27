@@ -48,11 +48,15 @@ public class ConnectorDemo {
             List<Map<String, Object>> resultAll = process.queryAll(queryTest);
             System.out.println(resultAll);
             
+            System.out.println("-----------------------------------");
+            
             queryTest = "testQuest(kill,john,jill,d,Path)";
             resultA = process.queryOnce(queryTest);
             System.out.println(resultA);
             resultAll = process.queryAll(queryTest);
             System.out.println(resultAll);            
+
+            System.out.println("-----------------------------------");
             
             queryTest = "getfirst([a,b,c],ActorName)";
             resultA = process.queryOnce(queryTest);
@@ -60,7 +64,7 @@ public class ConnectorDemo {
             resultAll = process.queryAll(queryTest);
             System.out.println(resultAll);           
 
-            
+            System.out.println("-----------------------------------");
             
             
             

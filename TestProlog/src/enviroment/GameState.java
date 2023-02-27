@@ -292,30 +292,62 @@ public class GameState {
 			//OVERRIDE USING ONE WITH LOWER LEVEL	
 			case ("currentLocation"):	
 				isDuplicated = false;
-			for (GameCondition GCnow : listDesireCharacter) {
-				if ((GCnow.getName() == HOLD_Name) && (GCnow.getVariable1() == variable_1)) {
-					if (GCnow.getDesireValue1() == inputGC.getDesireValue1()) {
-						isDuplicated = true;
-					}
-					else {
-						GCnowComLevel = GCnow.getComponentLevel();
-						GCnow1 = GCnow;
+				for (GameCondition GCnow : listDesireCharacter) {
+					if ((GCnow.getName() == HOLD_Name) && (GCnow.getVariable1() == variable_1)) {
+						if (GCnow.getDesireValue1() == inputGC.getDesireValue1()) {
+							isDuplicated = true;
+						}
+						else {
+							GCnowComLevel = GCnow.getComponentLevel();
+							GCnow1 = GCnow;
+						}
 					}
 				}
-			}
-			if (!isDuplicated) {
-				if (GCnowComLevel > inputGC.getComponentLevel()) // If the input has lower component level, override the current gameCondition with input Condition
-				{
-					this.listDesireCharacter.remove(GCnow1);
+				if (!isDuplicated) {
+					if (GCnowComLevel > inputGC.getComponentLevel()) // If the input has lower component level, override the current gameCondition with input Condition
+					{
+						this.listDesireCharacter.remove(GCnow1);
+						this.listDesireCharacter.add(inputGC);
+					}
+					else 
+					{
+						// if the input has higher, just ignore it.
+					}
+				}
+				return true;
+
+			
+			// ADD in 7-1-2019 
+			// This is to solve problem that Prolog can directly compare if
+			// [PLAYER:LOCATION:MARKET]
+			// &
+			// [JACK:LOCATION:MARKET]
+			//
+			// is at the same location or not using this
+			// [PLAYER:currentLocation:JACK]
+			
+			case ("sameLocation"):	
+				isDuplicated = false;
+				for (GameCondition GCnow : listDesireCharacter) {
+					if ((GCnow.getName() == HOLD_Name) && (GCnow.getVariable1() == variable_1)) {
+						if (GCnow.getDesireValue1() == inputGC.getDesireValue1()) {
+							isDuplicated = true;
+						}
+						else {
+							//Do nothing
+						}
+					}
+				}
+				if (!isDuplicated) {
 					this.listDesireCharacter.add(inputGC);
 				}
-				else 
-				{
-					// if the input has higher, just ignore it.
-				}
-			}
-			return true;
-
+				return true;
+			
+			
+			
+			
+			
+			
 			//conflict if same case & diff variable
 			case ("isAlive"):
 				isDuplicated = false;
@@ -421,7 +453,7 @@ public class GameState {
 			//Conflict if same object after case + match ITEM CONFLICT RULE (ITEM TOOK PIORITY?)
 			case ("listItem"):
 
-				HOLD_Name 		= inputGC.getName();
+			HOLD_Name 		= inputGC.getName();
 			variable_1		= inputGC.getVariable1();
 			desireValue_1 	= inputGC.getDesireValue1();
 
@@ -480,6 +512,35 @@ public class GameState {
 						return true;
 
 
+						// ADD in 7-1-2019 
+						// This is to solve problem that Prolog can directly compare if
+						// [PLAYER:LOCATION:MARKET]
+						// &
+						// [JACK:LOCATION:MARKET]
+						//
+						// is at the same location or not using this
+						// [PLAYER:currentLocation:JACK]
+						
+						case ("sameLocation"):	
+							isDuplicated = false;
+							if ((GCnow.getDesireValue1() == desireValue_1) && (GCnow.getVariable2() == variable_2)) {
+								if (GCnow.getDesireValue2() == inputGC.getDesireValue2()) {
+									isDuplicated = true;
+								}
+								else {
+									//do nothing
+								}
+							}
+							if (!isDuplicated) {
+								this.listDesireCharacter.add(inputGC);
+							}
+							return true;
+						
+						
+						
+						
+						
+						
 						//conflict if same case & diff variable
 						//OVERRIDE USING ONE WITH LOWER LEVEL	
 						case ("ownerName") :
@@ -691,28 +752,59 @@ public class GameState {
 							//OVERRIDE USING ONE WITH LOWER LEVEL	
 							case ("currentLocation"):	
 								isDuplicated = false;
-							if ((GCnow.getDesireValue1() == desireValue_1) && (GCnow.getVariable2() == variable_2)) {
-								if (GCnow.getDesireValue2() == inputGC.getDesireValue2()) {
-									isDuplicated = true;
+								if ((GCnow.getDesireValue1() == desireValue_1) && (GCnow.getVariable2() == variable_2)) {
+									if (GCnow.getDesireValue2() == inputGC.getDesireValue2()) {
+										isDuplicated = true;
+									}
+									else {
+										GCnowComLevel = GCnow.getComponentLevel();
+										GCnow1 = GCnow;
+									}
 								}
-								else {
-									GCnowComLevel = GCnow.getComponentLevel();
-									GCnow1 = GCnow;
+								if (!isDuplicated) {
+									if (GCnowComLevel > inputGC.getComponentLevel()) // If the input has lower component level, override the current gameCondition with input Condition
+									{
+										this.listDesireCharacter.remove(GCnow1);
+										this.listDesireCharacter.add(inputGC);
+									}							
+									else 
+									{
+										// if the input has higher, just ignore it.
+									}
 								}
-							}
-							if (!isDuplicated) {
-								if (GCnowComLevel > inputGC.getComponentLevel()) // If the input has lower component level, override the current gameCondition with input Condition
-								{
-									this.listDesireCharacter.remove(GCnow1);
-									this.listDesireCharacter.add(inputGC);
-								}							
-								else 
-								{
-									// if the input has higher, just ignore it.
-								}
-							}
-							return true;
+								return true;
 
+							
+							
+								// ADD in 7-1-2019 
+								// This is to solve problem that Prolog can directly compare if
+								// [PLAYER:LOCATION:MARKET]
+								// &
+								// [JACK:LOCATION:MARKET]
+								//
+								// is at the same location or not using this
+								// [PLAYER:currentLocation:JACK]
+								
+								case ("sameLocation"):	
+									isDuplicated = false;
+									if ((GCnow.getDesireValue1() == desireValue_1) && (GCnow.getVariable2() == variable_2)) {
+										if (GCnow.getDesireValue2() == inputGC.getDesireValue2()) {
+											isDuplicated = true;
+										}
+										else {
+											GCnowComLevel = GCnow.getComponentLevel();
+											GCnow1 = GCnow;
+										}
+									}
+									if (!isDuplicated) {
+										this.listDesireCharacter.add(inputGC);
+									}
+									return true;
+							
+							
+							
+							
+							
 
 							//conflict if same case & diff variable
 							//OVERRIDE USING ONE WITH LOWER LEVEL	
@@ -919,19 +1011,85 @@ public class GameState {
 
 
 		public void addDesire(GameCondition inputGC){
+			
 			String GCtypeOfObject = inputGC.getTypeOfObject();
-
+			String str1 = null;
+			String str2 = null;
 
 			switch (GCtypeOfObject)
 			{
 			case "Character":
-				listDesireCharacter.add(inputGC);
+				
+				boolean isExist = false;
+				for (GameCondition gcCur : listDesireCharacter)
+				{
+					str1 = gcCur.getDesireState();
+					str2 = inputGC.getDesireState();
+					
+					if (str1.equals(str2))
+					{
+						isExist = true;
+					}
+				}
+					
+				if (isExist)
+				{
+					break;
+				}
+				else 
+				{
+					listDesireCharacter.add(inputGC);
+				}
 				break;
+				
+				
 			case "Location":
-				listDesireLocation.add(inputGC);
+				
+				boolean isExist2 = false;
+				for (GameCondition gcCur : listDesireLocation)
+				{
+					str1 = gcCur.getDesireState();
+					str2 = inputGC.getDesireState();
+					
+					if (str1.equals(str2))
+					{
+						isExist2 = true;
+					}
+				}
+					
+				if (isExist2)
+				{
+					break;
+				}
+				else 
+				{
+					listDesireLocation.add(inputGC);
+				}
 				break;
+				
+				
 			case "Relationship":
-				listDesireRelationship.add(inputGC);
+				
+				boolean isExist3 = false;
+				for (GameCondition gcCur : listDesireRelationship)
+				{
+					str1 = gcCur.getDesireState();
+					str2 = inputGC.getDesireState();
+					
+					if (str1.equals(str2))
+					{
+						isExist3 = true;
+					}
+				}
+					
+				if (isExist3)
+				{
+					break;
+				}
+				else 
+				{
+					listDesireRelationship.add(inputGC);
+				}
 				break;
 
 			default:
@@ -1299,9 +1457,9 @@ public class GameState {
 					//["listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury:001"]  
 					String stringDesire_2 = desireString.substring(desireString.indexOf(":")+1, desireString.length());
 					//["THE_ITEM_NAME:typeOfItem:luxury:001"]  
-					String stringDesire_3 = stringDesire_2.substring(desireString.indexOf(":")+1, stringDesire_2.length());;
+					String stringDesire_3 = stringDesire_2.substring(stringDesire_2.indexOf(":")+1, stringDesire_2.length());;
 					//["typeOfItem:luxury:001"]  
-					String stringDesire_4 = stringDesire_3.substring(desireString.indexOf(":")+1, stringDesire_3.length());;
+					String stringDesire_4 = stringDesire_3.substring(stringDesire_3.indexOf(":")+1, stringDesire_3.length());;
 					
 					String name 			= desireString.substring(0, desireString.indexOf(":"));
 					String variable1 		= stringDesire_2.substring(0,stringDesire_2.indexOf(":"));

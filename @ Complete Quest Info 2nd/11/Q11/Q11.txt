@@ -1,0 +1,52 @@
+***FINAL QUEST COM***
+goto: [[player,sameLocation,king,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+wait: [[doctor1,isAlive,true,z,zz,zzz],[soldier3,isAlive,true,z,zz,zzz]]
+kill: [[soldier3,isAlive,false,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+wait: [[doctor1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,doctor1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,soldier3,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,doctor1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/i
+
+[filesa1c1d1e1f1g1h1i1.txt, filesa1c1d5e1f1g1h1i1.txt, filesa1c1d8e1f1g1h1i1.txt]
+
+[i,sa1c1d1e1f1g1h1,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,soldier3,char_die,soldier3,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player]
+[i,sa1c1d5e1f1g1h1,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,soldier3,king,char_die,king,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_hire_to_attack,player,mob_npc_1,soldier3,char_die,soldier3,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player]
+[i,sa1c1d8e1f1g1h1,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,no_action_need,start_new_component,ac_capture,soldier3,player,capture,soldier3,player,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_hire_to_attack,player,mob_npc_1,soldier3,char_die,soldier3,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 9
+Number of Quest Restart because dead-end: 0
+Number of path: 3
+Word             Count
+-----------------------
+sa1c1d1e1f1g1h1     1
+forest              4
+char_die            4
+lumberjack1         1
+city                40
+player]             1
+soldier3            9
+move_from_to        20
+mob_npc_1           6
+soldier_capture_criminal2
+sa1c1d5e1f1g1h1     1
+soldier1            4
+player              43
+palace              24
+player][i           2
+criminal_escort_to_jail_also_lose_crime2
+ac_capture          1
+king                2
+sa1c1d8e1f1g1h1     1
+capture             1
+ac_hire_to_attack   4
+no_action_need      8
+[i                  1
+ac_move_from_to     20
+dungeon             12
+start_new_component 24

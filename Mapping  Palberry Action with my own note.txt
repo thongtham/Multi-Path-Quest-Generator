@@ -1,0 +1,26 @@
+Capture X 			= Capture X
+
+alive X + damage X		= Damage X
+
+NOT_alive X  / Kill X		= Kill X
+
+move to X + Alive X		 = Defend X   ,   Escort X   ,   Follow X
+
+move to X 			= Examine X,Y   ,   Explore X   ,  Goto X   ,  Listen X,Y   ,   Report X,Y
+
+free X 				= Free X
+
+Player hold_item X 		= gather X   ,   Read X,Y   ,   Repair X   ,   Take X,Y   ,   Use X
+
+Y hold item X 			= Give X,Y
+
+TEMP: move to X			= Spy X, Stealth X
+
+
+// LET CHANGE THIS TO JUST "Player_HasItem" >>> Exchange is just a 'action' for player to get item
+// Thus let simplify this by just [if player has X_Item from Y] and [Y no longer has that item]
+
+Z hold item X, +  player hold item Y 	= Exchange X|Y, Z   ,   Take X,Y
+
+
+Do_nothing			= Wait   

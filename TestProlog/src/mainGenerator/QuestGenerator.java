@@ -1,10 +1,31 @@
 package mainGenerator;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+import org.apache.commons.io.FileUtils;
+import org.cs3.prolog.connector.Connector;
+import org.cs3.prolog.connector.common.QueryUtils;
+import org.cs3.prolog.connector.process.PrologProcess;
+import org.cs3.prolog.connector.process.PrologProcessException;
+import org.cs3.prolog.connector.session.PrologSession;
 
 import com.pengyifan.commons.collections.tree.TreeNode;
 
@@ -27,10 +48,20 @@ public class QuestGenerator {
 	static GameWorld mainGameWorld;
 	static ArrayList<Token> tokenList;
 	
+	
+	
 	//Token for quest generation
 	
 	public static void main(String args[])
 	{
+		
+
+		//Statistic recording
+		int numberOfQuestRestart = 0;
+		int numberOfQuestUncompleable = 0;
+		
+		int numberOfAutoRecord = 1;
+		
 		mainGameWorld = new GameWorld();
 		tokenList = new ArrayList<Token>();
 				
@@ -48,6 +79,23 @@ public class QuestGenerator {
 		outterloop:
 		while (true)
 			{
+
+			numberOfQuestRestart +=1;
+			
+			// Start by deleting all file and folder of previous quest (incase previous quest is not completable)
+			String deleteDirectory = "C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog";
+			deleteDirectory(new File(deleteDirectory));
+			
+			//Then create the folder
+			boolean success = (new File("C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog")).mkdirs();
+			if (!success) {
+			    // Directory creation failed
+				System.out.println("Somehow cannot create output folder, break and terminate");
+				break;
+			}
+			
+			
+			
 			System.out.println("////////////////");
 			System.out.println("Start new QUEST GENERATING");
 			System.out.println("////////////////");
@@ -120,30 +168,33 @@ public class QuestGenerator {
 			
 			//Select a random object within the game world
 			Object randomObjectQuestStarter = new Object();
-			Character curCharQG = new Character();
+			
+			//Character curCharQG = new Character();	15-2-2019
+			Character curCharQG = null;
 			
 			int randomNumQuestStarter = -1;
 			int randomQuestStarterObjNum = -1;
 			
 			boolean isQuestGiverOK = false;
+			String questGiverLo = "city";
 			
 			System.out.println("Select QuestGiver");
 			
 			while(!isQuestGiverOK)
 			{
-				//Random integer from [1] to [2]
+				//Random integer from [1] to [3]
 				randomNumQuestStarter = ThreadLocalRandom.current().nextInt(1,3+1);
 				System.out.println(randomNumQuestStarter);
 			
 				// get item from Location
-				if (randomNumQuestStarter == 1)
+				if (randomNumQuestStarter ==1)
 				{
 					randomQuestStarterObjNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListItemFromLocationAll().size()+1);
 					randomObjectQuestStarter = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1);
 					current_QuestLevel = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getLevelQuest();
 					QuestStarterObjectType = 2;
 					isQuestGiverOK = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getisQuestGiver();
-
+					questGiverLo = mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getCurrentLocation();
 					//DEBUG
 					//
 					System.out.println(mainGameWorld.getListItemFromLocationAll().get(randomQuestStarterObjNum-1).getName());
@@ -173,7 +224,7 @@ public class QuestGenerator {
 						randomQuestStarterObjNum = ThreadLocalRandom.current().nextInt(1, mainGameWorld.getListCharacter().size()+1);
 						randomObjectQuestStarter = mainGameWorld.getListCharacter().get(randomQuestStarterObjNum-1);
 						curCharQG = (Character) randomObjectQuestStarter;
-						
+						questGiverLo = curCharQG.getLocation();
 						// Check if chosen character is player
 						if (curCharQG.isPlayer() == true)  // If it is player, must select new character.
 						{
@@ -190,9 +241,14 @@ public class QuestGenerator {
 					
 					//DEBUG
 					//
+					System.out.println("QUSET GIVER");
 					System.out.println(curCharQG.getName());
 					System.out.println(curCharQG.getisQuestGiver());
+					System.out.println("QUSET GIVER");
+					
+					mainGameWorld.setPlayerLocation(questGiverLo);
 				}
+				
 				
 			
 			}
@@ -432,6 +488,35 @@ public class QuestGenerator {
 			}
 
 			
+			/*											DEBUG to check item token problem, TO BE DELETED
+			 * 
+			 * 
+			boolean debugT = false;
+			for (Token tok : tokenList)
+			{
+				if (tok.getTokenObject() instanceof Item)
+				{
+					System.out.println(tok);
+					debugT = true;
+				}
+			}
+			
+			if (debugT = false) 
+			{
+				continue outterloop;
+			}
+			
+			System.out.println("Step 5");
+			
+			for (Token tok : tokenList)
+			{
+				System.out.println(tok.toString());
+			}
+			*
+			*
+			*/
+			
+			
 			////////////////////////// 5th step, put token in this  ////////////////////////////////////////////
 			////////////////////////////////////////////////////////////////////////////////////////////////////
 			
@@ -507,7 +592,7 @@ public class QuestGenerator {
 						//OBSOLETE TO BE DELETED
 						//
 						//tokenInt.remove(0);
-						//tokenList.remove(0);
+						//.remove(0);
 					}
 					
 					currentPo++;
@@ -600,9 +685,6 @@ public class QuestGenerator {
 						// ONLY = [Itself]
 						case "damage" :
 						case "defend" :
-						case "read" :
-						case "experiment" :
-						case "use" :
 							
 							currentTokenNumFromLast = 1;
 							
@@ -649,6 +731,83 @@ public class QuestGenerator {
 							
 							
 							break;
+							
+							
+						// ONLY = [item, Itself]
+						case "read" :
+						case "experiment" :
+						case "use" :
+							
+							
+							currentTokenNumFromLast = 1;
+							option1Active = false;
+							while (true) 
+							{
+								
+								int currentTokenInt = activateToken.size()-currentTokenNumFromLast;
+								Token latestToken;
+								
+								
+								// If == 0; it means last token is reached
+								if ( currentTokenInt == -1 ) {
+									System.out.println("No available item REU");
+									
+									
+									//Option 1: use the latest item token anyway
+									currentTokenNumFromLast = 1;
+									
+									while(true)
+									{
+										if ( currentTokenInt == -1 ) {
+											continue outterloop;
+											// If no item token available, start generate new quest;
+										}
+										// If exhaust full token list and no token available, just use the latest item token
+										latestToken = activateToken.get(activateToken.size()-1);
+										
+										if (!(latestToken.getTokenObject() instanceof Item)) {
+											currentTokenNumFromLast++;
+											continue;
+										}
+										else {
+										curComponent.setObject(latestToken.getTokenObject());
+										curComponent.setTypeOfToken(3);
+										}
+									}
+									/*
+									//Choice 2: start generate the quest again
+									continue outterloop;
+									*/
+									
+								}
+								
+								latestToken = activateToken.get(currentTokenInt);
+							
+								//If the object isn't Item, look for the next one
+								if (!(latestToken.getTokenObject() instanceof Item)) {
+									currentTokenNumFromLast++;
+									continue;
+								}
+								
+								else if (latestToken.getTokenItself()) {
+									curComponent.setObject(latestToken.getTokenObject());
+									curComponent.setTypeOfToken(3);
+									break;
+								}
+
+								else {
+									//continue loop;
+									currentTokenNumFromLast++;
+								}
+							}
+							
+							break;
+							
+							
+							
+							
+							
+							
 							
 							
 							
@@ -860,6 +1019,8 @@ public class QuestGenerator {
 										curComponent.setObject(latestToken.getTokenObject());
 										curComponent.setTypeOfToken(3);
 										
+										
+										
 										// Make the item broken so it can be repaired
 										if(currentComponentName == "repair") {
 											boolean itemExist = false;
@@ -894,23 +1055,6 @@ public class QuestGenerator {
 								}
 								
 								latestToken = activateToken.get(currentTokenInt);
-								
-								
-								// DEBUG
-								/*
-								if (k == 0)
-								{
-									System.out.println("BREAKPOINT");
-									System.out.println("BREAKPOINT");
-								}
-								
-								if (k == (-1))
-								{
-									System.out.println("BREAKPOINT");
-									System.out.println("BREAKPOINT");
-								}
-								*/
-								// DEBUG END
 								
 								
 								//If the object isn't Item, look for the next one
@@ -1098,7 +1242,9 @@ public class QuestGenerator {
 							//------------1st select a NPC to receive / taken from --------
 							
 							currentTokenNumFromLast = 1;
-							Character selectedChar =new Character();
+							
+							//Character selectedChar = new Character();    	15-2-2019							Character selectedChar = null;
+							Character selectedChar = null;
 							
 							while (true) 
 							{
@@ -1107,25 +1253,29 @@ public class QuestGenerator {
 								
 								// If == 0; it means last token is reached
 								if ( currentTokenInt == -1 ) {
-									System.out.println(" EX");
+									System.out.println("EX");
 									currentTokenNumFromLast = 1;
 
 									// If exhaust full token list and no token available, just use the latest NPC token
-									// However, if no such NPC or any token exist, start new quest
+									// However, if tokensize is only 1, start new quest
 									if ((activateToken.size()-1) == -1)
 									{
 										continue outterloop;
 									}
+									
 									latestToken = activateToken.get(activateToken.size()-1);
 									
 									// However, if no such NPC or any token exist, start new quest
 									if (!(latestToken.getTokenObject() instanceof Character)) {
 										continue outterloop;
 									}
-									
-									curComponent.setObject(latestToken.getTokenObject());
-									curComponent.setTypeOfToken(3);
-									break;
+									else
+									{
+										curComponent.setObjectSecondary(latestToken.getTokenObject());
+										selectedChar = (Character) latestToken.getTokenObject();
+										curComponent.setTypeOfToken(3);
+										break;
+									}
 								}
 								
 								latestToken = activateToken.get(currentTokenInt);
@@ -1175,6 +1325,7 @@ public class QuestGenerator {
 									
 									curComponent.setObject(listItemRandomChar.get(randomNum-1));
 									curComponent.setTypeOfToken(3);
+									break;
 								}
 							}
 							
@@ -1196,7 +1347,8 @@ public class QuestGenerator {
 			for (TreeNode curNode : questTreeLeaves){
 				
 				System.out.println(curNode);
-				Component curComponent = (Component) curNode.getObject();
+				
+				//Component curComponent = (Component) curNode.getObject();
 				
 				//-------Debug Check object class-----------
 				//
@@ -1237,7 +1389,8 @@ public class QuestGenerator {
 
 			// This will store what the GameConditions MUST BE (or NOT BE) so that the action of the component
 			// make sense (in [GIVE BERRY to NPC_A], NPC_A must not has Berry in inventory at start so this make sense)
-			GameState resolveConditions = new GameState();
+			
+//			GameState resolveConditions = new GameState();
 			
 			// This will store what the GameConditions  MUST ACTUALLY BE (Figure 28 in proposal)
 			// Create by Combining both GameStates above.
@@ -1260,12 +1413,12 @@ public class QuestGenerator {
 			ArrayList<String> restrictConditionList = new ArrayList<String>();
 			
 			//Store inputDesire_String + the level of Condition
-			ArrayList<GameCondition> inputDesireCondition = new ArrayList<GameCondition>();
+//			ArrayList<GameCondition> inputDesireCondition = new ArrayList<GameCondition>();
 			
 			
 			int componentLevel = questTreeLeavesReverse.size();
 			
-			QuestGeneratorUtility QGU = new QuestGeneratorUtility();
+//			QuestGeneratorUtility QGU = new QuestGeneratorUtility();
 
 			
 			System.out.println("AAA");
@@ -1274,15 +1427,17 @@ public class QuestGenerator {
 			System.out.println(questTreeLeavesReverse.toString());
 			
 			for (int x = 0; x < questTreeLeavesReverse.size(); x++) {
-				TreeNode curNode = questTreeLeavesReverse.get(x);
+				
 				System.out.println("NEXT TREENODE");
+				
+				TreeNode curNode = questTreeLeavesReverse.get(x);
 				Component curCom = (Component) curNode.getObject();
 				curCom.setComponentLevel(componentLevel);
 				
 				// RESET To Avoid shallow copy
 				startConditions = new GameState();
 				goalConditions = new GameState();
-				resolveConditions = new GameState();
+//				resolveConditions = new GameState();
 				
 				// THIS WILL NOT BE RESET SINCE 
 				//restrictionConditions = new GameState();
@@ -1421,22 +1576,10 @@ public class QuestGenerator {
 			////////////////////////// 8th step, Push to Prolog ////////////////////////////////////////////
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
-			// Get each Component, we are sending to Prolog one Component at a time
-			for (int x = 0; x < questTreeFinal.size(); x++) {
-				TreeNode finalTreeNode = questTreeFinal.get(x);
-				Component curCom = (Component) finalTreeNode.getObject();
-				if (curCom.getComponentName() == "NULL")
-				{
-					continue;
-				}
 
-				
-				String goalState = "";
-				goalState = curCom.getPrologFormatFullCondition();
-				System.out.println(goalState);
-			}
-			
+		
 			//*************  DEBUG  *********************
+			
 			//(CO,GC,GL,AC,AL,AR,P,PF)
 			
 			//([],[],[],[],[],[],[],[]).
@@ -1451,17 +1594,488 @@ public class QuestGenerator {
 			gameWorldstr += "AAAA,AAAA";
 			gameWorldstr += mainGameWorld.toStringPrologFormatListLo();
 			gameWorldstr += ") END";
-					
+			
+			
 			System.out.println(gameWorldstr);
 			
-			System.out.println();
+			System.out.println("-----------");
+			
+			/*
+			System.out.println(toAlphabetic(0));
+			System.out.println(toAlphabetic(1));
+			System.out.println(toAlphabetic(2));
+			System.out.println(toAlphabetic(3));
+			
+			System.out.println("-----------");
+			*/
+			
+			/*
+			
+			for (int x = 0; x < questTreeFinal.size(); x++) {
+				TreeNode finalTreeNode = questTreeFinal.get(x);
+				Component CCTest = (Component) finalTreeNode.getObject();
+				if (CCTest.getComponentName() == "NULL")
+				{
+					continue;
+				}
+				String goalState = "";
+				goalState = CCTest.getPrologFormatFullCondition();
+				System.out.println(goalState);
+			}
+			
+			*/
 			
 			//*************  DEBUG  END  ****************
 			
 			
+			List<TreeNode> questTreeFinal2 = questTreeFinal;
+			questTreeFinal = new ArrayList<TreeNode>();
 			
+			for (int x = 0; x < questTreeFinal2.size(); x++) {
+				TreeNode finalTreeNode = questTreeFinal2.get(x);
+				Component CCTest = (Component) finalTreeNode.getObject();
+				if (CCTest.getComponentName() == "NULL")
+				{
+					continue;
+				}
+				questTreeFinal.add(finalTreeNode);
+			}
+			
+			
+			
+			System.out.println("***FINAL QUEST COM***");
+			
+			for(TreeNode FT : questTreeFinal )
+			{
+				Component CCTest = (Component) FT.getObject();
+				String goalState = CCTest.getComponentName();
+				goalState += ": ";
+				goalState += CCTest.getPrologFormatFullCondition();
+				System.out.println(goalState);
+			}
+
+			System.out.println("***FINAL QUEST COM***");
+
+			
+			//*************  Start Prolog Query  ****************
+			
+			System.out.println("-----------");
+			System.out.println("Start Prolog Query");
+			System.out.println("-----------");
+			
+			Component curCom = null;
+			boolean isFirstQuery = true;
+			String queryValue = "";
+			int alphabet = 0;
+			
+			//int numberOfComponent = 0;  // This is used to determine which file is last
+			
+			String path = "[a,s]"; // The 1st folder name  
+			String finalFolderPath = "";
+			
+			// Get each Component, we are sending to Prolog one Component at a time
+			for (int x = 0; x < questTreeFinal.size(); x++) {
+
+//				numberOfComponent = x;
+
+				TreeNode finalTreeNode = questTreeFinal.get(x);
+				curCom = (Component) finalTreeNode.getObject();
+				if (curCom.getComponentName() == "NULL")
+				{
+					continue;
+				}
+				
+				alphabet = alphabet+1; 
+				
+				// Start query process......
+
+	            if (isFirstQuery)
+		        {	
+	    			System.out.println("-----------");
+	    			System.out.println("Start 1st query");
+	    			System.out.println("-----------");
+	            	
+		            String queryTest  = "startQuestPath(GC,AC,AR,LA,P,PF)";
+					
+		            queryValue = "startQuestPath(";
+					
+		            //GC
+					queryValue += curCom.getPrologFormatFullCondition();
+					queryValue += ",";
+					//AC
+					queryValue += mainGameWorld.toStringPrologFormatListChar();
+					queryValue 	= queryValue.substring(0, queryValue.length()-1);
+					queryValue += ",";
+					String temp = mainGameWorld.toStringPrologFormatListLo();
+					temp 		= temp.substring(1, temp.length());
+					queryValue += temp;
+					//AR
+					queryValue += ",";
+					queryValue += mainGameWorld.toStringPrologFormatListRelationship();
+					//LA
+					queryValue += ",";
+					queryValue += "[]";
+					//P
+					queryValue += ",";
+					queryValue += path;
+					//PF
+					queryValue += ",";
+					queryValue += "PF";
+					queryValue += ").";
+			            
+					System.out.println(queryValue);
+					
+					String tempANS = ConnectorProlog.queryOnce(queryValue);
+					System.out.println("TEMP:ANS");
+					System.out.println(tempANS);
+					
+					// If this is null = no path found >>> start new quest
+					if (tempANS == "null")
+					{
+						numberOfQuestUncompleable += 1;
+						continue outterloop;
+					}
+					
+			        isFirstQuery = false;
+			        
+			            
+		        }
+	            else ////////// Second query and after ///////////////////////////
+	            {   
+	            	
+	            	// This is to get the last folder that whole final path
+	    			finalFolderPath = "C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/";
+					finalFolderPath += toAlphabetic(alphabet).toLowerCase();
+				
+
+	            	// 1st, get path to the current folder
+	    			String folderDirectory = "C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/";
+	    				
+	    			System.out.println();
+//	    			String pathPureString1 = path.replaceAll("[","");
+//	    			String pathPureString2 = pathPureString1.replaceAll("]","");
+	    			
+	    			String pathPureString = path.replaceAll("[\\[\\]]", "");
+	    			pathPureString = pathPureString.substring(0, pathPureString.indexOf(","));
+	    			folderDirectory += pathPureString;
+	  
+	    			
+	    			System.out.println(path);
+	    			System.out.println(pathPureString);
+	    			System.out.println(folderDirectory);
+	    			
+	    			
+	    			
+	    			// Access the folder and list of all file
+	    			File folder = new File(folderDirectory);
+	            	ArrayList<String> fileList = listFilesForFolder(folder);
+	            	System.out.println(fileList.toString());
+	            	
+	            	
+	            	int numberOfNull = 1;				// If this exceed numberOfFile = all path are null >> generate new quest
+	            	Scanner sc = null;
+	            	String filePath = null;
+	            	// Now, create query for each 
+	            	for (String fileName : fileList)
+	            	{
+	            		filePath = folderDirectory;
+	            		filePath += "/";
+	            		filePath += fileName;
+	            		try {
+							sc = new Scanner(new File(filePath));
+							
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+			            String P = "";
+			            String AC = "";
+			            String AR = "";
+			            String LA = "";
+			            
+			            //String queryTest  = "startQuestPath(GC,AC,AR,LA,P,PF)";
+			            
+			            while(sc.hasNextLine()){
+			       		P  = (sc.nextLine());
+			            AC = (sc.nextLine());
+			            AR = (sc.nextLine());
+			            LA = (sc.nextLine());
+			            }
+			            
+			            sc.close();
+		            	
+			            queryValue = "startQuestPath(";
+						
+			            //GC
+						queryValue += curCom.getPrologFormatFullCondition();
+						//AC
+						queryValue += ",";
+						queryValue += AC;
+						//AR
+						queryValue += ",";
+						queryValue += AR;
+						//LA
+						queryValue += ",";
+						queryValue += LA;
+						//P
+						queryValue += ",";
+
+						
+//------------------------------------------------------------------------------------------------------------
+//----------------------------CHECK BELOW IF PATH IS ----------------------------------------------------------------------------------			
+//-------------------------check if added to most front--------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+
+						///Obsolete code, change format of path reading to front
+						//*
+						//String alphabet = toAlphabetic(x);
+						//path = P;
+						//path += ",";
+						//path += alphabet;
+						
+						String tempA = P.substring(P.indexOf(",")+1, P.length());
+						tempA = tempA.substring(tempA.indexOf(",")+1, tempA.length());
+						
+						path = "[";
+						
+						path += toAlphabetic(alphabet).toLowerCase();
+						path += ",";
+						path += fileName.substring(4,fileName.indexOf("."));
+						path += ",";
+						
+
+						
+						//System.out.println("+++++++++++++++++++++++");
+						//System.out.println(P);
+						//System.out.println(tempA);
+						//System.out.println(path);
+						//System.out.println("+++++++++++++++++++++++");
+						
+						path += tempA;
+						
+						queryValue += path;
+						
+						//PF
+						queryValue += ",";
+						queryValue += "PF";
+						queryValue += ")";
+			            
+						System.out.println("//////////////////////////////////"); 
+						System.out.println(queryValue); 
+						System.out.println("//////////////////////////////////"); 
+						
+						String tempANS = ConnectorProlog.queryOnce(queryValue);
+						System.out.println("TEMP:ANS");
+						System.out.println(tempANS);
+						
+						// If this is null = no path found >>> start new quest
+						if (tempANS == "null")
+						{
+							numberOfNull +=1;
+							if (numberOfNull > fileList.size())
+							{
+								continue outterloop;
+							}
+						}
+						
+						
+						
+	            	}
+	            }
+			}
+			
+			//---------------------Final Step: Print out all path--------------------------------------------//
+			
+			String outputToText = "";	// This will collect all string into and write to text file
+			
+			
+			System.out.println("***FINAL QUEST COM***");
+			
+			for(TreeNode FT : questTreeFinal )
+			{
+				Component CCTest = (Component) FT.getObject();
+				String goalState = CCTest.getComponentName();
+				goalState += ": ";
+				goalState += CCTest.getPrologFormatFullCondition();
+				System.out.println(goalState);
+				outputToText += goalState;
+				outputToText += "\n";
+			}
+
+			System.out.println("***FINAL QUEST COM***");
+			
+			
+			
+			// Access the folder and list of all file
+			File folder = new File(finalFolderPath);
+        	ArrayList<String> fileList = listFilesForFolder(folder);
+        	
+        	System.out.println("");
+        	System.out.println(finalFolderPath);
+        	System.out.println("");
+        	System.out.println(fileList.toString());
+        	System.out.println("");
+        	
+        	
+			outputToText += "\n";
+			outputToText += finalFolderPath;
+			outputToText += "\n";
+			outputToText += fileList.toString();
+			outputToText += "\n";
+			outputToText += "\n";
+			
+        	String listString = "";
+			String filePath = "";
+			Scanner sc = null;
+			
+        	for (String fileName : fileList)
+        	{
+        		filePath = finalFolderPath;
+        		filePath += "/";
+        		filePath += fileName;
+        		
+        		try {
+					sc = new Scanner(new File(filePath));
+					
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+	            String P = "";
+	            String AC = "";
+	            String AR = "";
+	            String LA = "";
+	            
+	            //String queryTest  = "startQuestPath(GC,AC,AR,LA,P,PF)";
+	            
+	            while(sc.hasNextLine()){
+	       		P  = (sc.nextLine());
+	            AC = (sc.nextLine());
+	            AR = (sc.nextLine());
+	            LA = (sc.nextLine());
+	            }
+	            
+	            sc.close();
+	            listString += P;
+	            System.out.println(P);
+	            
+	            outputToText += "\n";
+	            outputToText += P;
+        	}
+			
+        	//Printing out all statistic
+        	System.out.println("");
+        	System.out.println("Final statistic of this cycle");
+        	System.out.println("");
+        	System.out.println("Number of Quest Generation attempt: "+numberOfQuestRestart);
+        	System.out.println("Number of Quest Restart because dead-end: "+numberOfQuestUncompleable);
+        	System.out.println("Number of path: "+fileList.size());
+        	
+            outputToText += "\n";
+            outputToText += "Final statistic of this cycle";
+            outputToText += "\n";
+            outputToText += "\n";
+            outputToText += "Number of Quest Generation attempt: "+numberOfQuestRestart;
+            outputToText += "\n";
+            outputToText += "Number of Quest Restart because dead-end: "+numberOfQuestUncompleable;
+            outputToText += "\n";
+            outputToText += "Number of path: "+fileList.size();
+            outputToText += "\n";
+            
+        	
+        	WordCount wc = new WordCount();
+        	outputToText +=  wc.countWords(listString);
+        	
+        	
+        	System.out.println("");
 			
 			System.out.println("END OF MAIN LOOP");
+			
+			
+			
+			// Play alarm to alert user that a quest is completed
+			File Alarm = new File("c:/Users/user/Desktop/Prolog Test/alarm_beep.wav");
+			try {
+		        Clip clip2 = AudioSystem.getClip();
+		        clip2.open(AudioSystem.getAudioInputStream(Alarm));
+		        clip2.start(); 
+		      } catch (Exception e) {
+		        System.err.println(e.getMessage());
+		      }
+			
+
+			
+			// location for text output, quest paths summary
+			String locationPrint = "c:/Users/user/Desktop/Prolog Test";
+			locationPrint += "/the-file-name.txt";
+
+			PrintWriter writer;
+			try 
+			{
+				
+				writer = new PrintWriter(locationPrint, "UTF-8");
+				writer.println("The first line");
+				writer.println("The second line");
+				writer.println(outputToText);
+				writer.close();
+				
+				
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+
+
+
+			
+			// Automatically record the generated quest and loop for next quest
+
+			String source = "c:/Users/user/Desktop/Prolog Test/TextPrintFromProlog";
+			File srcDir = new File(source);
+
+			String destination = "c:/Users/user/Desktop/Prolog Test/AutoRecord";
+			destination += "/";
+			destination += args[0];
+			destination += "/Q";
+			destination += numberOfAutoRecord;
+			File destDir = new File(destination);
+
+			try {
+				
+			    FileUtils.copyDirectory(srcDir, destDir);
+			    
+			    String destinationText = destination;
+			    destinationText += "/Q";
+			    destinationText += numberOfAutoRecord;
+			    destinationText += "summary.txt";
+			    
+			    System.out.println(destination);
+			    System.out.println(destinationText);
+			    
+				BufferedWriter writerBW = new BufferedWriter(new FileWriter(destinationText));
+				writerBW.write(outputToText);
+				writerBW.close();
+				
+				
+			} catch (IOException e) {
+			    e.printStackTrace();
+			}
+			
+			//If less than desired number of quest, generate more by looping back to top
+			if (numberOfAutoRecord <= 30)
+			{
+				System.out.println("-----------------");
+				System.out.println("complete 1 quest");
+				System.out.println("-----------------");
+				numberOfQuestRestart = 0;
+				numberOfAutoRecord +=1;
+				continue outterloop;
+			}
+			
+			
 			break;
 			// END OF MAIN WHILE LOOP
 		}
@@ -1474,11 +2088,14 @@ public class QuestGenerator {
 		// END OF MAIN BODY
 		
 		
-		
-		
-		
-		
-		
+		File Alarm = new File("c:/Users/user/Desktop/Prolog Test/alarm_beep.wav");
+		try {
+	        Clip clip2 = AudioSystem.getClip();
+	        clip2.open(AudioSystem.getAudioInputStream(Alarm));
+	        clip2.start(); 
+	      } catch (Exception e) {
+	        System.err.println(e.getMessage());
+	      }
 		
 		
 		
@@ -3287,5 +3904,102 @@ public class QuestGenerator {
 	}
 	
 	*/
+
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//---------------------------Utility Method()--------------------------------------//
+	//---------------------------Utility Method()--------------------------------------//
+
+	
+    public static boolean deleteDirectory(File dir) {
+        if (dir.isDirectory()) {
+            File[] children = dir.listFiles();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDirectory(children[i]);
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+
+        // either file or an empty directory
+        System.out.println("removing file or directory : " + dir.getName());
+        return dir.delete();
+    }
+
+
+
+    
+	
+    
+    
+	
+	
+	public static String toAlphabetic(int i) {
+	    if( i<0 ) {
+	        return "-"+toAlphabetic(-i-1);
+	    }
+
+	    int quot = i/26;
+	    int rem = i%26;
+	    char letter = (char)((int)'A' + rem);
+	    if( quot == 0 ) {
+	        return ""+letter;
+	    } else {
+	        return toAlphabetic(quot-1) + letter;
+	    }
+	}
+	
+	
+    public static ArrayList<String> listFilesForFolder(final File folder) {
+    	ArrayList<String> returnSTR = new ArrayList<String>();
+    	
+	    for (final File fileEntry : folder.listFiles()){
+	        if (fileEntry.isDirectory()){
+	            listFilesForFolder(fileEntry);
+	        } 
+	        else{
+	        	returnSTR.add(fileEntry.getName());
+	            //System.out.println(fileEntry.getName());
+	        }
+	    }
+	    return returnSTR;
+    }
+	
+	
+    public static ArrayList<String> findFoldersInDirectory(String directoryPath) {
+        File directory = new File(directoryPath);
+    	
+        FileFilter directoryFileFilter = new FileFilter() {
+            public boolean accept(File file) {
+                return file.isDirectory();
+            }
+        };
+    		
+        File[] directoryListAsFile = directory.listFiles(directoryFileFilter);
+        ArrayList<String> foldersInDirectory = new ArrayList<String>(directoryListAsFile.length);
+        for (File directoryAsFile : directoryListAsFile) {
+            foldersInDirectory.add(directoryAsFile.getName());
+        }
+
+        return foldersInDirectory;
+    }
+    
+	//---------------------------Prolog Connector ()--------------------------------------//
+
+    private static void fillFactbaseWithDemoData3(PrologProcess process) throws PrologProcessException, FileNotFoundException {
+
+        String consultQuery = QueryUtils.bT("reconsult", "'c:/Users/user/Desktop/Prolog Test/TestPrologPDT/QuestGeneratorMain.pl'");
+        process.queryOnce(consultQuery);
+    }
+
+    
 }

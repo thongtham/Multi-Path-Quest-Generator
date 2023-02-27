@@ -1,0 +1,44 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[player,listItem,antidote,itemNameNOT,antidote,200301]]
+gather: [[player,isAlive,true,z,zz,zzz],[player,listItem,antidote,itemName,antidote,200301]]
+stealth: [[player,sameLocation,merchant1,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt, filesa1c2d1e1.txt]
+
+[e,sa1c1d1,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+[e,sa1c2d1,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,lumberjack1,merchant1,char_die,merchant1,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 20
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+criminal_escort_to_jail_also_lose_crime1
+forest              4
+char_die            2
+lumberjack1         1
+city                4
+no_action_need]     1
+[e                  1
+ac_hire_to_attack   2
+move_from_to        2
+sa1c1d1             1
+no_action_need      4
+sa1c2d1             1
+ac_move_from_to     2
+ac_take_corpse      2
+doctor1             3
+pick_up             2
+start_new_component 8
+soldier_capture_criminal1
+antidote            4
+soldier1            2
+no_action_need][e   1
+merchant1           8
+player              10

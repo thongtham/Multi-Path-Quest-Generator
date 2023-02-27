@@ -1,0 +1,42 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,mob_npc_1,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+goto: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+stealth: [[player,sameLocation,thief1,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+take: [[blacksmith1,isAlive,true,z,zz,zzz],[thief1,listItem,lockpick,itemNameNOT,lockpick,300101],[player,listItem,lockpick,itemName,lockpick,300101]]
+goto: [[player,sameLocation,thief1,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,blacksmith1,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/g
+
+[filesa1c1d1e1f1g1.txt]
+
+[g,sa1c1d1e1f1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_direct_attack,player,thief1,char_die,thief1,ac_take_corpse,lockpick,thief1,player,pick_up,lockpick,player,thief1,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 91
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+sa1c1d1e1f1         1
+criminal_escort_to_jail_also_lose_crime1
+forest              4
+char_die            1
+city                8
+thief1              4
+move_from_to        4
+jail                4
+[g                  1
+no_action_need      2
+ac_move_from_to     4
+ac_take_corpse      1
+pick_up             1
+start_new_component 6
+soldier1]           1
+soldier_capture_criminal1
+ac_direct_attack    1
+lockpick            2
+soldier1            1
+player              13

@@ -1,0 +1,32 @@
+***FINAL QUEST COM***
+stealth: [[player,sameLocation,thief1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+examine: [[lumberjack1,isAlive,true,z,zz,zzz]]
+wait: [[lumberjack1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt]
+
+[e,sa1c1d1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 36
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+forest              2
+start_new_component 4
+city                8
+player]             1
+[e                  1
+move_from_to        4
+jail                4
+sa1c1d1             1
+no_action_need      2
+ac_move_from_to     4
+dungeon             2
+player              7

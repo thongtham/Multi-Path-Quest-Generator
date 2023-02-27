@@ -1,0 +1,56 @@
+***FINAL QUEST COM***
+stealth: [[player,sameLocation,king,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz]]
+wait: [[soldier1,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz]]
+kill: [[thief1,isAlive,false,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,king,z,zz,zzz],[player,sameLocation,king,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,thief1,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/h
+
+[filesa1c1d1e1f1g1h1.txt, filesa2c1d1e1f1g1h1.txt, filesa3c1d1e1f1g1h1.txt, filesa4c1d1e1f1g1h1.txt]
+
+[h,sa1c1d1e1f1g1,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,ac_hire_to_attack,player,miner1,thief1,char_die,thief1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa2c1d1e1f1g1,start_new_component,ac_hire_to_attack,player,thief1,mob_npc_1,char_die,mob_npc_1,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,ac_hire_to_attack,player,miner1,thief1,char_die,thief1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa3c1d1e1f1g1,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_hire_to_attack,player,mob_npc_1,soldier1,friend_block,merchant1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,ac_hire_to_attack,player,miner1,thief1,char_die,thief1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa4c1d1e1f1g1,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_capture,mob_npc_1,player,capture,mob_npc_1,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,ac_hire_to_attack,player,miner1,thief1,char_die,thief1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 9
+Number of Quest Restart because dead-end: 0
+Number of path: 4
+Word             Count
+-----------------------
+forest              16
+char_die            5
+city                74
+thief1              18
+player]             1
+move_from_to        37
+sa1c1d1e1f1g1       1
+criminal_lockpick_escape_jail3
+friend_block        1
+mob_npc_1           7
+soldier_capture_criminal1
+soldier1            3
+sa2c1d1e1f1g1       1
+player              84
+palace              24
+criminal_escort_to_jail_also_lose_crime1
+player][h           3
+ac_capture          4
+sa4c1d1e1f1g1       1
+miner1              4
+capture             4
+ac_hire_to_attack   6
+jail                18
+[h                  1
+no_action_need      4
+ac_move_from_to     37
+dungeon             16
+start_new_component 28
+sa3c1d1e1f1g1       1
+merchant1           1

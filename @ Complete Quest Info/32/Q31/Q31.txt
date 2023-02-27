@@ -1,0 +1,80 @@
+***FINAL QUEST COM***
+goto: [[player,sameLocation,blacksmith1,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+stealth: [[player,sameLocation,soldier1,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+examine: [[mob_npc_1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,soldier1,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+kill: [[merchant1,isAlive,false,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,blacksmith1,z,zz,zzz],[player,sameLocation,blacksmith1,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,mob_npc_1,z,zz,zzz],[mob_npc_1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/h
+
+[filesa1c1d1e1f10g1h1.txt, filesa1c1d1e1f11g1h1.txt, filesa1c1d1e1f12g1h1.txt, filesa1c1d1e1f13g1h1.txt, filesa1c1d1e1f14g1h1.txt, filesa1c1d1e1f15g1h1.txt, filesa1c1d1e1f17g1h1.txt, filesa1c1d1e1f18g1h1.txt, filesa1c1d1e1f1g1h1.txt, filesa1c1d1e1f6g1h1.txt, filesa1c1d1e1f9g1h1.txt]
+
+[h,sa1c1d1e1f10g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,mob_npc_1,thief1,char_die,thief1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,doctor1,king,char_die,king,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_direct_attack,player,merchant1,char_die,merchant1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+[h,sa1c1d1e1f11g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,mob_npc_1,miner1,char_die,miner1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f12g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,mob_npc_1,lumberjack1,char_die,lumberjack1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f13g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,soldier3,char_die,soldier3,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_capture,blacksmith1,player,capture,blacksmith1,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f14g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,thief1,char_die,thief1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_capture,soldier1,player,capture,soldier1,player,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f15g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,miner1,char_die,miner1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_hire_to_attack,player,blacksmith1,merchant1,char_die,merchant1,soldier_capture_criminal,blacksmith1,soldier1,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier1,ac_free,blacksmith1,player,free,blacksmith1,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f17g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_capture,doctor1,player,capture,doctor1,player,ac_hire_to_attack,player,mob_npc_1,king,char_die,king,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f18g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,lumberjack1,char_die,lumberjack1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_free,doctor1,player,free,doctor1,player,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f1g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,king,char_die,king,ac_hire_to_attack,player,lumberjack1,merchant1,char_die,merchant1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,no_action_need]
+[h,sa1c1d1e1f6g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,mob_npc_1,king,char_die,king,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,merchant1,char_die,merchant1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[h,sa1c1d1e1f9g1,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,mob_npc_1,doctor1,char_die,doctor1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,soldier1,king,char_die,king,ac_hire_to_attack,player,blacksmith1,merchant1,char_die,merchant1,soldier_capture_criminal,blacksmith1,soldier1,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier1,soldier_capture_criminal,soldier1,soldier3,criminal_escort_to_jail_also_lose_crime,soldier1,soldier3,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 2
+Number of Quest Restart because dead-end: 0
+Number of path: 11
+Word             Count
+-----------------------
+char_die            24
+forest              12
+lumberjack1         7
+city                54
+thief1              4
+soldier3            4
+move_from_to        27
+sa1c1d1e1f1g1       1
+mob_npc_1           18
+soldier_capture_criminal18
+ac_direct_attack    1
+soldier1            41
+potion_poison       2
+no_action_need][h   1
+free                2
+player              84
+criminal_escort_to_jail_also_lose_crime21
+player][h           8
+ac_capture          3
+sa1c1d1e1f12g1      1
+king                10
+sa1c1d1e1f11g1      1
+sa1c1d1e1f10g1      1
+no_action_need]     1
+miner1              4
+capture             3
+sa1c1d1e1f15g1      1
+ac_hire_to_attack   23
+sa1c1d1e1f14g1      1
+jail                20
+sa1c1d1e1f13g1      1
+[h                  1
+no_action_need      40
+ac_move_from_to     27
+dungeon             22
+sa1c1d1e1f18g1      1
+ac_take_corpse      1
+sa1c1d1e1f17g1      1
+doctor1             36
+pick_up             1
+start_new_component 77
+sa1c1d1e1f9g1       1
+soldier1][h         1
+sa1c1d1e1f6g1       1
+blacksmith1         10
+merchant1           24
+ac_free             2

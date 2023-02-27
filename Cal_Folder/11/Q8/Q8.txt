@@ -1,0 +1,52 @@
+The first line
+The second line
+wait: [[player,isAlive,true,z,zz,zzz],[merchant1,listItem,antidote,itemName,antidote,200301],[player,listItem,antidote,itemNameNOT,antidote,200301],[player,listItem,potion_poison,itemNameNOT,potion_poison,200101],[merchant1,listItem,potion_poison,itemName,potion_poison,200101]]
+take: [[player,isAlive,true,z,zz,zzz],[merchant1,listItem,potion_poison,itemNameNOT,potion_poison,200101],[player,listItem,potion_poison,itemName,potion_poison,200101],[merchant1,listItem,antidote,itemName,antidote,200301],[player,listItem,antidote,itemNameNOT,antidote,200301]]
+exchange: [[player,isAlive,true,z,zz,zzz],[merchant1,listItem,antidote,itemNameNOT,antidote,200301],[player,listItem,antidote,itemName,antidote,200301]]
+stealth: [[player,sameLocation,soldier1,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+[filesa1c1d2e1f1.txt, filesa1c2d2e1f1.txt]
+
+
+[f,sa1c1d2e1,start_new_component,no_action_need,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_hire_to_attack,player,doctor1,merchant1,move_from_to,city,city,doctor1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,ac_hire_to_attack,player,soldier1,mob_npc_1,move_from_to,city,jail,soldier1,char_die,mob_npc_1,ac_hire_to_attack,player,blacksmith1,king,move_from_to,city,jail,blacksmith1,char_die,king,soldier_capture_criminal,blacksmith1,soldier1,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier1,soldier_capture_criminal,soldier1,soldier3,criminal_escort_to_jail_also_lose_crime,soldier1,soldier3,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,no_action_need]
+[f,sa1c2d2e1,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,soldier3,merchant1,move_from_to,palace,city,soldier3,char_die,merchant1,soldier_capture_criminal,soldier3,soldier1,criminal_escort_to_jail_also_lose_crime,soldier3,soldier1,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,ac_hire_to_attack,player,soldier1,doctor1,move_from_to,city,city,soldier1,char_die,doctor1,soldier_capture_criminal,soldier1,soldier3,criminal_escort_to_jail_also_lose_crime,soldier1,soldier3,ac_hire_to_attack,player,blacksmith1,soldier1,move_from_to,city,city,blacksmith1,char_die,soldier1,soldier_capture_criminal,blacksmith1,soldier3,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier3,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 25
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+
+"Word             Count"
+-----------------------
+
+char_die            6
+city                15
+soldier3            10
+move_from_to        9
+mob_npc_1           2
+soldier_capture_criminal6
+soldier1            16
+potion_poison       4
+no_action_need][f   1
+player              20
+palace              3
+criminal_escort_to_jail_also_lose_crime6
+king                2
+no_action_need]     1
+ac_hire_to_attack   6
+[f                  1
+jail                6
+no_action_need      3
+ac_move_from_to     3
+ac_take_corpse      4
+doctor1             6
+pick_up             4
+start_new_component 10
+sa1c2d2e1           1
+antidote            4
+blacksmith1         8
+sa1c1d2e1           1
+merchant1           12
+

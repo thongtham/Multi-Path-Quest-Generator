@@ -1,0 +1,45 @@
+***FINAL QUEST COM***
+wait: [[player,isAlive,true,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[player,listItem,antidote,itemNameNOT,antidote,200301],[merchant1,listItem,antidote,itemName,antidote,200301]]
+stealth: [[player,sameLocation,merchant1,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[player,listItem,antidote,itemNameNOT,antidote,200301],[merchant1,listItem,antidote,itemName,antidote,200301]]
+take: [[player,isAlive,true,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[merchant1,listItem,antidote,itemNameNOT,antidote,200301],[player,listItem,antidote,itemName,antidote,200301]]
+follow: [[player,sameLocation,miner1,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d1e1f1.txt, filesa1c1d2e1f1.txt]
+
+[f,sa1c1d1e1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,soldier1,char_die,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,no_action_need]
+[f,sa1c1d2e1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 257
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+criminal_escort_to_jail_also_lose_crime1
+char_die            3
+city                6
+no_action_need]     1
+ac_hire_to_attack   3
+[f                  1
+move_from_to        3
+jail                2
+no_action_need      4
+ac_move_from_to     3
+dungeon             4
+ac_take_corpse      2
+doctor1             5
+pick_up             2
+start_new_component 10
+soldier_capture_criminal1
+antidote            4
+soldier1            4
+no_action_need][f   1
+sa1c1d2e1           1
+sa1c1d1e1           1
+merchant1           8
+player              13

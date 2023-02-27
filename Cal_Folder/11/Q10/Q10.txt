@@ -1,0 +1,58 @@
+***FINAL QUEST COM***
+wait: [[player,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201],[player,listItem,antidote,itemNameNOT,antidote,200301],[merchant1,listItem,antidote,itemName,antidote,200301]]
+take: [[player,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[merchant1,listItem,antidote,itemNameNOT,antidote,200301],[player,listItem,antidote,itemName,antidote,200301],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201]]
+listen: [[player,sameLocation,merchant1,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201]]
+explore: [[player,sameLocation,merchant1,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201]]
+kill: [[thief1,isAlive,false,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201]]
+take: [[player,isAlive,true,z,zz,zzz],[merchant1,listItem,potion_heal,itemNameNOT,potion_heal,200201],[player,listItem,potion_heal,itemName,potion_heal,200201]]
+stealth: [[player,sameLocation,merchant1,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/i
+
+[filesa1c1d1e1f1g1h1i1.txt, filesa1c2d1e1f1g1h1i1.txt, filesa1c3d1e1f1g1h1i1.txt]
+
+[i,sa1c1d1e1f1g1h1,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_hire_to_attack,player,doctor1,merchant1,move_from_to,city,city,doctor1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,thief1,move_from_to,forest,jail,lumberjack1,char_die,thief1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_direct_attack,player,soldier1,friend_block,merchant1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,soldier_capture_criminal,lumberjack1,soldier1,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier1,ac_take_corpse,potion_heal,merchant1,player,pick_up,potion_heal,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+[i,sa1c2d1e1f1g1h1,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,thief1,merchant1,move_from_to,jail,city,thief1,char_die,merchant1,soldier_capture_criminal,thief1,soldier1,criminal_escort_to_jail_also_lose_crime,thief1,soldier1,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,thief1,move_from_to,forest,city,lumberjack1,char_die,thief1,soldier_capture_criminal,lumberjack1,soldier1,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_direct_attack,player,doctor1,char_die,doctor1,ac_take_corpse,potion_heal,merchant1,player,pick_up,potion_heal,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+[i,sa1c3d1e1f1g1h1,start_new_component,no_action_need,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_hire_to_attack,player,doctor1,merchant1,move_from_to,city,city,doctor1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,antidote,merchant1,player,pick_up,antidote,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,thief1,move_from_to,forest,jail,lumberjack1,char_die,thief1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_direct_attack,player,soldier1,friend_block,merchant1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,soldier_capture_criminal,lumberjack1,soldier1,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier1,ac_take_corpse,potion_heal,merchant1,player,pick_up,potion_heal,player,merchant1,start_new_component,no_action_need,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 1
+Number of Quest Restart because dead-end: 0
+Number of path: 3
+Word             Count
+-----------------------
+sa1c1d1e1f1g1h1     1
+char_die            7
+forest              15
+lumberjack1         12
+city                22
+thief1              13
+move_from_to        14
+criminal_lockpick_escape_jail1
+friend_block        2
+no_action_need][i   2
+soldier_capture_criminal8
+ac_direct_attack    3
+soldier1            18
+sa1c3d1e1f1g1h1     1
+player              43
+criminal_escort_to_jail_also_lose_crime8
+ac_capture          1
+sa1c2d1e1f1g1h1     1
+no_action_need]     1
+capture             1
+ac_hire_to_attack   6
+jail                7
+potion_heal         6
+no_action_need      12
+[i                  1
+ac_move_from_to     8
+ac_take_corpse      6
+doctor1             10
+pick_up             6
+start_new_component 24
+antidote            6
+merchant1           20

@@ -65,7 +65,7 @@ public class Component {
 	//Object of Token
 	Object componentObject;
 	
-	//Mostly for 'Exchange' & 'give' , since they required the component to indicate which NPC is the 'trader'.
+	//Mostly for 'Exchange' & 'give' & 'take' , since they required the component to indicate which NPC is the 'trader'.
 	Object componentObjectSecondary;
 	
 	//Mostly for 'Exchange', since it need to know what item to trade for.

@@ -89,81 +89,96 @@ public class GameWorld {
 		String[] type =		new String[]	{"luxury"};
 		String[] function = new String[]	{"object"};	
 		String[] property = new String[]	{""};
-		newItem.setNewItem(1,"diamond", type, function, "", property, 2, true);
+		newItem.setNewItem(900101,"diamond", type, function, "null", property, 2, true);
 		newLocationPalace.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"weapon"};
 		function =  new String[]	{"equipment"};	
 		property =  new String[]	{"weapon"};
 		newItem = new Item();
-		newItem.setNewItem(5,"dagger", type, function, "", property, 1, false);		
-		newLocationDungeon.addOrUpdateItem(newItem);
+		newItem.setNewItem(500101,"dagger", type, function, "null", property, 1, false);		
+		newLocationJail.addOrUpdateItem(newItem);
 		
+		
+		type =		new String[]	{"quest"};
+		function = new String[]	{"object"};	
+		property = new String[]	{""};
+		newItem.setNewItem(900201,"treasure_map", type, function, "null", property, 2, true);
+		newLocationDungeon.addOrUpdateItem(newItem);
+
 		
 		////// Add very generic item (10+ items of same name)
 		////// These item start ID at 100000
 		
-		//Add 4 berry
+		//Add 1 berry
 		//100000
+		newItem = new Item();
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"berry"};
+		newItem.setNewItem(100101,"berry", type, function, "null", property, 0, false);
+		newLocationForest.addOrUpdateItem(newItem);
+		
+		/* REMOVE 19-2-2019 to increase performance
+		
 		newItem = new Item();
-		newItem.setNewItem(100000,"berry", type, function, "", property, 0, false);
+		newItem.setNewItem(100102,"berry", type, function, "null", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(100001,"berry", type, function, "", property, 0, false);
+		newItem.setNewItem(100102,"berry", type, function, "null", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(100002,"berry", type, function, "", property, 0, false);
+		newItem.setNewItem(100103,"berry", type, function, "null", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
-		newItem = new Item();
-		newItem.setNewItem(100003,"berry", type, function, "", property, 0, false);
-		newLocationForest.addOrUpdateItem(newItem);
-		newItem = new Item();
+		
+		*/
+
 		
 		//Add 2 poison_plant
 		//101000
+		newItem = new Item();
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"poison"};
-		newItem.setNewItem(101000,"poison_plant", type, function, "", property, 0, false);
+		newItem.setNewItem(100201,"poison_plant", type, function, "null", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
-		newItem.setNewItem(101001,"poison_plant", type, function, "", property, 0, false);
+		newItem.setNewItem(100202,"poison_plant", type, function, "null", property, 0, false);
 		newLocationForest.addOrUpdateItem(newItem);
 		newItem = new Item();
 
-
-		
-		
 		//player
-		Character newChar = new Character("player", 1, true,"City", 0, false);
+		Character newChar = new Character("player", 1, true,"city", 0, false);
 		newChar.setIsPlayer(true);
 		listCharacter.add(newChar);
 		
 		//UNIQUE NPC
-		newChar = new Character("mob_NPC_1", 15, true,"City", 0, false);
-		listCharacter.add(newChar);
-		newChar = new Character("mob_NPC_2", 15, true,"City", 0, false);
-		listCharacter.add(newChar);
-		newChar = new Character("mob_NPC_3", 15, true,"City", 0, false);
-		listCharacter.add(newChar);
-		newChar = new Character("mob_NPC_4", 15, true,"City", 0, false);
-		listCharacter.add(newChar);
-		
-		newChar = new Character("king", 20, true,"Palace", 3, true);
-		newChar.addOccupation("king");
+		newChar = new Character("mob_NPC_1", 15, true,"city", 0, false);
 		listCharacter.add(newChar);
 
+		
+		newChar = new Character("king", 20, true,"palace", 3, true);
+		newChar.addOccupation("king");
+		newChar.addOccupation("noble");
+		newChar.addStatus("rich");
+		
+		listCharacter.add(newChar);
+
+
 		//Mob character
-		newChar = new Character("soldier1", 20, true,"City", 2, true);
+		newChar = new Character("soldier1", 20, true,"city", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
-		newChar = new Character("soldier2", 20, true,"Jail", 2, true);
+		
+		// REMOVE to improve performance
+		/*
+		newChar = new Character("soldier2", 20, true,"jail", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
-		newChar = new Character("soldier3", 20, true,"Palace", 2, true);
+		*/
+		
+		
+		newChar = new Character("soldier3", 20, true,"palace", 2, true);
 		newChar.addOccupation("soldier");
 		listCharacter.add(newChar);
 		
@@ -173,33 +188,54 @@ public class GameWorld {
 		//listLocation.add(newLocationJail);
 		//listLocation.add(newLocationPalace);
 		
-		newChar = new Character("doctor1", 20, true,"City", 3, true);
+		newChar = new Character("doctor1", 20, true,"city", 3, true);
+		newChar.addSkill("heal");
 		newChar.addOccupation("doctor");
 		listCharacter.add(newChar);	
-		newChar = new Character("blacksmith1", 20, true,"City", 2, true);
+		newChar = new Character("blacksmith1", 20, true,"city", 2, true);
 		newChar.addOccupation("blacksmith");
 		listCharacter.add(newChar);
-		newChar = new Character("thief1", 20, true,"Jail", 2, true);
+		
+		
+		newChar = new Character("thief1", 20, true,"jail", 2, true);
 		newChar.addOccupation("thief");
+		type =	 	new String[]	{"supply"};
+		function =  new String[]	{"consumable"};	
+		property =  new String[]	{"unlock"};
+		newItem = new Item();
+		newItem.setNewItem(300101,"lockpick", type, function, "thief1", property, 1, false);
+		newChar.addOrUpdateItem(newItem);
 		listCharacter.add(newChar);
-		newChar = new Character("messenger1", 20, true,"City", 2, true);
+		
+		// Remove to improve performance
+		/*
+		newChar = new Character("messenger1", 20, true,"city", 2, true);
 		newChar.addOccupation("messenger");
 		listCharacter.add(newChar);
-		newChar = new Character("scout1", 20, true,"Forest", 2, true);
-		newChar.addOccupation("scout");
-		listCharacter.add(newChar);
-		newChar = new Character("farmer1", 20, true,"Forest", 1, true);
-		newChar.addOccupation("farmer");
-		listCharacter.add(newChar);
-		newChar = new Character("miner1", 20, true,"Dungeon", 1, true);
+		*/
+		
+		newChar = new Character("miner1", 20, true,"dungeon", 1, true);
 		newChar.addOccupation("miner");
 		listCharacter.add(newChar);
-		newChar = new Character("lumberjack1", 20, true,"Forest", 1, true);
+		newChar = new Character("lumberjack1", 20, true,"forest", 1, true);
 		newChar.addOccupation("lumberjack");
 		listCharacter.add(newChar);
 		
-		newChar = new Character("merchant1", 20, true,"City", 3, true);
+		/* REMOVE 19-2-2019 to increase performance
+		
+		newChar = new Character("scout1", 20, true,"forest", 2, true);
+		newChar.addOccupation("scout");
+		listCharacter.add(newChar);
+		newChar = new Character("farmer1", 20, true,"forest", 1, true);
+		newChar.addOccupation("farmer");
+		listCharacter.add(newChar);
+		
+		*/
+		
+		
+		newChar = new Character("merchant1", 20, true,"city", 3, true);
 		newChar.addOccupation("merchant");
+		newChar.addStatus("rich");
 		
 		// Merchant Item
 		//NPC item start at 50000
@@ -207,21 +243,21 @@ public class GameWorld {
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"poison"};
 		newItem = new Item();
-		newItem.setNewItem(50000,"potion_poison", type, function, "", property, 1, false);
+		newItem.setNewItem(200101,"potion_poison", type, function, "merchant1", property, 1, false);
 		newChar.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"healing"};
 		newItem = new Item();
-		newItem.setNewItem(50001,"potion_heal", type, function, "", property, 1, false);
+		newItem.setNewItem(200201,"potion_heal", type, function, "merchant1", property, 1, false);
 		newChar.addOrUpdateItem(newItem);
 		
 		type =	 	new String[]	{"supply"};
 		function =  new String[]	{"consumable"};	
 		property =  new String[]	{"cure_poison"};
 		newItem = new Item();
-		newItem.setNewItem(50002,"antidote", type, function, "", property, 1, false);	
+		newItem.setNewItem(200301,"antidote", type, function, "merchant1", property, 1, false);	
 		newChar.addOrUpdateItem(newItem);
 		
 		
@@ -232,7 +268,7 @@ public class GameWorld {
 		
 		//Relation
 		Relationship newRelation = new Relationship();
-		newRelation.setRelationship("alpha", "beta", "friend");
+		newRelation.setRelationship("merchant1", "soldier1", "friend");
 		listRelationship.add(newRelation);
 		
 		//
@@ -310,7 +346,9 @@ public class GameWorld {
 		String variable;
 		String desireValue;
 		
-		Character currentChar = new Character();
+		//Character currentChar = new Character();  //15-2-2019
+		Character currentChar = null;
+		
 		
 		for (String currentInput : inputList)
 		{
@@ -413,11 +451,33 @@ public class GameWorld {
 					
 			case ("currentLocation")
 				: 
-					if (currentChar.getLocation() != stringDesire)
+					for (Character curChar : listCharacter)
 					{
-						return false; 
+						if (currentChar.getLocation() != stringDesire)
+						{
+							return false; 
+						}
 					}
 					break;
+					
+			case ("sameLocation")
+			: 
+				Character CharSameLocation = null;
+				for (Character checkChar : listCharacter )
+				{
+					if (checkChar.getName() == stringDesire)
+					{
+						CharSameLocation = checkChar;
+					}
+				}
+				if (CharSameLocation == null) return false;
+				
+				if (currentChar.getLocation() != CharSameLocation.getLocation())
+				{
+					return false; 
+				}
+				break;
+				
 					
 			// True if contain the 'desireValue'
 			case ("listStatus")
@@ -659,8 +719,7 @@ public class GameWorld {
 		// IF even ONE of the item match, this methods will return true;
 		
 		ArrayList<Item> listMatchItem = new ArrayList<Item>();
-		
-		
+
 		for (int x = 0; x<inputListItem.size();x++)
 		{
 			if (inputListItem.get(x).getName() == itemName) 
@@ -738,6 +797,46 @@ public class GameWorld {
 						isOneMatch = true;
 						}
 					break;
+					
+				
+				case ("sameLocation")
+				: 
+					
+					
+					//-------------FIND ALL ITEM THAT MATCH DESIREVALUE------------------
+					
+					ArrayList<Item> listMatchItemSameLocation = new ArrayList<Item>();
+					
+				//	String itemName = stringDesire.substring(0, stringDesire.indexOf(":"));;
+				//	String variable = stringDesire.substring(stringDesire.indexOf(":")+1, stringDesire.lastIndexOf(":"));
+				//	String desireValue = stringDesire.substring(stringDesire.lastIndexOf(":")+1,stringDesire.length());
+			
+					for (int x = 0; x<inputListItem.size();x++)
+					{
+						if (inputListItem.get(x).getName() == desireValue) 
+							listMatchItemSameLocation.add(inputListItem.get(x));
+					}
+					
+					if (listMatchItemSameLocation.size() == 0 ) {
+						System.out.println("NO MATCH ITEM IS FOUND");
+						return false;
+					}
+					//--------------------------------
+					
+					Item itemSameLocation = null;
+					for (Item checkItem : listMatchItemSameLocation)
+					{
+						if (checkItem.getCurrentLocation() == inputItem.getCurrentLocation())
+						{
+							// If some item in match list = in same location, break and return true;
+							break;
+						}
+					}
+					// If the code reach this code, it mean no matched item with same location exist, Thus return false;
+					return false;
+					
+					
+					
 					
 				// If contain desireValue, return true;
 				case ("listProperty") 
@@ -864,7 +963,34 @@ public class GameWorld {
 	}
 	
 	
-
+	public void setPlayerLocation(String loc)
+	{
+		Character curChar = null;
+		for (int x = 0; x < listCharacter.size(); x++)
+		{
+			curChar = listCharacter.get(x);
+			if (curChar.getName() == "player")
+			{
+				curChar.setCurrentLocation(loc);
+			}
+		}
+	}
+	
+	public String getPlayerLo()
+	{
+		Character curChar = null;
+		for (int x = 0; x < listCharacter.size(); x++)
+		{
+			curChar = listCharacter.get(x);
+			if (curChar.getName() == "player")
+			{
+				return curChar.getLocation();
+			}
+		}
+		return null;
+	}
+	
+	
 	
 	public void setListRelationship(ArrayList<Relationship> newListRelationship) 
 	{
@@ -982,7 +1108,7 @@ public class GameWorld {
 	
 	
 	
-	public String toStringPrologFormatListChar()
+	public String toStringPrologFormatListLo()
 	{
 		//memberlist([[a,b,c,d,e,ID],[a,b,c,d,e,ID],[a,b,c,d,e,ID]] , [[a,b]] , ).
 		
@@ -998,7 +1124,7 @@ public class GameWorld {
 		return output;	
 	}
 	
-	public String toStringPrologFormatListLo()
+	public String toStringPrologFormatListChar()
 	{
 		//(CO,GC,GL,AC,AL,AR,P,PF)
 		

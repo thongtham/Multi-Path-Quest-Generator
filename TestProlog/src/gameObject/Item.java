@@ -24,12 +24,12 @@ public class Item {
 	// Generic property that all Item with the same name share
 	String itemName;
 	ArrayList<String> typeOfItem = new ArrayList<String>(); 	 // supply , food , weapon , luxury
-	ArrayList<String> typeOfFunction = new ArrayList<String>();; // consumable , equipment , object , container?
+	ArrayList<String> typeOfFunction = new ArrayList<String>(); // consumable , equipment , object , container?
 	
 	
 	//property that vary from Item to Item, making them unique from each other
 	String holderName;
-	String ownerName;
+	String ownerName = "null";
 	boolean isOnGround;
 	String currentLocation;
 	ArrayList<String> listProperty = new ArrayList<String>();
@@ -135,6 +135,13 @@ public class Item {
 		currentLocation = null;
 	}
 	
+	public void setOwner(String owner)
+	{
+		ownerName = owner;
+		currentLocation = null;
+		
+	}
+	
 	public void setQuestLevel(int newQL)
 	{
 		levelQuest = newQL;
@@ -186,6 +193,7 @@ public class Item {
 	{
 		if (ownerName == "") return false;
 		else if (ownerName == null) return false;
+		else if (ownerName == "null") return false;
 		else return true;
 	}
 	
@@ -271,13 +279,13 @@ public class Item {
 	
 
 	
-	public String toStringProlog(String ownerName, String ownerLocation)
+	public String toStringProlog(String owner, String ownerLocation)
 	{
 		String output = "";
 		
 		//1st Item Name		case ("itemName") :
 		output += "["; 
-		output += ownerName;
+		output += owner;
 		output += ",";
 		output += "listItem";
 		output += ",";
@@ -293,7 +301,7 @@ public class Item {
 		
 		//1st Item Name		case ("ownerName") 
 		output += "["; 
-		output += ownerName;
+		output += owner;
 		output += ",";
 		output += "listItem";
 		output += ",";
@@ -301,14 +309,14 @@ public class Item {
 		output += ",";
 		output += "ownerName";
 		output += ",";
-		output += this.itemName;
+		output += this.ownerName;
 		output += ",";
 		output += this.itemID;
 		output += "],"; 
 		
 		//1st Item Name		case ("isOnGround")
 		output += "["; 
-		output += ownerName;
+		output += owner;
 		output += ",";
 		output += "listItem";
 		output += ",";
@@ -323,7 +331,7 @@ public class Item {
 		
 		//1st Item Name		case ("currentLocation"):
 		output += "["; 
-		output += ownerName;
+		output += owner;
 		output += ",";
 		output += "listItem";
 		output += ",";
@@ -341,7 +349,7 @@ public class Item {
 		for (String str: this.typeOfItem)
 		{
 			output += "["; 
-			output += ownerName;
+			output += owner;
 			output += ",";
 			output += "listItem";
 			output += ",";
@@ -358,7 +366,7 @@ public class Item {
 		for (String str: this.typeOfFunction)
 		{
 			output += "["; 
-			output += ownerName;
+			output += owner;
 			output += ",";
 			output += "listItem";
 			output += ",";
@@ -375,7 +383,7 @@ public class Item {
 		for (String str: this.listProperty)
 		{
 			output += "["; 
-			output += ownerName;
+			output += owner;
 			output += ",";
 			output += "listItem";
 			output += ",";
@@ -427,6 +435,7 @@ public class Item {
         result = 31 * result + Integer.hashCode(itemID);
         result = 31 * result + typeOfItem.hashCode();
         result = 31 * result + typeOfFunction.hashCode();
+        result = 31 * result + holderName.hashCode();
         result = 31 * result + ownerName.hashCode();
         result = 31 * result + Boolean.hashCode(isOnGround);
         result = 31 * result + currentLocation.hashCode();
@@ -434,6 +443,15 @@ public class Item {
         return result;
     }
     
+	//String itemName;
+	//int itemID = 0;
+	//ArrayList<String> typeOfItem = new ArrayList<String>(); 	 
+	//ArrayList<String> typeOfFunction = new ArrayList<String>();
+	//String holderName;
+	//String ownerName = "NULL";
+	//boolean isOnGround;
+	//String currentLocation;
+	//ArrayList<String> listProperty = new ArrayList<String>();
 	
 	public String toString()
 	{

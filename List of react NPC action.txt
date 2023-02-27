@@ -1,0 +1,22 @@
+%Friend cure Friend poison
+
+%Soldier capture criminal at same place (unless noble)
+
+%Soldier bring captured criminal to jail (only way to go to jail?)
+%This also remove crime from that character when reach Jail
+
+%Criminal resist capture if lvl higher than 15
+
+%Soldier kill NPC criminal who resist (call it game mechanic)
+
+%Soldier auto warp criminal player to jail (no resist possible?)
+
+%jailbreak (undo capture status) if has lockpick in inventory
+
+%none soldier walk out of jail
+
+%Character with non-owned item in inventory = got crime, the item is then removed and 'warped' to the true owner
+
+%Doctor will always heal people at same place
+
+%Soldier will go to crime scene (where someone die?)

@@ -27,6 +27,11 @@ public class QuestGeneratorUtility {
 	//EX: ["LocationNAME:locationType:City","LocationNAME:locationEnvironment:night",""]
 	//EX: for ITEM ["LocationNAME:listItemInLocation:THE_ITEM_NAME:typeOfItem:luxury"]  item has to be 4 steps
 	
+	
+	//---- SPECIAL CASE ----
+	// In case of checking if the NPC is at the same location as a certain NPC, use the following string instead
+	// EX: ["CharNAME:sameLocation:Char2NAME"]
+	//
 
 	
 	public static ArrayList<String> CreateStartCondition(Component componentinput, GameWorld inputGameWorld) {
@@ -65,6 +70,7 @@ public class QuestGeneratorUtility {
 						break;
 						
 		case "NULL":
+		case "null":
 						//if null >>>> do nothing
 						typeOfObject = 4;
 						break;
@@ -116,10 +122,14 @@ public class QuestGeneratorUtility {
 		// Object to store ANY random object
 		Object randomObject;
 		// Character to store ANY(1) Random Character
-		Character RandomCharacter1 = new Character();
+		
+		//Character RandomCharacter1 = new Character();	15-2-2019
+		Character RandomCharacter1 = null;
 		
 		Item componentObject_1_ITEM = new Item();
-		Character componentObject_1_Character = new Character();
+		
+		//Character componentObject_1_Character = new Character();	15-2-2019
+		Character componentObject_1_Character = null;
 		Location componentObject_1_Location = new Location();
 		
 		String output = "";
@@ -216,7 +226,9 @@ public class QuestGeneratorUtility {
 		
 		
 		String currentCompoentName = componentinput.getComponentName();
-		Character curChar = new Character();
+		
+		//Character curChar = new Character();	15-2-2019
+		Character curChar = null;
 		Item curItem = new Item();
 		
 	////  ---------BELOW = switch for each component that group with how their token are turned into GOAL-----------
@@ -239,6 +251,7 @@ public class QuestGeneratorUtility {
 				
 				
 				// The character must also be alive
+				curChar = (Character) componentinput.getComponentObject();  //Add 13-2-2019
 				output = "1:";
 				output += curChar.getName();
 				output += ":isAlive:" + "true";
@@ -264,6 +277,7 @@ public class QuestGeneratorUtility {
 				
 				
 				// The character must also be alive
+				curChar = (Character) componentinput.getComponentObject();	//Add 13-2-2019
 				output = "1:";
 				output += curChar.getName();
 				output += ":isAlive:" + "true";
@@ -311,6 +325,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getCurrentLocation();
 						output += ":listItemInLocation:" + curItem.getName();
 						output += ":listPropertyNOT:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -322,6 +337,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getHolderName();
 						output += ":listItem:" + curItem.getName();
 						output += ":listPropertyNOT:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -399,6 +415,7 @@ public class QuestGeneratorUtility {
 				{
 					
 					// Only damaged, but not kill for report
+					curChar = (Character) componentinput.getComponentObject();
 					output = "1:";
 					output += curChar.getName();
 					output += ":isAlive:" + "true";
@@ -504,9 +521,10 @@ public class QuestGeneratorUtility {
 					curItem = (Item) componentinput.getComponentObject();
 					
 					output = "1:";
-					output += "PLAYER";
+					output += "player";
 					output += ":listItem:" + curItem.getName();
 					output += ":listProperty:" + "damaged";
+					output += ":" + curItem.getID();
 					outputList.add(output);
 					
 					return outputList;
@@ -523,6 +541,7 @@ public class QuestGeneratorUtility {
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -539,11 +558,12 @@ public class QuestGeneratorUtility {
 				curItem = (Item) componentinput.getComponentObject();
 				curChar = (Character) componentinput.getComponentObjectSecondary();
 				
-				// Check that target nolonger has item
+				// Check that target has the item before start the quest
 				output = "1:";
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -649,11 +669,16 @@ public class QuestGeneratorUtility {
 		int randomNum;
 		// Object to store ANY random object
 		Object randomObject;
+		
 		// Character to store ANY(1) Random Character
-		Character RandomCharacter1 = new Character();
+		//Character RandomCharacter1 = new Character();	15-2-2019
+		Character RandomCharacter1 = null;
 		
 		Item componentObject_1_ITEM = new Item();
-		Character componentObject_1_Character = new Character();
+		
+		//Character componentObject_1_Character = new Character();	15-2-2019
+		Character componentObject_1_Character = null;
+				
 		Location componentObject_1_Location = new Location();
 		
 		String output = "";
@@ -687,8 +712,8 @@ public class QuestGeneratorUtility {
 			String RCLocation = RandomCharacter1.getLocation();
 			//"CharNAME:currentLocation:market"
 			output = "1:";
-			output += "PLAYER";
-			output += ":currentLocation:" + RCLocation;
+			output += "player";
+			output += ":sameLocation:" + RandomCharacter1.getName();
 			outputList.add(output);
 			
 			// The character must also be alive
@@ -708,7 +733,7 @@ public class QuestGeneratorUtility {
 			objectLocation = componentObject_1_Character.getLocation();
 			
 			output = "1:";
-			output += "PLAYER";
+			output += "player";
 			output += ":currentLocation:" + objectLocation;
 			outputList.add(output);
 			return outputList;
@@ -721,13 +746,13 @@ public class QuestGeneratorUtility {
 			componentObject_1_ITEM = (Item) componentObjectONE;
 			objectLocation = componentObject_1_ITEM.getCurrentLocation();
 			output = "1:";
-			output += "PLAYER";
+			output += "player";
 			output += ":currentLocation:" + objectLocation;
 			outputList.add(output);
 			
 			// The character must also be alive
 			output = "1:";
-			output += componentObject_1_Character.getName();
+			output += componentObject_1_ITEM.getHolderName();
 			output += ":isAlive:" + "true";
 			outputList.add(output);
 			
@@ -741,7 +766,7 @@ public class QuestGeneratorUtility {
 		case "23":
 			componentObject_1_Location = (Location) componentObjectONE;
 			output = "1:";
-			output += "PLAYER";
+			output += "player";
 			output += ":currentLocation:" + componentObject_1_Location.getLocationName();
 			outputList.add(output);
 			return outputList;
@@ -780,7 +805,9 @@ public class QuestGeneratorUtility {
 		
 		
 		String currentCompoentName = componentinput.getComponentName();
-		Character curChar = new Character();
+		
+		//Character curChar = new Character(); 	15-2-2019
+		Character curChar = null;
 		Item curItem = new Item();
 		
 	////  ---------BELOW = switch for each component that group with how their token are turned into GOAL-----------
@@ -861,6 +888,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getCurrentLocation();
 						output += ":listItemInLocation:" + curItem.getName();
 						output += ":listProperty:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -872,6 +900,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getHolderName();
 						output += ":listItem:" + curItem.getName();
 						output += ":listProperty:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -905,7 +934,7 @@ public class QuestGeneratorUtility {
 				output += ":isAlive:" + "true";
 				
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":currentLocation:" + curChar.getLocation();
 				outputList.add(output);
 				
@@ -935,8 +964,8 @@ public class QuestGeneratorUtility {
 				output += ":isAlive:" + "true";
 
 				output = "1:";
-				output += "PLAYER";
-				output += ":currentLocation:" + curChar.getLocation();
+				output += "player";
+				output += ":sameLocation:" + curChar.getName();
 				outputList.add(output);
 				
 				outputList.add(output);
@@ -957,8 +986,8 @@ public class QuestGeneratorUtility {
 				{
 					curChar = (Character) componentinput.getComponentObject();
 					output = "1:";
-					output += "PLAYER";
-					output += ":currentLocation:" + curChar.getLocation();
+					output += "player";
+					output += ":sameLocation:" + curChar.getName();
 					outputList.add(output);
 					
 					
@@ -994,8 +1023,8 @@ public class QuestGeneratorUtility {
 				{
 					curChar = (Character) componentinput.getComponentObject();
 					output = "1:";
-					output += "PLAYER";
-					output += ":currentLocation:" + curChar.getLocation();
+					output += "player";
+					output += ":sameLocation:" + curChar.getName();
 					outputList.add(output);
 					
 					
@@ -1014,7 +1043,7 @@ public class QuestGeneratorUtility {
 					if (curItem.isItemOnGround())
 					{
 						output = "2:";
-						output += "PLAYER";
+						output += "player";
 						output += ":currentLocation:" + curItem.getCurrentLocation();
 						outputList.add(output);
 						
@@ -1026,7 +1055,9 @@ public class QuestGeneratorUtility {
 					else 
 					{
 						String itemHolderName = curItem.getHolderName();
-						Character itemHolderCharacter = new Character();
+						
+						
+						Character itemHolderCharacter = null;
 						
 						ArrayList<Character> listCharMGW =  inputGameWorld.getListCharacter();
 						for (Character itrChar : listCharMGW)
@@ -1038,7 +1069,7 @@ public class QuestGeneratorUtility {
 						}
 						
 						output = "1:";
-						output += "PLAYER";
+						output += "player";
 						output += ":currentLocation:" + itemHolderCharacter.getLocation();
 						outputList.add(output);
 						
@@ -1060,14 +1091,14 @@ public class QuestGeneratorUtility {
 			case "use":
 				
 			case "gather" :
-			case "take" :
 				
 				curItem = (Item) componentinput.getComponentObject();
 				
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				return outputList;
 				
@@ -1086,9 +1117,16 @@ public class QuestGeneratorUtility {
 				curChar = (Character) componentinput.getComponentObject();
 				
 				output = "1:";
-				output += curChar.getName();
-				output += ":listStatus:" + "GOT_SNEAK";
+				output += "player";
+				output += ":sameLocation:" + curChar.getName();
 				outputList.add(output);
+				
+				/*
+				output = "1:";
+				output += curChar.getName();
+				output += ":listStatus:" + "got_sneak";
+				outputList.add(output);
+				*/
 				
 				return outputList;
 				
@@ -1104,9 +1142,10 @@ public class QuestGeneratorUtility {
 					curItem = (Item) componentinput.getComponentObject();
 					
 					output = "1:";
-					output += "PLAYER";
+					output += "player";
 					output += ":listItem:" + curItem.getName();
 					output += ":listPropertyNOT:" + "damaged";
+					output += ":" + curItem.getID();
 					outputList.add(output);
 					
 					return outputList;
@@ -1122,6 +1161,7 @@ public class QuestGeneratorUtility {
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -1130,6 +1170,7 @@ public class QuestGeneratorUtility {
 			// LET CHANGE THIS TO JUST "Player_HasItem" >>> Exchange is just a 'action' for player to get item
 			// Thus let simplify this by just [if player has X_Item from Y] and [Y no longer has that item]
 			case "exchange":
+			case "take" :	
 				
 				curItem = (Item) componentinput.getComponentObject();
 				curChar = (Character) componentinput.getComponentObjectSecondary();
@@ -1139,13 +1180,15 @@ public class QuestGeneratorUtility {
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				// Check that player has the item
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -1480,9 +1523,10 @@ public class QuestGeneratorUtility {
 				curItem = (Item) componentinput.getComponentObject();
 				
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				return outputList;
 				
@@ -1493,9 +1537,10 @@ public class QuestGeneratorUtility {
 				
 
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				return outputList;
 				
@@ -1533,9 +1578,10 @@ public class QuestGeneratorUtility {
 				
 				//PLAYER:listItem:curItem.getName():itemName:curItem.getName()
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -1551,9 +1597,10 @@ public class QuestGeneratorUtility {
 
 				// Check that player has the item
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -1751,7 +1798,9 @@ public class QuestGeneratorUtility {
 		
 		
 		String currentCompoentName = componentinput.getComponentName();
-		Character curChar = new Character();
+		
+		//Character curChar = new Character();	15-2-2019
+		Character curChar = null;
 		Item curItem = new Item();
 		
 	////  ---------BELOW = switch for each component that group with how their token are turned into GOAL-----------
@@ -1833,6 +1882,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getCurrentLocation();
 						output += ":listItemInLocation:" + curItem.getName();
 						output += ":listPropertyNOT:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -1845,6 +1895,7 @@ public class QuestGeneratorUtility {
 						output += curItem.getHolderName();
 						output += ":listItem:" + curItem.getName();
 						output += ":listPropertyNOT:" + "damaged";
+						output += ":" + curItem.getID();
 						outputList.add(output);
 						return outputList;
 					}
@@ -1914,6 +1965,7 @@ public class QuestGeneratorUtility {
 
 				// For now, just let the character be alive, and condition that player = same place?
 				
+				curChar = (Character) componentinput.getComponentObject();
 				
 				// 1 == Character
 				if (typeOfObject == 1)
@@ -1961,9 +2013,10 @@ public class QuestGeneratorUtility {
 				curItem = (Item) componentinput.getComponentObject();
 				
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				return outputList;
 				
@@ -1973,18 +2026,24 @@ public class QuestGeneratorUtility {
 				
 				//PLAYER:listItem:curItem.getName():itemNameNOT:curItem.getName()
 				
+				curItem = (Item) componentinput.getComponentObject();
+				
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				//curChar.getName():listItem:curItem.getName():itemName:curItem.getName()
+
+				curChar = (Character) componentinput.getComponentObjectSecondary();
 				
 				output = "1:";
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				
@@ -2028,13 +2087,15 @@ public class QuestGeneratorUtility {
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				//PLAYER:listItem:curItem.getName():itemName:curItem.getName()
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -2053,13 +2114,15 @@ public class QuestGeneratorUtility {
 				output += curChar.getName();
 				output += ":listItem:" + curItem.getName();
 				output += ":itemName:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				// Check that player has the item
 				output = "1:";
-				output += "PLAYER";
+				output += "player";
 				output += ":listItem:" + curItem.getName();
 				output += ":itemNameNOT:" + curItem.getName();
+				output += ":" + curItem.getID();
 				outputList.add(output);
 				
 				return outputList;
@@ -2098,21 +2161,46 @@ public class QuestGeneratorUtility {
 		for (int x = 0; x < restrictionState.getListGameConditionCharacter().size(); x++) {
 			GameCondition addGC = restrictionState.getListGameConditionCharacter().get(x);
 			GameCondition newGC = new GameCondition(addGC);
-			list_RSGC_Chararacter.add(newGC);
+			
+			int newGC_level = newGC.componentLevel;
+			int input_level = input.getComponentLevel();
+			
+			if (newGC_level <= input_level)
+			{
+				continue;
+			}
+			else
+			{
+				list_RSGC_Chararacter.add(newGC);
+			}
 		}
 				
 		ArrayList<GameCondition> list_RSGC_Location = new ArrayList<GameCondition>();
 		for (int x = 0; x < restrictionState.getListGameConditionLocation().size(); x++) {
 			GameCondition addGC = restrictionState.getListGameConditionLocation().get(x);
 			GameCondition newGC = new GameCondition(addGC);
-			list_RSGC_Location.add(newGC);
+			if (newGC.componentLevel <= input.getComponentLevel())
+			{
+				continue;
+			}
+			else
+			{
+				list_RSGC_Location.add(newGC);
+			}
 		}
 		
 		ArrayList<GameCondition> list_RSGC_Relationship = new ArrayList<GameCondition>();
 		for (int x = 0; x < restrictionState.getListGameConditionLocation().size(); x++) {
 			GameCondition addGC = restrictionState.getListGameConditionLocation().get(x);
 			GameCondition newGC = new GameCondition(addGC);
-			list_RSGC_Relationship.add(newGC);
+			if (newGC.componentLevel <= input.getComponentLevel())
+			{
+				continue;
+			}
+			else
+			{
+				list_RSGC_Relationship.add(newGC);
+			}
 		}
 
 		
@@ -2137,7 +2225,7 @@ public class QuestGeneratorUtility {
 			GameCondition newGC = new GameCondition(addGC);
 			newList_RSGC_Relationship.add(newGC);
 		}
-	
+		
 		
 		//---------------------ADD GC to new List-----------------------------------
 	
@@ -2207,7 +2295,9 @@ public class QuestGeneratorUtility {
 			output = new GameState(false);
 			return output;
 		}
-		
+		output.addDesire(newList_RSGC_Chararacter);
+		output.addDesire(newList_RSGC_Location);
+		output.addDesire(newList_RSGC_Relationship);
 		return output;
 	}
 	

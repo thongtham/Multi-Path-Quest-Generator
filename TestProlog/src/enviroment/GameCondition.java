@@ -19,7 +19,6 @@ public class GameCondition {
 
 	public GameCondition()
 	{
-		
 	}
 	
 	public GameCondition(String inputStr, int inputLVL, String inputStr2)

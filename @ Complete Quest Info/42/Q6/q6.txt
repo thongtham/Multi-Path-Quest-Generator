@@ -1,0 +1,52 @@
+***FINAL QUEST COM***
+goto: [[player,sameLocation,king,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[soldier1,listStatusNOT,Captured,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+explore: [[player,sameLocation,thief1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[soldier1,listStatusNOT,Captured,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+capture: [[soldier1,listStatus,Captured,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,doctor1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt, filesa2c1d1e1.txt, filesa3c1d1e1.txt, filesa4c1d1e1.txt]
+
+[e,sa1c1d1,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_direct_attack,player,mob_npc_1,char_die,mob_npc_1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,ac_hire_to_attack,player,soldier1,king,char_die,king,start_new_component,no_action_need]
+[e,sa2c1d1,start_new_component,ac_hire_to_attack,player,thief1,mob_npc_1,char_die,mob_npc_1,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_direct_attack,player,soldier1,friend_block,merchant1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,ac_hire_to_attack,player,soldier1,king,char_die,king,start_new_component,no_action_need]
+[e,sa3c1d1,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_hire_to_attack,player,mob_npc_1,soldier1,friend_block,merchant1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_hire_to_attack,player,soldier1,mob_npc_1,char_die,mob_npc_1,start_new_component,no_action_need]
+[e,sa4c1d1,start_new_component,ac_capture,thief1,player,capture,thief1,player,criminal_lockpick_escape_jail,thief1,ac_capture,mob_npc_1,player,capture,mob_npc_1,player,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_direct_attack,player,mob_npc_1,char_die,mob_npc_1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,ac_hire_to_attack,player,soldier1,king,char_die,king,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 31
+Number of Quest Restart because dead-end: 0
+Number of path: 4
+Word             Count
+-----------------------
+char_die            7
+city                30
+thief1              10
+move_from_to        15
+sa1c1d1             1
+criminal_lockpick_escape_jail3
+friend_block        2
+sa3c1d1             1
+mob_npc_1           13
+soldier_capture_criminal4
+ac_direct_attack    3
+soldier1            14
+no_action_need][e   3
+sa4c1d1             1
+player              53
+palace              12
+criminal_escort_to_jail_also_lose_crime4
+ac_capture          4
+king                6
+no_action_need]     1
+capture             4
+[e                  1
+ac_hire_to_attack   6
+jail                18
+no_action_need      1
+ac_move_from_to     15
+start_new_component 16
+sa2c1d1             1
+merchant1           2

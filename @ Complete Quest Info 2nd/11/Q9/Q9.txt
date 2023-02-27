@@ -1,0 +1,43 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,merchant1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[player,listItem,potion_heal,itemNameNOT,potion_heal,200201],[merchant1,listItem,potion_heal,itemName,potion_heal,200201]]
+take: [[thief1,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[merchant1,listItem,potion_heal,itemNameNOT,potion_heal,200201],[player,listItem,potion_heal,itemName,potion_heal,200201]]
+stealth: [[player,sameLocation,mob_npc_1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+listen: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,lumberjack1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,thief1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/g
+
+[filesa1c2d1e1f1g1.txt]
+
+[g,sa1c2d1e1f1,start_new_component,no_action_need,start_new_component,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_take_corpse,potion_heal,merchant1,player,pick_up,potion_heal,player,merchant1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 50
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+criminal_escort_to_jail_also_lose_crime1
+char_die            1
+forest              4
+city                12
+player]             1
+ac_hire_to_attack   1
+jail                8
+move_from_to        6
+[g                  1
+potion_heal         2
+sa1c2d1e1f1         1
+no_action_need      1
+ac_move_from_to     6
+ac_take_corpse      1
+doctor1             3
+pick_up             1
+start_new_component 6
+soldier_capture_criminal1
+soldier1            2
+merchant1           4
+player              14

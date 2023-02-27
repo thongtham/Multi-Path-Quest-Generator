@@ -1,0 +1,50 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,thief1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+take: [[doctor1,isAlive,true,z,zz,zzz],[thief1,listItem,lockpick,itemNameNOT,lockpick,300101],[player,listItem,lockpick,itemName,lockpick,300101]]
+wait: [[doctor1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,doctor1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt, filesa2c1d1e1.txt, filesa3c1d1e1.txt]
+
+[e,sa1c1d1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_direct_attack,player,thief1,char_die,thief1,ac_take_corpse,lockpick,thief1,player,pick_up,lockpick,player,thief1,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+[e,sa2c1d1,start_new_component,ac_direct_attack,player,mob_npc_1,char_die,mob_npc_1,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,start_new_component,ac_direct_attack,player,thief1,char_die,thief1,ac_take_corpse,lockpick,thief1,player,pick_up,lockpick,player,thief1,criminal_lockpick_escape_jail,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+[e,sa3c1d1,start_new_component,ac_hire_to_attack,player,mob_npc_1,king,move_from_to,city,palace,mob_npc_1,char_die,king,soldier_capture_criminal,mob_npc_1,soldier3,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier3,start_new_component,ac_direct_attack,player,thief1,char_die,thief1,ac_take_corpse,lockpick,thief1,player,pick_up,lockpick,player,thief1,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 20
+Number of Quest Restart because dead-end: 0
+Number of path: 3
+Word             Count
+-----------------------
+char_die            5
+city                9
+thief1              12
+soldier3            2
+move_from_to        5
+sa1c1d1             1
+criminal_lockpick_escape_jail1
+sa3c1d1             1
+mob_npc_1           6
+soldier1]           1
+soldier_capture_criminal5
+ac_direct_attack    4
+lockpick            6
+soldier1            5
+player              28
+palace              1
+criminal_escort_to_jail_also_lose_crime5
+king                2
+[e                  1
+ac_hire_to_attack   1
+jail                8
+no_action_need      3
+ac_move_from_to     4
+ac_take_corpse      3
+pick_up             3
+start_new_component 12
+soldier1][e         2
+sa2c1d1             1

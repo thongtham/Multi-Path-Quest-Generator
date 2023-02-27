@@ -1,0 +1,20 @@
+***FINAL QUEST COM***
+wait: [[lumberjack1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+explore: [[player,sameLocation,thief1,z,zz,zzz],[thief1,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+damage: [[lumberjack1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,blacksmith1,z,zz,zzz],[player,sameLocation,blacksmith1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+[filesa1c1d1e1f1.txt]
+[f,sa1c1d1e1,start_new_component,no_action_need,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,no_action_need,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 14
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+[fsa1c1d1e1start_new_componentno_action_needstart_new_componentac_move_from_todungeoncityplayermove_from_todungeoncityplayerac_move_from_tocityjailplayermove_from_tocityjailplayerstart_new_componentno_action_needstart_new_componentac_move_from_tojailcityplayermove_from_tojailcityplayerstart_new_componentac_move_from_tocityforestplayermove_from_tocityforestplayer]1

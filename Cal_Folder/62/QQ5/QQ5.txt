@@ -1,0 +1,50 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,merchant1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[player,listItem,potion_poison,itemNameNOT,potion_poison,200101],[merchant1,listItem,potion_poison,itemName,potion_poison,200101]]
+explore: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[player,listItem,potion_poison,itemNameNOT,potion_poison,200101],[merchant1,listItem,potion_poison,itemName,potion_poison,200101]]
+kill: [[merchant1,isAlive,false,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[player,listItem,potion_poison,itemNameNOT,potion_poison,200101],[merchant1,listItem,potion_poison,itemName,potion_poison,200101]]
+take: [[soldier1,isAlive,true,z,zz,zzz],[merchant1,listItem,potion_poison,itemNameNOT,potion_poison,200101],[player,listItem,potion_poison,itemName,potion_poison,200101]]
+report: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d3e1f1.txt, filesa1c1d6e1f1.txt]
+
+[f,sa1c1d3e1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_hire_to_attack,player,mob_npc_1,thief1,move_from_to,city,jail,mob_npc_1,char_die,thief1,ac_hire_to_attack,player,doctor1,merchant1,move_from_to,city,city,doctor1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,start_new_component,ac_direct_attack,player,doctor1,char_die,doctor1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+[f,sa1c1d6e1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_hire_to_attack,player,lumberjack1,mob_npc_1,move_from_to,forest,city,lumberjack1,char_die,mob_npc_1,soldier_capture_criminal,lumberjack1,soldier1,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier1,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,ac_hire_to_attack,player,doctor1,merchant1,move_from_to,city,city,doctor1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,start_new_component,ac_direct_attack,player,blacksmith1,char_die,blacksmith1,ac_direct_attack,player,lumberjack1,char_die,lumberjack1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 49
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+forest              9
+char_die            7
+lumberjack1         6
+city                18
+thief1              2
+move_from_to        10
+mob_npc_1           6
+soldier1]           1
+soldier_capture_criminal6
+ac_direct_attack    3
+soldier1            10
+potion_poison       4
+player              27
+criminal_escort_to_jail_also_lose_crime6
+ac_hire_to_attack   4
+[f                  1
+jail                5
+no_action_need      2
+ac_move_from_to     6
+ac_take_corpse      2
+doctor1             10
+pick_up             2
+start_new_component 10
+soldier1][f         1
+blacksmith1         2
+sa1c1d3e1           1
+merchant1           8
+sa1c1d6e1           1

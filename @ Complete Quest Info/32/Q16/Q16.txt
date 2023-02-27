@@ -1,0 +1,49 @@
+***FINAL QUEST COM***
+explore: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,blacksmith1,z,zz,zzz],[player,sameLocation,blacksmith1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+kill: [[doctor1,isAlive,false,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt, filesa1c1d4e1.txt, filesa1c1d5e1.txt]
+
+[e,sa1c1d1,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,ac_hire_to_attack,player,lumberjack1,mob_npc_1,char_die,mob_npc_1,ac_hire_to_attack,player,lumberjack1,doctor1,char_die,doctor1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player]
+[e,sa1c1d4,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_hire_to_attack,player,mob_npc_1,king,char_die,king,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,soldier1,mob_npc_1,char_die,mob_npc_1,ac_hire_to_attack,player,blacksmith1,doctor1,char_die,doctor1,soldier_capture_criminal,blacksmith1,soldier1,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier1,soldier_capture_criminal,soldier1,soldier3,criminal_escort_to_jail_also_lose_crime,soldier1,soldier3,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[e,sa1c1d5,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,ac_move_from_to,city,forest,player,move_from_to,city,forest,player,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_capture,mob_npc_1,player,capture,mob_npc_1,player,ac_hire_to_attack,player,doctor1,mob_npc_1,char_die,mob_npc_1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_hire_to_attack,player,blacksmith1,doctor1,char_die,doctor1,soldier_capture_criminal,blacksmith1,soldier1,criminal_escort_to_jail_also_lose_crime,blacksmith1,soldier1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 13
+Number of Quest Restart because dead-end: 0
+Number of path: 3
+Word             Count
+-----------------------
+forest              16
+char_die            7
+lumberjack1         2
+city                26
+player]             1
+soldier3            2
+move_from_to        13
+sa1c1d1             1
+mob_npc_1           11
+soldier_capture_criminal5
+soldier1            11
+player              32
+palace              6
+criminal_escort_to_jail_also_lose_crime5
+ac_capture          1
+king                2
+capture             1
+[e                  1
+ac_hire_to_attack   7
+jail                4
+player][e           2
+ac_move_from_to     13
+doctor1             9
+sa1c1d5             1
+start_new_component 12
+sa1c1d4             1
+blacksmith1         6

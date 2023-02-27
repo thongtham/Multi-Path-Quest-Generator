@@ -1,0 +1,31 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,soldier3,z,zz,zzz],[player,sameLocation,soldier3,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+stealth: [[player,sameLocation,blacksmith1,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+listen: [[player,sameLocation,soldier3,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+explore: [[player,sameLocation,soldier3,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,king,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d1e1f1.txt]
+
+[f,sa1c1d1e1,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,ac_move_from_to,palace,city,player,move_from_to,palace,city,player,start_new_component,ac_move_from_to,city,palace,player,move_from_to,city,palace,player,start_new_component,no_action_need,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 7
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+palace              6
+start_new_component 5
+city                6
+no_action_need]     1
+[f                  1
+sa1c1d1e1           1
+move_from_to        3
+no_action_need      1
+ac_move_from_to     3
+player              6

@@ -1,0 +1,52 @@
+***FINAL QUEST COM***
+goto: [[player,sameLocation,merchant1,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+goto: [[player,currentLocation,jail,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[player,listItem,lockpick,itemNameNOT,lockpick,300101],[thief1,listItem,lockpick,itemName,lockpick,300101]]
+take: [[player,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[thief1,listItem,lockpick,itemNameNOT,lockpick,300101],[player,listItem,lockpick,itemName,lockpick,300101]]
+follow: [[player,sameLocation,soldier1,z,zz,zzz],[player,isAlive,true,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,lumberjack1,z,zz,zzz],[lumberjack1,isAlive,true,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+listen: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,player,z,zz,zzz],[player,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/h
+
+[filesa1c1d1e1f1g1h1.txt]
+
+[h,sa1c1d1e1f1g1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_direct_attack,player,thief1,char_die,thief1,ac_take_corpse,lockpick,thief1,player,pick_up,lockpick,player,thief1,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,soldier_capture_criminal,player,soldier1,criminal_escort_to_jail_also_lose_crime,player,soldier1,start_new_component,ac_hire_to_attack,player,soldier1,mob_npc_1,move_from_to,city,jail,soldier1,char_die,mob_npc_1,ac_give_item,lockpick,doctor1,player,give_item,lockpick,doctor1,player,ac_hire_to_attack,player,doctor1,king,move_from_to,city,jail,doctor1,char_die,king,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,soldier_capture_criminal,soldier1,soldier3,criminal_escort_to_jail_also_lose_crime,soldier1,soldier3,criminal_lockpick_escape_jail,doctor1,start_new_component,ac_direct_attack,player,merchant1,char_die,merchant1,ac_hire_to_attack,player,lumberjack1,soldier1,move_from_to,city,jail,lumberjack1,char_die,soldier1,soldier_capture_criminal,lumberjack1,soldier3,criminal_escort_to_jail_also_lose_crime,lumberjack1,soldier3,criminal_escort_to_jail_also_lose_crime,player,soldier3,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 30
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+forest              2
+char_die            5
+lumberjack1         4
+city                9
+thief1              4
+give_item           1
+soldier3            5
+move_from_to        6
+sa1c1d1e1f1g1       1
+criminal_lockpick_escape_jail1
+mob_npc_1           2
+soldier_capture_criminal4
+ac_direct_attack    2
+lockpick            4
+soldier1            10
+player              18
+criminal_escort_to_jail_also_lose_crime5
+king                2
+no_action_need]     1
+ac_hire_to_attack   3
+jail                7
+[h                  1
+ac_move_from_to     3
+ac_give_item        1
+ac_take_corpse      1
+doctor1             7
+pick_up             1
+start_new_component 7
+merchant1           2

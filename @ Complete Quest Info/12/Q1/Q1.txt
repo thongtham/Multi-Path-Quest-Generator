@@ -1,0 +1,25 @@
+***FINAL QUEST COM***
+spy: [[player,sameLocation,merchant1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz],[merchant1,isAlive,true,z,zz,zzz]]
+follow: [[player,sameLocation,merchant1,z,zz,zzz],[player,sameLocation,merchant1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+wait: [[doctor1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,doctor1,z,zz,zzz],[doctor1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c1d1e1.txt]
+
+[e,sa1c1d1,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 13
+Number of Quest Restart because dead-end: 0
+Number of path: 1
+Word             Count
+-----------------------
+start_new_component 4
+no_action_need]     1
+[e                  1
+sa1c1d1             1
+no_action_need      3

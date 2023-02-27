@@ -197,7 +197,7 @@ public class QuestToProlog {
 	private static void fillFactbaseWithDemoData(PrologProcess process) throws PrologProcessException, FileNotFoundException {
 
         // or by consulting a file
-         String consultQuery = QueryUtils.bT("reconsult", "'c:/Users/user/Desktop/Prolog Test/QuestGenerator.pl'");
+         String consultQuery = QueryUtils.bT("reconsult", "'c:/Users/user/Desktop/Prolog Test/TestPrologPDT/QuestGeneratorMain.pl'");
          process.queryOnce(consultQuery);
 
     	

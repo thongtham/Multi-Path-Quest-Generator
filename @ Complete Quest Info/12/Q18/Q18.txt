@@ -1,0 +1,41 @@
+***FINAL QUEST COM***
+follow: [[player,sameLocation,thief1,z,zz,zzz],[player,sameLocation,thief1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz]]
+spy: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz]]
+goto: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz]]
+stealth: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,miner1,z,zz,zzz],[miner1,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/f
+
+[filesa1c1d1e1f1.txt, filesa3c1d1e1f1.txt]
+
+[f,sa1c1d1e1,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,no_action_need]
+[f,sa3c1d1e1,start_new_component,ac_hire_to_attack,player,mob_npc_1,king,char_die,king,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,start_new_component,ac_move_from_to,jail,city,player,move_from_to,jail,city,player,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,ac_move_from_to,dungeon,city,player,move_from_to,dungeon,city,player,start_new_component,ac_move_from_to,city,dungeon,player,move_from_to,city,dungeon,player,start_new_component,no_action_need]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 15
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+criminal_escort_to_jail_also_lose_crime1
+char_die            1
+city                18
+king                2
+no_action_need]     1
+ac_hire_to_attack   1
+[f                  1
+jail                6
+move_from_to        9
+ac_move_from_to     9
+dungeon             12
+sa3c1d1e1           1
+start_new_component 10
+mob_npc_1           3
+soldier_capture_criminal1
+soldier1            2
+no_action_need][f   1
+sa1c1d1e1           1
+player              19

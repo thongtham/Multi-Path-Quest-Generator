@@ -113,19 +113,87 @@ characterTest([[CharacterName,Value]|TailMain],CharacterNameAsk,CharacterAbility
 %[[1,2,3],[4,5,6]]= [[First, Second| Tail]|TailB].
 %-------------------------------------------------------------------------	
 	
-	
+
+testAppendText(N,NAME2)
+:-
+	atom_concat('file',N,NAME),
+	atom_concat(NAME,'.txt',NAME2).	
 	
 	
 queryToRelation(friend(A,B))
 :-.
 
 queryTR([RelationHead|RelationTail])
+:-.
+
+	
+	
+	
+  
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+[player:currentlocation:market:Z:ZZ:ZZZ]	
+[jack:currentlocation:market:Z:ZZ:ZZZ]	
+
+[player:currentlocation2:jack:Z:ZZ:ZZZ]	
+
+[[player,jack]]
+
+[jack:currentlocation:market:Z:ZZ:ZZZ]	
+[player:currentlocation:market:Z:ZZ:ZZZ]
+
+/-
+member(GS,CS)
+
+memberSameLocation(GsameLocation,GL)
+
+
+
+%---------------------------- OPTION 1 == create new format of goal [[player,jack]] and check if char of that name is at same location when check if goal reach ---------------------------------
+%---------------------------- Pro: easier to code, light weight
+%---------------------------- Con: must code on Java site >> reliability 
+%---------------------------- Con: the [jack:currentlocation:market:Z:ZZ:ZZZ]	is nolonger generalized 
+
+%memberSameLocation([[player,jack]], ALL_CHAR_LOCATION_LIST)
+memberSameLocation([[Char1Lo,Char2Lo]|Tail],GL)
 :-
-	
-		
-	
-	
-	
-	
-	
-	
+	getCharCurrentLocationFromList(GL,Char1Lo,B),
+	getCharCurrentLocationFromList(GL,Char2Lo,B).
+
+
+
+
+%----------------------------OPTION 2 == when goto(CharName,newLocation) > create all pair of [CharName:currentLocation:Char_at_newLocation] as below ---------------------------------
+%---------------------------- Pro: self-contain in Prolog
+%---------------------------- Con: Performance
+%---------------------------- Con: coding in Prolog = hard 
+
+
+%-check who's at market
+%-
+%player:currentlocation:jack
+%player:currentlocation:jill
+%player:currentlocation:adam
+%
+%jack:currentlocation:jill
+
+
+

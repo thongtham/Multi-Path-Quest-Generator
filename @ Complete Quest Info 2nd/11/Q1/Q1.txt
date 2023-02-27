@@ -1,0 +1,48 @@
+***FINAL QUEST COM***
+goto: [[player,sameLocation,soldier1,z,zz,zzz],[soldier1,isAlive,true,z,zz,zzz],[king,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[player,listItem,potion_poison,itemNameNOT,potion_poison,200101],[merchant1,listItem,potion_poison,itemName,potion_poison,200101]]
+take: [[king,isAlive,true,z,zz,zzz],[blacksmith1,isAlive,true,z,zz,zzz],[merchant1,listItem,potion_poison,itemNameNOT,potion_poison,200101],[player,listItem,potion_poison,itemName,potion_poison,200101]]
+follow: [[player,sameLocation,blacksmith1,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+report: [[player,sameLocation,king,z,zz,zzz],[king,isAlive,true,z,zz,zzz]]
+***FINAL QUEST COM***
+
+C:/Users/user/Desktop/Prolog Test/TextPrintFromProlog/e
+
+[filesa1c2d1e1.txt, filesa1c4d1e1.txt]
+
+[e,sa1c2d1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_hire_to_attack,player,mob_npc_1,soldier1,friend_block,merchant1,soldier_capture_criminal,mob_npc_1,soldier1,criminal_escort_to_jail_also_lose_crime,mob_npc_1,soldier1,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+[e,sa1c4d1,start_new_component,ac_move_from_to,forest,city,player,move_from_to,forest,city,player,start_new_component,ac_capture,mob_npc_1,player,capture,mob_npc_1,player,ac_hire_to_attack,player,doctor1,merchant1,char_die,merchant1,soldier_capture_criminal,doctor1,soldier1,criminal_escort_to_jail_also_lose_crime,doctor1,soldier1,ac_take_corpse,potion_poison,merchant1,player,pick_up,potion_poison,player,merchant1,start_new_component,no_action_need,start_new_component,ac_move_from_to,city,jail,player,move_from_to,city,jail,player]
+
+Final statistic of this cycle
+
+Number of Quest Generation attempt: 41
+Number of Quest Restart because dead-end: 0
+Number of path: 2
+Word             Count
+-----------------------
+forest              4
+char_die            2
+city                8
+player]             1
+move_from_to        4
+sa1c2d1             1
+friend_block        1
+mob_npc_1           5
+soldier_capture_criminal3
+soldier1            7
+potion_poison       4
+player              15
+criminal_escort_to_jail_also_lose_crime3
+ac_capture          1
+capture             1
+[e                  1
+ac_hire_to_attack   3
+jail                4
+player][e           1
+no_action_need      2
+ac_move_from_to     4
+ac_take_corpse      2
+doctor1             6
+pick_up             2
+sa1c4d1             1
+start_new_component 8
+merchant1           9
